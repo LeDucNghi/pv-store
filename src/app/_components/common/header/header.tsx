@@ -22,13 +22,22 @@ export default function Header(props: IHeaderProps) {
           <li>
             <Image src={images.logo} alt="logo" />
           </li>
-          <li className={`ml-4 menu-link ${isActive === 1 ? "active" : ""}`}>
+          <li
+            onClick={() => setisActive(1)}
+            className={`ml-4 menu-link ${isActive === 1 ? "active" : ""}`}
+          >
             <Link href="/about">about</Link>
           </li>
-          <li className={`menu-link ${isActive === 2 ? "active" : ""}`}>
+          <li
+            onClick={() => setisActive(2)}
+            className={`menu-link ${isActive === 2 ? "active" : ""}`}
+          >
             <Link href="/blog">blog</Link>
           </li>
-          <li className={`menu-link ${isActive === 3 ? "active" : ""}`}>
+          <li
+            onClick={() => setisActive(3)}
+            className={`menu-link ${isActive === 3 ? "active" : ""}`}
+          >
             <Link href="/shop">shop</Link>
           </li>
         </ul>
