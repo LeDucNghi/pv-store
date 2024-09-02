@@ -1,0 +1,70 @@
+.banner-container {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    img {
+        position: absolute;
+
+        bottom: 0;
+    }
+
+    .banner-products {
+        width: 90%;
+        height: 80%;
+
+        top: -2rem;
+
+        .banner-slide {
+            .slide-wrapper {
+                width: 100%;
+                height: 100%;
+
+                .prod-img {
+                    width: 50%;
+                    height: 100%;
+
+                    padding: 0 1.25rem;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+
+                        object-fit: contain;
+                    }
+                }
+
+                .prod-info {
+                    width: 50%;
+
+                    flex-direction: column;
+
+                    padding: 0 1.25rem;
+
+                    color: #fff;
+                    text-align: left;
+
+                    span {
+                        font-size: 5rem;
+                        font-weight: 700;
+                        line-height: 5.5rem;
+                    }
+
+                    p {
+                        font-size: 1rem;
+                        margin: 2rem 0;
+                        line-height: 1.8rem;
+                    }
+
+                    .prod-cart-btn {
+                        width: 100%;
+
+                        display: flex;
+                        justify-content: flex-start;
+                    }
+                }
+            }
+        }
+    }
+}
