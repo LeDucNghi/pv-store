@@ -4,57 +4,64 @@
     width: 100%;
     height: 100vh;
 
-    img {
+    .banner-wave {
         position: absolute;
 
-        bottom: 0;
+        bottom: -4rem;
     }
 
     .banner-products {
         width: 90%;
         height: 80%;
 
-        top: -2rem;
+        top: 3rem;
 
         .banner-slide {
+            width: 100%;
+
             .slide-wrapper {
                 width: 100%;
                 height: 100%;
 
                 .prod-img {
-                    width: 50%;
+                    width: 60%;
                     height: 100%;
 
                     padding: 0 1.25rem;
 
                     img {
-                        width: 100%;
-                        height: 100%;
+                        width: 95%;
+                        height: 95%;
 
                         object-fit: contain;
                     }
                 }
 
                 .prod-info {
-                    width: 50%;
+                    width: 40%;
 
                     flex-direction: column;
 
-                    padding: 0 1.25rem;
-
                     color: #fff;
-                    text-align: left;
 
-                    span {
-                        font-size: 5rem;
+                    position: relative;
+                    left: -6rem;
+
+                    .product-name {
+                        padding: 0 1.25rem;
+
+                        font-size: 4rem;
                         font-weight: 700;
                         line-height: 5.5rem;
                     }
 
-                    p {
+                    .product-description {
+                        padding: 0 1.25rem;
+
                         font-size: 1rem;
                         margin: 2rem 0;
                         line-height: 1.8rem;
+                        text-align: left;
                     }
 
                     .prod-cart-btn {

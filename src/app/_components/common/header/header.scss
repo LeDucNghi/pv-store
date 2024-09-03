@@ -1,5 +1,5 @@
 .header-container {
-    width: 98%;
+    width: 95%;
 
     padding: 1rem 0;
 
@@ -7,7 +7,12 @@
 
     background: white;
 
-    margin: 1rem auto 0 auto;
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 2;
 
     .menu-port {
         width: 95%;

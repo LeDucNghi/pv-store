@@ -1,10 +1,93 @@
 .body-container {
     position: relative;
+    top: 4rem;
 
     width: 100%;
-    height: 1493px;
+    height: 80%;
 
     z-index: 2;
 
     background-color: #f5ecdd;
+
+    .delivery-step {
+        position: relative;
+        top: 8rem;
+
+        display: flex;
+        flex-direction: column;
+
+        width: 65%;
+
+        margin: 0 auto;
+
+        text-align: center;
+
+        h1 {
+            font-weight: 700;
+            font-size: 3.625rem;
+            color: #e84242;
+            text-transform: capitalize;
+
+            margin-bottom: 4rem;
+        }
+
+        .inner-step {
+            width: 35%;
+
+            &:nth-child(2) {
+                margin: 0 3rem;
+            }
+
+            .step-img {
+                position: relative;
+
+                width: 100%;
+
+                padding: 0 0 1rem;
+
+                line-height: 1.8rem;
+
+                .step-line {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    color: #e84242;
+
+                    font-size: 4rem;
+
+                    &:first-child {
+                        left: -4rem;
+                    }
+
+                    &:nth-child(3) {
+                        right: -4rem;
+                    }
+                }
+
+                img {
+                    width: 40%;
+                    height: 40%;
+
+                    object-fit: contain;
+                }
+            }
+
+            .step-content {
+                .step-name {
+                    font-weight: 600;
+                    font-size: 1.25rem;
+                    line-height: 1.375rem;
+
+                    padding: 0 0 0.5rem;
+                }
+
+                .step-description {
+                    padding: 1rem 0 0;
+
+                    font-weight: 500;
+                }
+            }
+        }
+    }
 }

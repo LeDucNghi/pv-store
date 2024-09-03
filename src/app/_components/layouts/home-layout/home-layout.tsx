@@ -1,7 +1,10 @@
+"use client";
+
 import "./home-layout.scss";
 
 import * as React from "react";
 
+import { AnimatePresence } from "framer-motion";
 import Banner from "../../common/banner/banner";
 import Image from "next/image";
 import { images } from "@/app/constants";
@@ -12,12 +15,16 @@ export interface IHomeLayoutProps {
 
 export default function HomeLayout({ children }: IHomeLayoutProps) {
   return (
-    <div className="home-layout">
-      <div className="home-background"></div>
+    <AnimatePresence mode="wait">
+      <div className="home-layout">
+        <div className="home-banner-img">
+          <Image src={images.homeBg} alt="home background" />
+        </div>
 
-      <Banner />
+        <Banner />
 
-      {children}
-    </div>
+        {children}
+      </div>
+    </AnimatePresence>
   );
 }
