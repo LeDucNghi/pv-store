@@ -8,7 +8,7 @@ import { Button } from "@mui/material";
 import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
 import Image from "next/image";
 import Link from "next/link";
-import { images } from "@/app/constants";
+import { images } from "@/constants";
 
 export interface IHeaderProps {}
 
@@ -45,7 +45,7 @@ export default function Header(props: IHeaderProps) {
         <div className="menu-cell flex-space-center">
           <div className="menu-content">
             <span className="text-[0.9rem] leading-6 text-black">
-              Order by phone
+              Đặt hàng qua điện thoại
             </span>
             <span className="text-[1.5rem] leading-6">0931303515</span>
           </div>
@@ -55,7 +55,7 @@ export default function Header(props: IHeaderProps) {
             <span className="cart-content">0</span>
           </span>
 
-          <Button variant="outlined">view all menu</Button>
+          <Button variant="outlined">menu</Button>
         </div>
       </div>
     </div>

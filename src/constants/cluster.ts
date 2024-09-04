@@ -1,3 +1,4 @@
+import { Product } from "@/models";
 import { faker } from "@faker-js/faker";
 import { images } from "./images";
 
@@ -57,5 +58,23 @@ export const deliverySteps = [
     name: "Thưởng thức món ăn",
     description: faker.lorem.paragraph(1),
     time: 2.5,
+  },
+];
+
+export const specialOffers: Product[] = [
+  {
+    id: "1",
+    name: faker.commerce.productName(),
+    images: [images.productRv1.src],
+  },
+  {
+    id: "2",
+    name: faker.commerce.productName(),
+    images: [images.productRv1.src],
+  },
+  {
+    id: "3",
+    name: faker.commerce.productName(),
+    images: [images.productRv1.src],
   },
 ];

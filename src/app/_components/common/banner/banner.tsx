@@ -2,9 +2,10 @@
 
 import "swiper/css";
 import "./banner.scss";
+import "../../../../app/_components/layouts/home-layout/home-layout.scss";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { bannerProducts, images } from "@/app/constants";
+import { bannerProducts, images } from "@/constants";
 
 import CartButton from "../cart-button/cart-button";
 import Image from "next/image";
@@ -21,11 +22,17 @@ export default function Banner(props: IBannerProps) {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <div className="banner-container flex-center">
+    <div className="parallax banner-container flex-center">
+      <Image
+        className="parallax-image"
+        src={images.homeBg}
+        alt="home background"
+      />
+
       <Swiper
         autoplay
         onSlideChange={(swiper) => setActiveTab(swiper.realIndex)}
-        className="mySwiper banner-products"
+        className="mySwiper banner-products flex-center"
       >
         {bannerProducts.map((prods, key) => {
           return (
@@ -68,12 +75,6 @@ export default function Banner(props: IBannerProps) {
           );
         })}
       </Swiper>
-
-      <Image
-        className="banner-wave"
-        src={images.bottomWave}
-        alt="bottom wave"
-      />
     </div>
   );
 }
