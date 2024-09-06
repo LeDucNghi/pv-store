@@ -1,9 +1,9 @@
 import "./menu.scss";
 
-import { default as FirstMenu, default as MenuContent } from "./first-menu";
-
+import { default as FirstMenu } from "./first-menu";
 import Image from "next/image";
 import LimitedProds from "@/app/_components/common/limited-prods/limited-prods";
+import MenuContent from "./menu-content";
 import SecondMenu from "./second-menu";
 import ThirdMenu from "./third-menu";
 import { homeMenu } from "@/_mock";
