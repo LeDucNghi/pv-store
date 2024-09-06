@@ -1,0 +1,241 @@
+// VERTICAL
+.vertical-prod {
+    padding: 1rem 1.25rem;
+
+    cursor: pointer;
+
+    &:hover .prod-wrapper {
+        box-shadow:
+            20px 20px 46px #cdcdcd,
+            -20px -20px 46px #ffffff;
+
+        transition: 600ms all ease;
+    }
+
+    .prod-wrapper {
+        position: relative;
+
+        border-radius: 1.875rem;
+
+        padding: 1.8rem;
+
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: column;
+
+        transition: 600ms all ease;
+
+        color: #000;
+
+        overflow: hidden;
+
+        &:hover button {
+            top: 0;
+
+            opacity: 1;
+            visibility: visible;
+
+            transition: all 0.3s ease-in-out;
+        }
+
+        .prod-content {
+            padding: 1.5rem 0 0;
+
+            text-align: center;
+
+            .prod-name {
+                padding: 0 0 2rem;
+
+                font-weight: 700;
+                font-size: 1.5rem;
+            }
+
+            .prod-description {
+                padding: 0 0 1rem;
+            }
+
+            .prod-price {
+                padding: 0 0 1.25rem;
+
+                font-weight: 600;
+            }
+        }
+
+        button {
+            position: relative;
+
+            opacity: 0;
+            visibility: hidden;
+
+            margin: 0 auto;
+
+            border-radius: 1.875rem;
+
+            background-color: #ffb406;
+
+            transition: all 0.3s ease-in-out;
+
+            color: #000;
+            font-weight: 600;
+        }
+    }
+}
+
+// HORIZONTAL
+.horizontal-prod {
+    display: flex;
+
+    margin-bottom: 1rem;
+
+    .prod-img {
+        line-height: 28.8px;
+        padding: 0px 8px;
+
+        width: 6.3rem;
+        height: 6.3rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+        }
+    }
+
+    .prod-content {
+        color: #121212;
+        line-height: 1.8rem;
+        text-align: left;
+
+        margin: 0px 0px 0px 0.5rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        border-bottom: 0.001rem solid #999999;
+
+        width: 100%;
+
+        .content-header {
+            display: flex;
+
+            justify-content: center;
+
+            color: #121212;
+
+            font-size: 1.2rem;
+            line-height: 1.4rem;
+            text-align: left;
+
+            padding: 0 0 0.5rem;
+
+            .prod-name {
+                flex-basis: 100%;
+                font-weight: 700;
+            }
+
+            .prod-price {
+            }
+        }
+
+        .content-body {
+            font-size: 14.4px;
+            font-weight: 500;
+            line-height: 21.6px;
+            padding: 1.44px 0px 0px;
+        }
+    }
+}
+
+// WITH IMAGE
+.img-prod {
+    height: 45rem;
+
+    padding: 0 0.9rem;
+
+    cursor: pointer;
+
+    .prod-item-wrapper {
+        position: relative;
+
+        height: 100%;
+        width: 100%;
+
+        padding: 1.8rem;
+
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        flex-basis: 100%;
+        flex-wrap: wrap;
+
+        border-radius: 1.875rem;
+
+        overflow: hidden;
+
+        &:hover header {
+            color: #e84242;
+            transition: color 0.3s ease-in-out;
+        }
+
+        &:hover .prod-img {
+            transform: scale(1.1);
+            border-radius: 1.875rem;
+
+            transition: all 0.3s ease-in-out;
+        }
+
+        .prod-img {
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            inset: 0;
+
+            object-fit: cover;
+            border-radius: 1.875rem;
+
+            transition: all 0.3s ease-in-out;
+        }
+
+        header {
+            position: relative;
+            top: 0;
+
+            text-align: center;
+            color: #fff;
+            font-weight: 800;
+
+            display: flex;
+            flex-direction: column;
+
+            transition: color 0.3s ease-in-out;
+
+            span {
+                text-transform: uppercase;
+                font-size: 1rem;
+
+                line-height: 1.5rem;
+            }
+
+            a {
+                text-transform: capitalize;
+                font-size: 3rem;
+                line-height: 3rem;
+            }
+        }
+
+        .prod-btn {
+            background-color: #ffb300;
+
+            border-radius: 2rem;
+
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #000;
+        }
+    }
+}

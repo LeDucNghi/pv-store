@@ -1,120 +1,25 @@
-.delivery-step {
-    position: relative;
-
-    display: flex;
-    flex-direction: column;
-
-    width: 100%;
-    // height: 80vh;
-
-    background-color: #f5ecdd;
-
-    padding: 6rem 0 4rem;
-
-    margin: 0 auto;
-
-    z-index: 999;
-
-    text-align: center;
-
-    h1 {
-        font-weight: 700;
-        font-size: 3.625rem;
-        color: #e84242;
-        text-transform: capitalize;
-
-        margin-bottom: 4rem;
-    }
-
-    .inner-step {
-        width: 20%;
-
-        margin: 0 auto;
-
-        .step-img {
-            position: relative;
-
-            width: 100%;
-
-            padding: 0 0 1rem;
-
-            line-height: 1.8rem;
-
-            .step-line {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-
-                color: #e84242;
-
-                font-size: 4rem;
-
-                &:first-child {
-                    left: -1rem;
-                }
-
-                &:nth-child(3) {
-                    right: -1rem;
-                }
-            }
-
-            img {
-                width: 20%;
-                height: 20%;
-
-                object-fit: contain;
-            }
-        }
-
-        .step-content {
-            .step-name {
-                font-weight: 600;
-                font-size: 1.25rem;
-                line-height: 1.375rem;
-
-                padding: 0 0 0.5rem;
-            }
-
-            .step-description {
-                padding: 1rem 0 0;
-
-                font-weight: 500;
-            }
-        }
-    }
-
-    .bottom-wave,
-    .top-wave {
-        position: absolute;
-
-        z-index: 2;
-    }
-
-    .bottom-wave {
-        bottom: -8rem;
-
-        rotate: 180deg;
-    }
-
-    .top-wave {
-        top: -8rem;
-    }
-}
-
 .special-offers {
     width: 100%;
+
+    .top-wave {
+        bottom: 0;
+
+        width: 100%;
+    }
 
     .offer-content {
         position: relative;
 
         width: 100%;
-        height: 100vh;
+        height: 120vh;
+
+        transform: translateZ(0.8px) scale(0.5);
 
         .offer-title {
-            margin: 6rem 0 4rem 0;
+            margin: 0 0 2rem 0;
 
             h1 {
-                font-size: 5rem;
+                font-size: 6rem;
                 font-weight: 700;
                 color: white;
                 text-align: center;
@@ -123,13 +28,13 @@
         }
 
         .offers {
-            width: 80%;
+            width: 100%;
 
             margin: 0 auto;
 
             .offer-item {
-                width: 30%;
-                height: 39.5rem;
+                width: 34%;
+                height: 45rem;
 
                 padding: 0 0.9rem;
 
@@ -194,14 +99,14 @@
 
                         span {
                             text-transform: uppercase;
-                            font-size: 0.875rem;
+                            font-size: 1rem;
 
-                            line-height: 1.2rem;
+                            line-height: 1.5rem;
                         }
 
                         a {
                             text-transform: capitalize;
-                            font-size: 2.5rem;
+                            font-size: 3rem;
                             line-height: 3rem;
                         }
                     }
@@ -211,21 +116,12 @@
 
                         border-radius: 2rem;
 
-                        font-size: 0.9rem;
+                        font-size: 1.2rem;
                         font-weight: 600;
                         color: #000;
                     }
                 }
             }
         }
-    }
-
-    .menu {
-        position: relative;
-
-        width: 100%;
-        height: 100vh;
-
-        background: red;
     }
 }

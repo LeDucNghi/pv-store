@@ -1,0 +1,10 @@
+.bottom-wave,
+.top-wave {
+    position: absolute;
+
+    z-index: 2;
+}
+
+.bottom-wave {
+    rotate: 180deg;
+}

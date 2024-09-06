@@ -1,7 +1,6 @@
 .banner-container {
     width: 100%;
-
-    // background: red;
+    height: 100vh;
 
     .banner-wave {
         position: absolute;
@@ -13,10 +12,12 @@
     .banner-products {
         position: relative;
 
-        top: 5rem;
+        top: 1rem;
 
-        width: 90%;
+        width: 100%;
         height: 100%;
+
+        transform: translateZ(0.9px) scale(0.5);
 
         .banner-slide {
             width: 100%;
@@ -32,8 +33,8 @@
                     padding: 0 1.25rem;
 
                     img {
-                        width: 75%;
-                        height: 75%;
+                        width: 100%;
+                        height: 100%;
 
                         object-fit: contain;
                     }
@@ -47,20 +48,18 @@
                     color: #fff;
 
                     position: relative;
-                    left: -6rem;
+                    left: -4rem;
 
-                    // padding: 0 1.rem;
-
-                    padding-right: 10rem;
+                    padding-right: 5rem;
 
                     .product-name {
-                        font-size: 4rem;
+                        font-size: 4.5rem;
                         font-weight: 700;
                         line-height: 5.5rem;
                     }
 
                     .product-description {
-                        font-size: 1rem;
+                        font-size: 1.5rem;
                         margin: 2rem 0;
                         line-height: 1.8rem;
                         text-align: left;
@@ -71,6 +70,8 @@
 
                         display: flex;
                         justify-content: flex-start;
+
+                        font-size: 1.5rem;
                     }
                 }
             }

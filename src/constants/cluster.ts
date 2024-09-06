@@ -61,20 +61,46 @@ export const deliverySteps = [
   },
 ];
 
-export const specialOffers: Product[] = [
+export const specialOffers = [
   {
     id: "1",
     name: faker.commerce.productName(),
     images: [images.productRv1.src],
+    time: 0.5,
   },
   {
     id: "2",
     name: faker.commerce.productName(),
     images: [images.productRv1.src],
+    time: 1.5,
   },
   {
     id: "3",
     name: faker.commerce.productName(),
     images: [images.productRv1.src],
+    time: 2.5,
+  },
+];
+
+export const menuInformations = [
+  {
+    id: 1,
+    description: "Over 40 Pizza Flavours",
+    img: images.goicuon,
+  },
+  {
+    id: 2,
+    description: "Over 40 Pizza Flavours",
+    img: images.deliveryTime,
+  },
+  {
+    id: 3,
+    description: "Safe and Secure Delivery",
+    img: images.deliveryMan,
+  },
+  {
+    id: 4,
+    description: "For Special Orders Call: 0123 456 789",
+    img: images.serving,
   },
 ];
