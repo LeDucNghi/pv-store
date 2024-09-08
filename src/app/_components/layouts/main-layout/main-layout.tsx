@@ -3,6 +3,7 @@
 import * as React from "react";
 
 import { AnimatePresence } from "framer-motion";
+import Footer from "../../common/footer/footer";
 
 export interface IMainLayoutProps {
   children: React.ReactNode;
@@ -11,7 +12,11 @@ export interface IMainLayoutProps {
 export default function MainLayout({ children }: IMainLayoutProps) {
   return (
     <AnimatePresence mode="wait">
-      <div>{children}</div>
+      <div>
+        {children}
+
+        <Footer />
+      </div>
     </AnimatePresence>
   );
 }

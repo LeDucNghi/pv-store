@@ -1,0 +1,116 @@
+footer {
+    position: relative;
+
+    top: 6rem;
+
+    width: 100%;
+    // height: 100vh;
+
+    background-image: url(../../../../../public/images/hero_footer.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .footer-head {
+        position: relative;
+
+        margin: 0 auto;
+
+        width: 60%;
+
+        flex-direction: column;
+
+        margin: 7rem auto 5rem auto;
+
+        span {
+            margin: 0.5rem 0 1.125rem 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        p {
+            color: white;
+            font-size: 1.375rem;
+        }
+    }
+
+    .footer-info {
+        position: relative;
+
+        margin: 0 auto;
+
+        width: 60%;
+
+        display: flex;
+        justify-content: space-between;
+
+        padding-bottom: 4rem;
+
+        border-bottom: 0.01rem solid #848c8e;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+
+            padding: 0 1.25rem;
+
+            .info-title {
+                color: #e84242;
+                font-weight: 700;
+                text-transform: uppercase;
+
+                padding: 1rem 0;
+            }
+
+            li {
+                display: flex;
+
+                width: 100%;
+
+                color: white;
+
+                margin-bottom: 0.5rem;
+
+                .info-icon {
+                    margin-right: 0.5rem;
+                    color: #848c8e;
+                }
+
+                .social-icon {
+                    width: 1.7rem;
+                    height: 1.7rem;
+
+                    margin-right: 0.5rem;
+
+                    border-radius: 50%;
+
+                    background: #e84242;
+
+                    .icon {
+                        width: 1rem;
+                        height: 1rem;
+
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-copy-right {
+        padding: 1rem 0;
+
+        width: 60%;
+
+        margin: 0 auto;
+
+        text-align: center;
+
+        color: white;
+    }
+}

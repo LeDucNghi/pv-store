@@ -6,9 +6,11 @@ import deliveryMan from "../../public/images/delivery-man.png";
 import deliveryTime from "../../public/images/delivery.png";
 import foodDelivery from "../../public/images/food-delivery.png";
 import foodPackage from "../../public/images/food-package.png";
+import footerBg from "../../public/images/hero_footer.jpg";
 import goicuon from "../../public/images/goi-cuon.png";
 import homeBg from "../../public/images/home-background.jpg";
 import homeBg2 from "../../public/images/home-background-2.jpg";
+import homeBg3 from "../../public/images/background_03.jpg";
 import illustration1 from "../../public/images/illustration-img1.png";
 import logo from "../../public/images/logo.png";
 import logoBorder from "../../public/images/logo-border.png";
@@ -39,6 +41,8 @@ export const images = {
   homeBg,
   homeBg2,
   menuBg,
+  homeBg3,
+  footerBg,
 
   illustration1,
 };

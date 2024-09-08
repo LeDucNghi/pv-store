@@ -27,8 +27,8 @@ export default function MenuContent(props: IMenuContentProps) {
                 <Image
                   src={info.img.src}
                   alt="description"
-                  width={45}
-                  height={45}
+                  width={100}
+                  height={100}
                   objectFit="contain"
                 />
 

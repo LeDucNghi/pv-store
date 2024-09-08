@@ -1,6 +1,5 @@
 import "../../public/styles/index.scss";
 
-import Footer from "./_components/common/footer/footer";
 import Header from "./_components/common/header/header";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
@@ -23,8 +22,6 @@ export default function RootLayout({
         <Header />
 
         {children}
-
-        {/* <Footer /> */}
       </body>
     </html>
   );

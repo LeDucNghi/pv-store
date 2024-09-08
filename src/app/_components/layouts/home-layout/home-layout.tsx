@@ -6,6 +6,7 @@ import * as React from "react";
 
 import { AnimatePresence } from "framer-motion";
 import Banner from "../../common/banner/banner";
+import Footer from "../../common/footer/footer";
 
 export interface IHomeLayoutProps {
   children: React.ReactNode;
@@ -18,6 +19,8 @@ export default function HomeLayout({ children }: IHomeLayoutProps) {
         <Banner />
 
         {children}
+
+        <Footer />
       </div>
     </AnimatePresence>
   );

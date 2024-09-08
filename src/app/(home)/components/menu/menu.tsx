@@ -41,6 +41,12 @@ export default function Menu(props: IMenuProps) {
 
         <ThirdMenu />
       </div>
+
+      <Image
+        src={images.bottomWave}
+        alt="bottom wave"
+        className="bottom-wave"
+      />
     </div>
   );
 }
