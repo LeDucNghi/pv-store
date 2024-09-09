@@ -55,7 +55,9 @@ export default function Header(props: IHeaderProps) {
             <span className="cart-content">0</span>
           </span>
 
-          <Button variant="outlined">menu</Button>
+          <Button variant="outlined">
+            <Link href="/products"> menu </Link>
+          </Button>
         </div>
       </div>
     </div>

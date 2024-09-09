@@ -4,9 +4,11 @@ import "./main-layout.scss";
 
 import * as React from "react";
 
-import { AnimatePresence } from "framer-motion";
 import Banner from "../../common/banner/banner";
 import Footer from "../../common/footer/footer";
+import Header from "../../common/header/header";
+import Loader from "../../common/loader/loader";
+import useDebounce from "@/hooks/useDebounce";
 
 export interface IMainLayoutProps {
   children: React.ReactNode;
@@ -22,8 +24,14 @@ export default function MainLayout({
   bannerTitle,
   bannerSubtitle,
 }: IMainLayoutProps) {
+  const { show } = useDebounce({ time: 3000 });
+
+  if (!show) return <Loader />;
+
   return (
-    <AnimatePresence mode="wait">
+    <>
+      <Header />
+
       <div className="main-layout">
         <Banner
           page="main"
@@ -36,6 +44,6 @@ export default function MainLayout({
 
         <Footer style={{ top: "0rem", zIndex: "-1" }} />
       </div>
-    </AnimatePresence>
+    </>
   );
 }

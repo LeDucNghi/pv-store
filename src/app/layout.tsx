@@ -1,8 +1,9 @@
 import "../../public/styles/index.scss";
 
-import Header from "./_components/common/header/header";
+import AnimatePresenceWrapper from "./_components/common/animate-presence/animate-presence";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import PageTransition from "./_components/common/page-transition/page-transition";
 
 const mont = Montserrat({ subsets: ["latin"] });
 
@@ -19,9 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={mont.className}>
-        <Header />
-
-        {children}
+        <AnimatePresenceWrapper>
+          <PageTransition>{children}</PageTransition>
+        </AnimatePresenceWrapper>
       </body>
     </html>
   );
