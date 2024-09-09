@@ -4,7 +4,7 @@ import "./offers.scss";
 
 import { images, specialOffers } from "@/constants";
 
-import { Button } from "@mui/material";
+import CustomButton from "@/app/_components/common/custom-button/button";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -58,9 +58,11 @@ export default function Offers(props: IOffersProps) {
                     <a href=""> {offer.name} </a>
                   </header>
 
-                  <Button className="offer-btn" variant="contained">
-                    add to cart
-                  </Button>
+                  <CustomButton
+                    kind="normal"
+                    content="add to card"
+                    className="offer-btn"
+                  />
                 </div>
               </motion.div>
             );
@@ -68,7 +70,7 @@ export default function Offers(props: IOffersProps) {
         </div>
       </div>
 
-      <Image src={images.bottomWave} alt="top wave" className="top-wave" />
+      <Image src={images.whiteBottomWave} alt="top wave" className="top-wave" />
     </div>
   );
 }

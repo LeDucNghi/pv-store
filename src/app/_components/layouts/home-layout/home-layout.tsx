@@ -16,11 +16,15 @@ export default function HomeLayout({ children }: IHomeLayoutProps) {
   return (
     <AnimatePresence mode="wait">
       <div className="home-layout">
-        <Banner />
+        <Banner page="home" />
 
         {children}
 
-        <Footer />
+        <Footer
+          style={{
+            top: "6rem",
+          }}
+        />
       </div>
     </AnimatePresence>
   );

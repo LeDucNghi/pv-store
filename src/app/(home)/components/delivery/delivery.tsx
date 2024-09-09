@@ -15,7 +15,11 @@ export interface IDeliveryStepsProps {}
 export default function DeliverySteps(props: IDeliveryStepsProps) {
   return (
     <div className="delivery-step">
-      <Image className="top-wave" src={images.bottomWave} alt="bottom wave" />
+      <Image
+        className="top-wave"
+        src={images.whiteBottomWave}
+        alt="bottom wave"
+      />
 
       <motion.h1
         initial={{ opacity: 0 }}
@@ -62,7 +66,7 @@ export default function DeliverySteps(props: IDeliveryStepsProps) {
 
       <Image
         className="bottom-wave"
-        src={images.bottomWave}
+        src={images.whiteBottomWave}
         alt="bottom wave"
       />
     </div>

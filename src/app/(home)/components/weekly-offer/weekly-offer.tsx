@@ -37,7 +37,11 @@ export default function WeeklyOffer(props: IWeeklyOfferProps) {
         </div>
       </div>
 
-      <Image src={images.bottomWave} alt="top wave" className="bottom-wave" />
+      <Image
+        src={images.whiteBottomWave}
+        alt="top wave"
+        className="bottom-wave"
+      />
     </div>
   );
 }

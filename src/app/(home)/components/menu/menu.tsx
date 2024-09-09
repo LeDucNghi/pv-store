@@ -27,14 +27,18 @@ export default function Menu(props: IMenuProps) {
 
         <div className="menu-limited-prod">
           <Image
-            src={images.bottomWave}
+            src={images.whiteBottomWave}
             alt="bottom wave"
             className="bottom-wave"
           />
 
           <LimitedProds imgDirection="left" product={homeMenu[0]} />
 
-          <Image src={images.bottomWave} alt="top wave" className="top-wave" />
+          <Image
+            src={images.whiteBottomWave}
+            alt="top wave"
+            className="top-wave"
+          />
         </div>
 
         <SecondMenu />
@@ -43,7 +47,7 @@ export default function Menu(props: IMenuProps) {
       </div>
 
       <Image
-        src={images.bottomWave}
+        src={images.whiteBottomWave}
         alt="bottom wave"
         className="bottom-wave"
       />

@@ -2,7 +2,7 @@ import "./product.scss";
 
 import * as React from "react";
 
-import { Button } from "@mui/material";
+import CustomButton from "@/app/_components/common/custom-button/button";
 import Image from "next/image";
 import { Product } from "@/models";
 import { redirect } from "next/navigation";
@@ -42,7 +42,11 @@ export default function VericalProd({
           <div className="prod-price">{product.goodsPrice}</div>
         </div>
 
-        <Button variant="contained">add to cart</Button>
+        <CustomButton
+          kind="normal"
+          content="add to card"
+          className="vertical-button"
+        />
       </div>
     </div>
   );

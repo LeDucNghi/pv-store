@@ -1,4 +1,4 @@
-.banner-container {
+.home-banner-container {
     width: 100%;
     height: 100vh;
 
@@ -76,5 +76,57 @@
                 }
             }
         }
+    }
+}
+
+.main-banner-container {
+    position: relative;
+
+    width: 100%;
+    height: 80vh;
+
+    // background: #000;
+
+    .main-banner-bg {
+        position: absolute;
+
+        z-index: -1;
+
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+    .main-banner-content {
+        position: relative;
+
+        top: 50%;
+        transform: translateY(-50%);
+
+        width: 60%;
+
+        margin: 0 auto;
+
+        text-align: center;
+        color: white;
+
+        h1 {
+            font-size: 6.875rem;
+            line-height: 6.875rem;
+        }
+
+        h4 {
+            font-size: 1.625rem;
+            line-height: 2.1125rem;
+            margin: 1.625rem 0 0;
+        }
+    }
+
+    .top-wave {
+        position: absolute;
+        bottom: 0;
     }
 }

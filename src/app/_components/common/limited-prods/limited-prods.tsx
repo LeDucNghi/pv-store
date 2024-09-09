@@ -2,7 +2,7 @@ import "./limited-prods.scss";
 
 import * as React from "react";
 
-import CartButton from "../cart-button/cart-button";
+import CustomButton from "../custom-button/button";
 import Image from "next/image";
 import { Product } from "@/models";
 import { images } from "@/constants";
@@ -41,7 +41,8 @@ export default function LimitedProds({
           <div className="prod-description">{product.description}</div>
 
           <div className="prod-cart-btn">
-            <CartButton
+            <CustomButton
+              kind="cart"
               info={`${product.weight!} gr / 600 cal`}
               price={`${product.goodsPrice!}`}
             />

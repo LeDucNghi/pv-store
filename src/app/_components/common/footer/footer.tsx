@@ -6,13 +6,16 @@ import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import Image from "next/image";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import React from "react";
 import { images } from "@/constants";
 
-export interface IFooterProps {}
+export interface IFooterProps {
+  style?: React.CSSProperties;
+}
 
-export default function Footer(props: IFooterProps) {
+export default function Footer({ style }: IFooterProps) {
   return (
-    <footer>
+    <footer style={style}>
       <div className="footer-head flex-center">
         <Image
           src={images.logo}

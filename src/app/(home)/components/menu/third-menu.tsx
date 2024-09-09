@@ -1,7 +1,5 @@
 import "./menu.scss";
 
-import * as React from "react";
-
 import CustomProduct from "../product/product";
 import { homeMenu } from "@/_mock";
 import { images } from "@/constants";
