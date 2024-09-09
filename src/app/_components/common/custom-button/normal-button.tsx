@@ -18,7 +18,7 @@ export default function NormalButton({
   ...rest
 }: INormalButtonProps) {
   return (
-    <Button className={`normal-button ${className}`} style={style}>
+    <Button className={`normal-button ${className}`} style={style} {...rest}>
       {content}
     </Button>
   );
