@@ -45,7 +45,7 @@ export default function VericalProd({
         <CustomButton
           kind="normal"
           content="add to card"
-          className="vertical-button"
+          // className="vertical-button"
         />
       </div>
     </div>
