@@ -4,6 +4,9 @@ import AnimatePresenceWrapper from "./_components/common/animate-presence/animat
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import PageTransition from "./_components/common/page-transition/page-transition";
+import { Provider } from "react-redux";
+import ReduxProvider from "./lib/provider";
+import { store } from "./lib";
 
 const mont = Montserrat({ subsets: ["latin"] });
 
@@ -20,9 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={mont.className}>
-        <AnimatePresenceWrapper>
-          <PageTransition>{children}</PageTransition>
-        </AnimatePresenceWrapper>
+        <ReduxProvider>
+          <AnimatePresenceWrapper>
+            <PageTransition>{children}</PageTransition>
+          </AnimatePresenceWrapper>
+        </ReduxProvider>
       </body>
     </html>
   );

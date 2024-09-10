@@ -1,3 +1,5 @@
+import "./products.scss";
+
 import * as React from "react";
 
 import MainLayout from "@/app/_components/layouts/main-layout/main-layout";
@@ -8,7 +10,7 @@ export interface IProductPageProps {}
 export default function ProductPage(props: IProductPageProps) {
   return (
     <MainLayout bannerBg={images.mainLayoutBg.src} bannerTitle="Our Menu">
-      productpage
+      <div className="products-container"></div>
     </MainLayout>
   );
 }
