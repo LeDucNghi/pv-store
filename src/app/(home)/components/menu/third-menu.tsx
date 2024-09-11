@@ -1,6 +1,6 @@
 import "./menu.scss";
 
-import CustomProduct from "../product/product";
+import CustomProduct from "../../../_components/common/product/product";
 import { homeMenu } from "@/_mock";
 import { images } from "@/constants";
 

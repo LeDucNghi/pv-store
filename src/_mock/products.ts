@@ -78,6 +78,19 @@ export const homeMenu: Product[] = [
   },
 ];
 
+export const productList: Product[] = [...Array(20)].map((_, index) => ({
+  id: "6",
+  name: faker.commerce.productName(),
+  images: [images.product1.src],
+  description: faker.lorem.paragraph(1),
+  goodsPrice: faker.commerce.price({
+    min: 100,
+    max: 200,
+    dec: 0,
+    symbol: "$",
+  }),
+}));
+
 export const weeklyOffer = {
   id: "1",
   name: faker.commerce.productName(),

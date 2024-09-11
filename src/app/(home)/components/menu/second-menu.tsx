@@ -2,7 +2,7 @@ import "./menu.scss";
 
 import * as React from "react";
 
-import CustomProduct from "../product/product";
+import CustomProduct from "../../../_components/common/product/product";
 import { homeMenu } from "@/_mock";
 
 export interface ISecondMenuProps {}

@@ -15,6 +15,8 @@ export interface IProductProps {
 
   style?: React.CSSProperties;
   className?: string;
+
+  onClick?: (value: any) => void;
 }
 
 export default function CustomProduct({

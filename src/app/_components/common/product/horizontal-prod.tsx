@@ -2,6 +2,8 @@ import "./product.scss";
 
 import Image from "next/image";
 import { Product } from "@/models";
+import { addToCart } from "@/app/lib";
+import { useAppDispatch } from "@/hooks";
 
 export interface IHorizontalProdProps {
   product: Product;
@@ -15,6 +17,12 @@ export default function HorizontalProd({
   style,
   className,
 }: IHorizontalProdProps) {
+  const dispatch = useAppDispatch();
+
+  const onCartChange = () => {
+    dispatch(addToCart(product));
+  };
+
   return (
     <div className={`horizontal-prod ${className}`} style={style}>
       <div className="prod-img">

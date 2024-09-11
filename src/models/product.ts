@@ -9,4 +9,5 @@ export interface Product {
   weight?: number;
   name: string;
   description?: string;
+  quantity?: number;
 }

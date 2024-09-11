@@ -18,7 +18,19 @@ export default function NormalButton({
   ...rest
 }: INormalButtonProps) {
   return (
-    <Button className={`normal-button ${className}`} style={style} {...rest}>
+    <Button
+      className={`normal-button ${className}`}
+      style={{
+        ...style,
+        position: "relative",
+        borderRadius: "1.875rem",
+        backgroundColor: style ? style.backgroundColor : "#ffb406",
+        color: style ? style.color : "#000",
+        fontWeight: "600",
+        padding: "1rem 1.35rem",
+      }}
+      {...rest}
+    >
       {content}
     </Button>
   );

@@ -1,0 +1,19 @@
+.prods-list-container {
+    position: relative;
+    width: 70%;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    .prod-item-wrapper {
+        position: relative;
+
+        width: 30%;
+    }
+
+    .prods-list-pagination {
+        width: 100%;
+
+        margin-top: 1rem;
+    }
+}

@@ -1,0 +1,94 @@
+.prods-cart-container {
+    position: relative;
+
+    width: 30%;
+
+    padding: 2rem 0;
+
+    .prods-cart-wrapper {
+        padding: 0 0 0 1.25rem;
+
+        .prods-cart-title {
+            font-size: 1.875rem;
+            font-weight: 800;
+
+            margin: 0 0 1.875rem;
+            text-transform: capitalize;
+        }
+
+        .prods-cart-main {
+            .prods-cart-item {
+                position: relative;
+                width: 100%;
+
+                padding: 0 0 1rem;
+
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                .prods-cart-img {
+                    width: 5rem;
+                    height: 5rem;
+
+                    object-fit: contain;
+
+                    border-radius: 1.25rem;
+
+                    padding: 0.2rem;
+                }
+
+                .cart-item-info {
+                    display: flex;
+                    flex-direction: column;
+
+                    padding: 0 0.5rem;
+
+                    .cart-item-name {
+                        width: 100%;
+                        font-weight: 800;
+                        font-size: 1rem;
+                    }
+
+                    .cart-item-quantity {
+                        width: 100%;
+
+                        font-size: 0.875rem;
+                    }
+                }
+
+                .clear-icon {
+                    position: absolute;
+
+                    right: 0;
+                    top: 0;
+                }
+            }
+
+            .prods-cart-total {
+                border-style: solid none none;
+                border-width: 0.8px 0px 0px;
+                border-color: #ccc;
+                line-height: 20px;
+                margin: 0px 0px 16px;
+                padding: 20px 10px 10px;
+
+                display: flex;
+                justify-content: space-between;
+
+                strong {
+                    text-transform: capitalize;
+                }
+
+                span {
+                    font-weight: 500;
+                }
+            }
+
+            .prods-cart-button {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}

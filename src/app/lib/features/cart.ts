@@ -23,6 +23,6 @@ export const cart = createSlice({
 
 export const { addToCart } = cart.actions;
 
-export const selectSuccess = (state: RootState) => state.cart.cart;
+export const selectCart = (state: RootState) => state.cart.cart;
 
 export const cartReducer = cart.reducer;
