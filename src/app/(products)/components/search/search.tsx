@@ -22,6 +22,7 @@ export default function Search(props: ISearchProps) {
         </InputLabel>
         <OutlinedInput
           id="outlined-adornment-amount"
+          className="search-field"
           endAdornment={
             <InputAdornment position="end">
               <SearchIcon />

@@ -28,6 +28,7 @@ export default function Filter(props: IFilterProps) {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
+          className="filter"
           value={age}
           label="Sort by"
           onChange={handleChange}
