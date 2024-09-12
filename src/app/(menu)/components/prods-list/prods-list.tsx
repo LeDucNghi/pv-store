@@ -2,6 +2,7 @@ import "../../menu/menu.scss";
 
 import * as React from "react";
 
+import Image from "next/image";
 import ImageProd from "@/app/_components/common/product/img-prod";
 import VericalProd from "@/app/_components/common/product/vertical-prod";
 import { images } from "@/constants";
@@ -11,7 +12,7 @@ export interface IProdsListProps {}
 
 export default function ProdsList(props: IProdsListProps) {
   return (
-    <div className="menu-main">
+    <div className="menu-page-wrapper">
       <div className="menu-row row1">
         {productList.slice(0, 3).map((x, key) => {
           return (
@@ -86,6 +87,12 @@ export default function ProdsList(props: IProdsListProps) {
           );
         })}
       </div>
+
+      <Image
+        src={images.redBottomWave}
+        className="bottom-wave"
+        alt="bottom wave"
+      />
     </div>
   );
 }

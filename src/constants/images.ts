@@ -17,6 +17,7 @@ import logo from "../../public/images/logo.png";
 import logoBorder from "../../public/images/logo-border.png";
 import mainLayoutBg from "../../public/images/featured_image_shop.jpg";
 import menuBg from "../../public/images/menu-background.jpg";
+import menuInfoIllustration from "../../public/images/menu_delivery.png";
 import menuPageBg from "../../public/images/menu-bg.jpg";
 import product1 from "../../public/images/product.png";
 import productRv1 from "../../public/images/product-rv1.jpg";
@@ -57,4 +58,5 @@ export const images = {
   limitedBg,
 
   illustration1,
+  menuInfoIllustration,
 };

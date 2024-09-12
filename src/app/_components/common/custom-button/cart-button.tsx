@@ -2,7 +2,7 @@ import "./button.scss";
 
 import * as React from "react";
 
-import { Button, ButtonProps, IconButton } from "@mui/material";
+import { ButtonProps, IconButton } from "@mui/material";
 
 import AddIcon from "@mui/icons-material/Add";
 

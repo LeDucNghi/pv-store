@@ -3,6 +3,7 @@ import "./menu.scss";
 import Combo from "../components/combo/combo";
 import Image from "next/image";
 import MainLayout from "@/app/_components/layouts/main-layout/main-layout";
+import MenuInformation from "../components/info/info";
 import ProdsList from "../components/prods-list/prods-list";
 import { images } from "@/constants";
 
@@ -17,17 +18,11 @@ export default function MenuPage(props: IMenuPageProps) {
       bannerSubtitle="Enjoy the tastiest ricepapers in town"
     >
       <div className="menu-page-container">
-        <div className="menu-page-wrapper">
-          <ProdsList />
-        </div>
+        <ProdsList />
 
         <Combo />
 
-        <Image
-          src={images.redBottomWave}
-          className="bottom-wave"
-          alt="bottom wave"
-        />
+        <MenuInformation />
       </div>
     </MainLayout>
   );

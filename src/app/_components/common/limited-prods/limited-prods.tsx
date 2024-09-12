@@ -3,7 +3,6 @@ import "./limited-prods.scss";
 import * as React from "react";
 
 import CartButton from "../custom-button/cart-button";
-import CustomButton from "../custom-button/button";
 import Image from "next/image";
 import { Product } from "@/models";
 import { motion } from "framer-motion";
@@ -11,17 +10,18 @@ import { motion } from "framer-motion";
 export interface ILimitedProdsProps {
   product: Product;
 
-  imgDirection: "left" | "right";
-
   className?: string;
 
   style?: React.CSSProperties;
+
+  prodImgSize?: string;
 }
 
 export default function LimitedProds({
   product,
   className,
   style,
+  prodImgSize,
 }: ILimitedProdsProps) {
   return (
     <div className={`prod-container ${className}`} style={style}>
@@ -29,13 +29,14 @@ export default function LimitedProds({
         initial={{ opacity: 0 }}
         viewport={{ once: true, amount: 0.8 }}
         whileInView={{ opacity: 1, transition: { duration: 0.5 } }}
-        className="prod-img flex-center"
+        className={`prod-img flex-center`}
       >
         <Image
           src={product.images[0]}
           alt="prod image"
           width={1000}
           height={1000}
+          style={{ height: prodImgSize }}
         />
       </motion.div>
 

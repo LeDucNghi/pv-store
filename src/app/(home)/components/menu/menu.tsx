@@ -32,7 +32,7 @@ export default function Menu(props: IMenuProps) {
             className="bottom-wave"
           />
 
-          <LimitedProds imgDirection="left" product={homeMenu[0]} />
+          <LimitedProds product={homeMenu[0]} />
 
           <Image
             src={images.whiteBottomWave}

@@ -4,10 +4,12 @@
     height: 100vh;
     width: 100%;
 
+    margin: 2rem 0 0 0;
+
     .menu-products {
         position: relative;
 
-        top: 1rem;
+        top: 0rem;
 
         width: 100%;
         height: 100%;
@@ -18,77 +20,6 @@
             .slide-wrapper {
                 width: 100%;
                 height: 100%;
-
-                .prod-img {
-                    position: absolute;
-                    z-index: -1;
-
-                    width: 100%;
-                    height: 100%;
-
-                    inset: 0;
-
-                    img {
-                        width: 100%;
-                        height: 100%;
-
-                        object-fit: cover;
-                    }
-                }
-
-                .prod-info {
-                    width: 50%;
-                    height: 100%;
-
-                    flex-direction: column;
-                    display: flex;
-                    justify-content: center;
-                    align-items: flex-end;
-
-                    color: #fff;
-
-                    position: relative;
-
-                    background: black;
-
-                    // &::before {
-                    //     content: "";
-
-                    //     position: absolute;
-                    //     top: 0;
-                    //     right: -12rem;
-
-                    //     background-image: linear-gradient(to left, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 1) 100%);
-
-                    //     width: 25%;
-                    //     height: 100%;
-
-                    //     border-color: transparent;
-                    // }
-
-                    .product-name {
-                        font-size: 4.5rem;
-                        font-weight: 700;
-                        line-height: 5.5rem;
-                        text-align: right;
-                    }
-
-                    .product-description {
-                        font-size: 1.5rem;
-                        margin: 2rem 0;
-                        line-height: 1.8rem;
-                        text-align: right;
-                    }
-
-                    .prod-cart-btn {
-                        width: 100%;
-
-                        display: flex;
-                        justify-content: flex-end;
-
-                        font-size: 1.5rem;
-                    }
-                }
             }
         }
     }

@@ -1,0 +1,53 @@
+@import "../../../../../public/styles/index.scss";
+
+.menu-info-container {
+    position: relative;
+    top: 0.5rem;
+
+    width: 100%;
+    height: 100%;
+
+    align-items: flex-start;
+    display: flex;
+    justify-content: center;
+
+    line-height: 1.8rem;
+    padding: 4rem 0 0;
+
+    .content-text,
+    .content-img {
+        position: relative;
+        width: 50%;
+        height: 100%;
+    }
+
+    .content-text {
+        padding: 2rem 4rem;
+
+        .menu-description {
+            font-weight: 600;
+            color: #000;
+
+            padding: 0 0 0 1rem;
+        }
+
+        h2 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            text-align: left;
+            color: black;
+
+            margin-bottom: 3.125rem;
+        }
+    }
+
+    .content-img {
+        img {
+            position: absolute;
+
+            left: 0;
+
+            object-fit: cover;
+        }
+    }
+}
