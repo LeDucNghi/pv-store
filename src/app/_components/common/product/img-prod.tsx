@@ -1,3 +1,5 @@
+import "./product.scss";
+
 import * as React from "react";
 
 import { Button } from "@mui/material";
@@ -11,6 +13,7 @@ export interface IImageProdProps {
 
   style?: React.CSSProperties;
   className?: string;
+  titleSize?: string;
 }
 
 export default function ImageProd({
@@ -18,6 +21,7 @@ export default function ImageProd({
   product,
   style,
   className,
+  titleSize,
 }: IImageProdProps) {
   return (
     <div className={`img-prod ${className}`} style={style}>
@@ -32,7 +36,10 @@ export default function ImageProd({
 
         <header>
           <span> special offer </span>
-          <a href=""> {product.name} </a>
+          <a style={{ fontSize: titleSize }} href="">
+            {" "}
+            {product.name}{" "}
+          </a>
         </header>
 
         <Button className="prod-btn" variant="contained">

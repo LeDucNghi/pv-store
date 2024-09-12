@@ -15,13 +15,9 @@ export default function FirstMenu(props: IFirstMenuProps) {
       <div className="w-full relative flex flex-wrap justify-center">
         {homeMenu.map((x, key) => {
           return (
-            <CustomProduct
-              product={x}
-              key={key}
-              type="normal"
-              direction="vertical"
-              style={{ width: "30%" }}
-            />
+            <div className="menu-item-wrapper w-4/12" key={key}>
+              <CustomProduct product={x} type="normal" direction="vertical" />
+            </div>
           );
         })}
       </div>

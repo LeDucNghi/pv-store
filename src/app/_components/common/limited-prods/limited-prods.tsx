@@ -2,10 +2,11 @@ import "./limited-prods.scss";
 
 import * as React from "react";
 
+import CartButton from "../custom-button/cart-button";
 import CustomButton from "../custom-button/button";
 import Image from "next/image";
 import { Product } from "@/models";
-import { images } from "@/constants";
+import { motion } from "framer-motion";
 
 export interface ILimitedProdsProps {
   product: Product;
@@ -24,31 +25,44 @@ export default function LimitedProds({
 }: ILimitedProdsProps) {
   return (
     <div className={`prod-container ${className}`} style={style}>
-      <div className="prod-img">
+      <motion.div
+        initial={{ opacity: 0 }}
+        viewport={{ once: true, amount: 0.8 }}
+        whileInView={{ opacity: 1, transition: { duration: 0.5 } }}
+        className="prod-img flex-center"
+      >
         <Image
-          //   src={product.images[0]}
-          src={images.banhtrang}
+          src={product.images[0]}
           alt="prod image"
-          width={200}
-          height={200}
+          width={1000}
+          height={1000}
         />
-      </div>
+      </motion.div>
 
-      <div className="prod-content">
+      <motion.div
+        initial={{ y: -10, opacity: 0 }}
+        viewport={{ once: true, amount: 0.8 }}
+        whileInView={{
+          y: 0,
+          opacity: 1,
+          transition: { duration: 0.5 },
+        }}
+        className="prod-content"
+      >
         <div className="content-wrapper">
           <span className="prod-name"> {product.name} </span>
 
           <div className="prod-description">{product.description}</div>
 
           <div className="prod-cart-btn">
-            <CustomButton
-              kind="cart"
+            <CartButton
+              variant="outlined"
               info={`${product.weight!} gr / 600 cal`}
               price={`${product.goodsPrice!}`}
             />
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

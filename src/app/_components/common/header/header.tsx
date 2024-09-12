@@ -9,6 +9,7 @@ import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
 import Image from "next/image";
 import Link from "next/link";
 import { images } from "@/constants";
+import { redirect } from "next/navigation";
 
 export interface IHeaderProps {}
 
@@ -19,7 +20,7 @@ export default function Header(props: IHeaderProps) {
     <div className="header-container">
       <div className="menu-port flex-space-center">
         <ul className="flex-space-center">
-          <li>
+          <li onClick={() => redirect("/")}>
             <Image src={images.logo} alt="logo" />
           </li>
           <li

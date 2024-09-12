@@ -1,12 +1,11 @@
 import "../../public/styles/index.scss";
+import "swiper/css";
 
-import AnimatePresenceWrapper from "./_components/common/animate-presence/animate-presence";
+import AnimatePresenceWrapper from "./_components/common/wrapper/animate-wrapper";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import PageTransition from "./_components/common/page-transition/page-transition";
-import { Provider } from "react-redux";
-import ReduxProvider from "./lib/provider";
-import { store } from "./lib";
+import ReduxProvider from "./_components/common/wrapper/redux-provider";
 
 const mont = Montserrat({ subsets: ["latin"] });
 

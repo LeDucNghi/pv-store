@@ -165,9 +165,7 @@
 
 // WITH IMAGE
 .img-prod {
-    height: 45rem;
-
-    padding: 0 0.9rem;
+    padding: 1rem 1.25rem;
 
     cursor: pointer;
 
@@ -182,7 +180,6 @@
         display: flex;
         justify-content: space-between;
         flex-direction: column;
-        flex-basis: 100%;
         flex-wrap: wrap;
 
         border-radius: 1.875rem;
@@ -225,6 +222,7 @@
 
             display: flex;
             flex-direction: column;
+            flex-wrap: wrap;
 
             transition: color 0.3s ease-in-out;
 
@@ -236,6 +234,7 @@
             }
 
             a {
+                text-wrap: wrap;
                 text-transform: capitalize;
                 font-size: 3rem;
                 line-height: 3rem;

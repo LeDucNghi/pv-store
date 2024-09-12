@@ -136,3 +136,33 @@ export const weeklyOffer = {
     symbol: "$",
   }),
 };
+
+export const menuCombo = [
+  {
+    id: 1,
+    banner: images.limitedBg,
+    name: faker.commerce.productName(),
+    image: faker.image.avatar(),
+    description: faker.lorem.paragraph(2),
+    price: faker.commerce.price({ min: 100, max: 200, dec: 0, symbol: "$" }),
+    weight: "200gr / 600 cal",
+  },
+  {
+    id: 2,
+    banner: images.limitedBg,
+    name: faker.commerce.productName(),
+    image: faker.image.avatar(),
+    description: faker.lorem.paragraph(2),
+    price: faker.commerce.price({ min: 100, max: 200, dec: 0, symbol: "$" }),
+    weight: "200gr / 600 cal",
+  },
+  {
+    id: 3,
+    banner: images.limitedBg,
+    name: faker.commerce.productName(),
+    image: faker.image.avatar(),
+    description: faker.lorem.paragraph(2),
+    price: faker.commerce.price({ min: 100, max: 200, dec: 0, symbol: "$" }),
+    weight: "200gr / 600 cal",
+  },
+];

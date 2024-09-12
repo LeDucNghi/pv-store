@@ -31,7 +31,7 @@ export default function VericalProd({
 
   return (
     <div
-      className={`vertical-prod `}
+      className={`vertical-prod`}
       onClick={() => redirect(`/product/${product.id}`)}
     >
       <div className={`prod-wrapper ${className}`} style={style}>

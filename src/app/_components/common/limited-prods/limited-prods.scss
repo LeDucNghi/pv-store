@@ -2,42 +2,38 @@
     position: relative;
 
     width: 100%;
-    height: 100%;
+    height: 100vh;
 
     display: flex;
 
+    &::before {
+        content: "";
+
+        position: absolute;
+
+        inset: 0;
+
+        background-image: url(../../../../../public/images/litmited-bg.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
     .prod-img {
         position: relative;
-        left: 0rem;
-
         width: 50%;
         height: 100%;
 
         img {
             width: 100%;
-            height: 100%;
+            height: 50%;
 
-            object-fit: cover;
-        }
-
-        &::before {
-            content: "";
-
-            position: absolute;
-            top: 0;
-            right: 0;
-
-            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 1) 100%);
-
-            width: 25%;
-            height: 100%;
-
-            // border-color: transparent;
+            object-fit: contain;
         }
     }
 
     .prod-content {
-        position: relative;
+        position: absolute;
 
         width: 50%;
         height: 100%;
@@ -47,7 +43,7 @@
         justify-content: center;
         align-items: flex-start;
 
-        background: rgba(0, 0, 0, 1);
+        right: 0;
 
         .content-wrapper {
             width: 80%;

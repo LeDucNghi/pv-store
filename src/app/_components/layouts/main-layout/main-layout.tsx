@@ -8,6 +8,7 @@ import Banner from "../../common/banner/banner";
 import Footer from "../../common/footer/footer";
 import Header from "../../common/header/header";
 import Loader from "../../common/loader/loader";
+import MainBanner from "../../common/banner/main-banner";
 import useDebounce from "@/hooks/useDebounce";
 
 export interface IMainLayoutProps {
@@ -16,6 +17,7 @@ export interface IMainLayoutProps {
   bannerBg: string;
   bannerTitle: string;
   bannerSubtitle?: string;
+  color?: "red" | "cream";
 }
 
 export default function MainLayout({
@@ -23,6 +25,7 @@ export default function MainLayout({
   bannerBg,
   bannerTitle,
   bannerSubtitle,
+  color,
 }: IMainLayoutProps) {
   const { show } = useDebounce({ time: 3000 });
 
@@ -33,8 +36,8 @@ export default function MainLayout({
       <Header />
 
       <div className="main-layout">
-        <Banner
-          page="main"
+        <MainBanner
+          color={color}
           bannerBg={bannerBg!}
           bannerTitle={bannerTitle!}
           bannerSubtitle={bannerSubtitle}

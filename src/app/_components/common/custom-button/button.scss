@@ -10,6 +10,13 @@
 
     background: #fff;
 
+    border: none;
+
+    &.outlined {
+        background: transparent;
+        border: 0.3rem solid #fff;
+    }
+
     .btn-content {
         padding: 0 0 0 2rem;
 

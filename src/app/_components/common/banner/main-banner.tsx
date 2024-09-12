@@ -9,12 +9,15 @@ export interface IMainBannerProps {
   bannerBg: string;
   bannerTitle: string;
   bannerSubtitle?: string;
+
+  color?: "red" | "cream";
 }
 
 export default function MainBanner({
   bannerBg,
   bannerTitle,
   bannerSubtitle,
+  color,
 }: IMainBannerProps) {
   return (
     <div className="main-banner-container">
@@ -40,7 +43,11 @@ export default function MainBanner({
         </div>
       </div>
 
-      <Image className="top-wave" src={images.creamBottomWave} alt="wave" />
+      <Image
+        className="top-wave"
+        src={color === "cream" ? images.creamBottomWave : images.redBottomWave}
+        alt="wave"
+      />
     </div>
   );
 }

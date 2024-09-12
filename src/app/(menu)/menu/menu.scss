@@ -1,0 +1,53 @@
+.menu-page-container {
+    position: relative;
+
+    width: 100%;
+
+    background-image: url(../../../../public/images/menu-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    .bottom-wave {
+        bottom: -4rem;
+        z-index: 1;
+    }
+
+    .menu-page-wrapper {
+        margin: 0 auto;
+        width: 80%;
+
+        .menu-row {
+            position: relative;
+
+            display: flex;
+            justify-content: space-between;
+
+            padding: 1.5rem 0;
+        }
+
+        .row1 {
+            .menu-prods-item {
+                width: 32%;
+            }
+        }
+
+        .row2 {
+            .menu-prods-item {
+                width: 24%;
+            }
+        }
+
+        .row3 {
+            .menu-prods-item {
+                &:nth-child(1) {
+                    width: 40%;
+                }
+
+                &:nth-child(2) {
+                    width: 60%;
+                }
+            }
+        }
+    }
+}

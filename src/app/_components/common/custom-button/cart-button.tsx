@@ -12,6 +12,8 @@ export type ICartButtonProps = ButtonProps & {
 
   style?: React.CSSProperties;
   className?: string;
+
+  variant?: "outlined" | "contained";
 };
 
 export default function CartButton({
@@ -19,10 +21,16 @@ export default function CartButton({
   info,
   className,
   style,
+  variant,
   ...rest
 }: ICartButtonProps) {
   return (
-    <div className={`btn-container flex-center ${className}`} style={style}>
+    <div
+      className={`btn-container ${
+        variant === "outlined" ? "outlined" : "contained"
+      } flex-center ${className}`}
+      style={style}
+    >
       <div className="btn-content">
         <div className="btn-price">{price}</div>
 

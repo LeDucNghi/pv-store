@@ -12,10 +12,12 @@ import homeBg from "../../public/images/home-background.jpg";
 import homeBg2 from "../../public/images/home-background-2.jpg";
 import homeBg3 from "../../public/images/background_03.jpg";
 import illustration1 from "../../public/images/illustration-img1.png";
+import limitedBg from "../../public/images/litmited-bg.png";
 import logo from "../../public/images/logo.png";
 import logoBorder from "../../public/images/logo-border.png";
 import mainLayoutBg from "../../public/images/featured_image_shop.jpg";
 import menuBg from "../../public/images/menu-background.jpg";
+import menuPageBg from "../../public/images/menu-bg.jpg";
 import product1 from "../../public/images/product.png";
 import productRv1 from "../../public/images/product-rv1.jpg";
 import redBottomWave from "../../public/images/red_bottom_wave_01.png";
@@ -25,12 +27,14 @@ import whiteBottomWave from "../../public/images/pink_bottom_wave_01.png";
 export const images = {
   logo,
   logoBorder,
-  whiteBottomWave,
-  redBottomWave,
-  creamBottomWave,
   product1,
   productRv1,
   banhtrang,
+
+  // WAVE
+  whiteBottomWave,
+  redBottomWave,
+  creamBottomWave,
 
   // ICONS
   goicuon,
@@ -49,6 +53,8 @@ export const images = {
   homeBg3,
   footerBg,
   mainLayoutBg,
+  menuPageBg,
+  limitedBg,
 
   illustration1,
 };
