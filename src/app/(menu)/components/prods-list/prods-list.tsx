@@ -4,7 +4,7 @@ import * as React from "react";
 
 import Image from "next/image";
 import ImageProd from "@/app/_components/common/product/img-prod";
-import VericalProd from "@/app/_components/common/product/vertical-prod";
+import VerticalProd from "@/app/_components/common/product/vertical-prod";
 import { images } from "@/constants";
 import { productList } from "@/_mock";
 
@@ -18,7 +18,7 @@ export default function ProdsList(props: IProdsListProps) {
           return (
             <div className="menu-prods-item" key={key}>
               {key % 2 === 0 ? (
-                <VericalProd
+                <VerticalProd
                   product={x}
                   style={{
                     background: "white",
@@ -43,7 +43,7 @@ export default function ProdsList(props: IProdsListProps) {
           return (
             <div className="menu-prods-item" key={key}>
               {key % 2 !== 0 ? (
-                <VericalProd
+                <VerticalProd
                   product={x}
                   style={{
                     background: "white",
@@ -68,7 +68,7 @@ export default function ProdsList(props: IProdsListProps) {
           return (
             <div className="menu-prods-item" key={key}>
               {key % 2 === 0 ? (
-                <VericalProd
+                <VerticalProd
                   product={x}
                   style={{
                     background: "white",

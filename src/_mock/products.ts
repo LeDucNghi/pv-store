@@ -1,85 +1,26 @@
-import { Product } from "@/models";
-import { faker } from "@faker-js/faker";
+import { Comments, Product } from "@/models";
+import { SimpleFaker, faker, simpleFaker } from "@faker-js/faker";
+
 import { images } from "@/constants";
 
-export const homeMenu: Product[] = [
-  {
-    id: "1",
-    name: faker.commerce.productName(),
-    images: [images.product1.src],
-    description: faker.lorem.paragraph(1),
-    goodsPrice: faker.commerce.price({
-      min: 100,
-      max: 200,
-      dec: 0,
-      symbol: "$",
-    }),
-    weight: Number(faker.number.binary(4)),
-  },
-  {
-    id: "2",
-    name: faker.commerce.productName(),
-    images: [images.product1.src],
-    description: faker.lorem.paragraph(1),
-    goodsPrice: faker.commerce.price({
-      min: 100,
-      max: 200,
-      dec: 0,
-      symbol: "$",
-    }),
-  },
-  {
-    id: "3",
-    name: faker.commerce.productName(),
-    images: [images.product1.src],
-    description: faker.lorem.paragraph(1),
-    goodsPrice: faker.commerce.price({
-      min: 100,
-      max: 200,
-      dec: 0,
-      symbol: "$",
-    }),
-  },
-  {
-    id: "4",
-    name: faker.commerce.productName(),
-    images: [images.product1.src],
-    description: faker.lorem.paragraph(1),
-    goodsPrice: faker.commerce.price({
-      min: 100,
-      max: 200,
-      dec: 0,
-      symbol: "$",
-    }),
-  },
-  {
-    id: "5",
-    name: faker.commerce.productName(),
-    images: [images.product1.src],
-    description: faker.lorem.paragraph(1),
-    goodsPrice: faker.commerce.price({
-      min: 100,
-      max: 200,
-      dec: 0,
-      symbol: "$",
-    }),
-  },
-  {
-    id: "6",
-    name: faker.commerce.productName(),
-    images: [images.product1.src],
-    description: faker.lorem.paragraph(1),
-    goodsPrice: faker.commerce.price({
-      min: 100,
-      max: 200,
-      dec: 0,
-      symbol: "$",
-    }),
-  },
-];
+const customSimpleFaker = new SimpleFaker();
+
+export const homeMenu: Product[] = [...Array(6)].map((_, index) => ({
+  id: simpleFaker.string.uuid(),
+  name: faker.commerce.productName(),
+  images: [images.product1.src],
+  description: faker.lorem.paragraph(1),
+  goodsPrice: faker.commerce.price({
+    min: 100,
+    max: 200,
+    dec: 0,
+    symbol: "$",
+  }),
+  weight: Number(faker.number.binary(4)),
+}));
 
 export const productList: Product[] = [...Array(20)].map((_, index) => ({
-  id: "6",
+  id: simpleFaker.string.uuid(),
   name: faker.commerce.productName(),
   images: [images.product1.src],
   description: faker.lorem.paragraph(1),
@@ -92,7 +33,7 @@ export const productList: Product[] = [...Array(20)].map((_, index) => ({
 }));
 
 export const weeklyOffer = {
-  id: "1",
+  id: simpleFaker.string.uuid(),
   name: faker.commerce.productName(),
   images: [images.product1.src],
   description: [
@@ -136,3 +77,26 @@ export const weeklyOffer = {
     symbol: "$",
   }),
 };
+
+export const prodImgGallery = [...Array(4)].map((_, index) => ({
+  id: 1,
+  img: images.product1,
+}));
+
+export const prodTags = [...Array(3)].map((_, index) => ({
+  id: simpleFaker.string.uuid(),
+  tag: customSimpleFaker.helpers.arrayElement(["burger", "bacon", "cheese"]),
+}));
+
+export const reviews: Comments[] = [...Array(3)].map((_, index) => ({
+  id: simpleFaker.string.uuid(),
+  user: {
+    id: simpleFaker.string.uuid(),
+    username: faker.internet.userName(),
+    avatar: faker.image.avatarGitHub(),
+  },
+  comment: faker.lorem.paragraph({ min: 1, max: 3 }),
+  images: [faker.image.url()],
+  rate: customSimpleFaker.helpers.arrayElement([1, 2, 3, 4, 5]),
+  date: faker.date.anytime(),
+}));

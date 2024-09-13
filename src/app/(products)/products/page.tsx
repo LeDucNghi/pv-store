@@ -2,7 +2,7 @@ import "./products.scss";
 
 import * as React from "react";
 
-import Cart from "../components/cart/cart";
+import Cart from "../../_components/common/cart/cart";
 import Filter from "../components/filter/filter";
 import Image from "next/image";
 import MainLayout from "@/app/_components/layouts/main-layout/main-layout";
@@ -30,7 +30,9 @@ export default function ProductPage(props: IProductPageProps) {
           <div className="products-main">
             <ProductsList />
 
-            <Cart />
+            <div className="w-[30%]">
+              <Cart />
+            </div>
           </div>
         </div>
 

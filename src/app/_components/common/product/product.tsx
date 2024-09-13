@@ -3,7 +3,7 @@ import * as React from "react";
 import HorizontalProd from "./horizontal-prod";
 import ImageProd from "./img-prod";
 import { Product } from "@/models";
-import VericalProd from "./vertical-prod";
+import VerticalProd from "./vertical-prod";
 
 export interface IProductProps {
   type: "img" | "normal";
@@ -37,7 +37,7 @@ export default function CustomProduct({
           product={product}
         />
       ) : direction === "vertical" ? (
-        <VericalProd className={className} style={style} product={product} />
+        <VerticalProd className={className} style={style} product={product} />
       ) : (
         <HorizontalProd className={className} style={style} product={product} />
       )}

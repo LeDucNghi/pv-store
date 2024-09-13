@@ -11,18 +11,18 @@ import { addToCart } from "@/app/lib";
 import { redirect } from "next/navigation";
 import { useAppDispatch } from "@/hooks";
 
-export interface IVericalProdProps {
+export interface IVerticalProdProps {
   product: Product;
 
   style?: React.CSSProperties;
   className?: string;
 }
 
-export default function VericalProd({
+export default function VerticalProd({
   product,
   style,
   className,
-}: IVericalProdProps) {
+}: IVerticalProdProps) {
   const dispatch = useAppDispatch();
 
   const onCartChange = () => {

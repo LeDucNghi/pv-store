@@ -5,6 +5,7 @@ import { images } from "@/constants";
 
 export interface IComponentWrapperProps {
   children: React.ReactNode;
+  style?: React.CSSProperties;
 
   color?: "red" | "cream";
 
@@ -15,12 +16,14 @@ export default function ComponentWrapper({
   children,
   color,
   className,
+  style,
 }: IComponentWrapperProps) {
   return (
     <div
       className={` relative wrapper w-full h-screen ${className} ${
         color === "cream" ? "bg-[#f5e7c2]" : "#e84242"
       }`}
+      style={style}
     >
       <Image
         src={color === "cream" ? images.creamBottomWave : images.redBottomWave}

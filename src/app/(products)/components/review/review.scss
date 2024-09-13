@@ -1,0 +1,93 @@
+.review-container {
+    width: 60%;
+
+    .comments-wrapper {
+        width: 100%;
+
+        margin: 2.5rem 0;
+
+        h2 {
+            font-size: 1.875rem;
+            margin: 0 0 1.875rem;
+            text-transform: capitalize;
+            font-weight: 700;
+        }
+
+        .comments-box {
+            .comment-item {
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: column;
+
+                padding: 1rem 0;
+
+                border-bottom: 0.01rem solid #ccc;
+
+                .comment-header {
+                    display: flex;
+                    align-items: center;
+
+                    padding: 1rem 0;
+
+                    img {
+                        width: 4rem;
+                        height: 4rem;
+
+                        border-radius: 50%;
+
+                        object-fit: contain;
+                    }
+
+                    .review-user {
+                        font-size: 1rem;
+                        font-weight: 600;
+                    }
+
+                    .review-time {
+                        color: #999;
+                        font-size: 1rem;
+                    }
+
+                    .review-rate {
+                        padding: 0 1rem;
+                    }
+                }
+
+                .comment-main {
+                    .comment-img {
+                        padding: 0rem 1rem 1rem 0;
+
+                        img {
+                            border-radius: 0.5rem;
+
+                            object-fit: contain;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.rating-container {
+    h2 {
+        font-size: 1.875rem;
+        font-weight: 700;
+
+        margin: 0 0 1.875rem;
+    }
+
+    .rating-form {
+        .rating {
+            margin: 0 0 1rem;
+        }
+
+        .rating-star {
+            p {
+                text-transform: capitalize;
+                font-weight: 500;
+                padding-bottom: 0.5rem;
+            }
+        }
+    }
+}

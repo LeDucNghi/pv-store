@@ -29,8 +29,14 @@ export default function MainBanner({
         height={1500}
       />
       <div className="main-banner-content">
-        <h1> {bannerTitle} </h1>
-        <h4> {bannerSubtitle} </h4>
+        <h1 className={!bannerSubtitle ? "" : "top-[25rem]"}>
+          {" "}
+          {bannerTitle}{" "}
+        </h1>
+        <h4 className={!bannerSubtitle ? "" : "bottom-[23rem]"}>
+          {" "}
+          {bannerSubtitle}{" "}
+        </h4>
 
         <div className="banner-glass">
           <Image
