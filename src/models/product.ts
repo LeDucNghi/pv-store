@@ -29,9 +29,22 @@ export interface Comments {
   date: Date;
 }
 
+export interface Cart {}
+
 export interface CommentPayload {
   comment: string;
   rate: number;
   username: string;
   email: string;
+}
+
+export interface CheckoutPayload {
+  firstname: string;
+  lastname: string;
+  email: string;
+  district: string;
+  country: string;
+  phone: string;
+  address: string;
+  note?: string;
 }

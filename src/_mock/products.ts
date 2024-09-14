@@ -100,3 +100,17 @@ export const reviews: Comments[] = [...Array(3)].map((_, index) => ({
   rate: customSimpleFaker.helpers.arrayElement([1, 2, 3, 4, 5]),
   date: faker.date.anytime(),
 }));
+
+export const userCart: Product[] = [...Array(2)].map((_, index) => ({
+  id: simpleFaker.string.uuid(),
+  name: faker.commerce.productName(),
+  images: [images.product1.src],
+  description: faker.lorem.paragraph(1),
+  goodsPrice: faker.commerce.price({
+    min: 100,
+    max: 200,
+    dec: 0,
+    symbol: "$",
+  }),
+  quantity: customSimpleFaker.helpers.arrayElement([1, 2, 3, 4, 5]),
+}));

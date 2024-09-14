@@ -104,3 +104,21 @@ export const menuInformations = [
     img: images.serving,
   },
 ];
+
+export const paymentMethods = [
+  {
+    id: 1,
+    img: images.acbLogo,
+    name: "banking",
+  },
+  {
+    id: 2,
+    img: images.momoLogo,
+    name: "momo",
+  },
+  {
+    id: 3,
+    img: images.codLogo,
+    name: "COD",
+  },
+];
