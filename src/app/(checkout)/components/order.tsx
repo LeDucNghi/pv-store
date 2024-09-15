@@ -12,16 +12,16 @@ export default function Order(props: IOrderProps) {
     <div className="order-container">
       <h3>Your order</h3>
 
-      <table className="order-table">
-        <tr className="order-row-name">
-          <th className="order-row-product">product</th>
-          <th className="order-row-subtotal">subtotal</th>
-        </tr>
+      <div className="order-table">
+        <div className="order-row-name">
+          <div className="order-product order-row">product</div>
+          <div className="order-subtotal order-row">subtotal</div>
+        </div>
 
-        <tr className="order-row-products">
+        <div className="order-row-products">
           {userCart.slice(0, 2).map((item, key) => {
             return (
-              <td key={key}>
+              <div className="order-row-item" key={key}>
                 <div className="product-name">
                   {" "}
                   <p>{item.name}</p>{" "}
@@ -29,30 +29,30 @@ export default function Order(props: IOrderProps) {
                 </div>
 
                 <p className="product-price">{item.goodsPrice}</p>
-              </td>
+              </div>
             );
           })}
-        </tr>
+        </div>
 
         <Divider sx={{ margin: "0 auto" }} />
 
-        <tr>
-          <td className="font-bold capitalize">subtotal</td>
-          <td className="font-semibold">{userCart[0].goodsPrice}</td>
-        </tr>
+        <div className="order-row-total">
+          <div className="font-bold capitalize">subtotal</div>
+          <div className="font-semibold">{userCart[0].goodsPrice}</div>
+        </div>
 
-        <tr>
-          <td className="font-bold capitalize">shipping</td>
-          <td className="font-semibold">{userCart[0].goodsPrice}</td>
-        </tr>
+        <div className="order-row-total">
+          <div className="font-bold capitalize">shipping</div>
+          <div className="font-semibold">{userCart[0].goodsPrice}</div>
+        </div>
 
-        <tr className="order-row-total">
-          <td className="font-bold capitalize">total</td>
-          <td className="font-semibold">{userCart[0].goodsPrice}</td>
-        </tr>
+        <div className="order-row-total">
+          <div className="font-bold capitalize">total</div>
+          <div className="font-semibold">{userCart[0].goodsPrice}</div>
+        </div>
 
         <Divider sx={{ margin: "0 auto" }} />
-      </table>
+      </div>
     </div>
   );
 }

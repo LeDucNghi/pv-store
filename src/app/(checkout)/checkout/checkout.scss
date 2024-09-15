@@ -51,47 +51,50 @@
                 .order-table {
                     width: 100%;
 
-                    th,
-                    td {
-                        width: 100%;
-
-                        padding: 1rem;
-                    }
-
                     .order-row-name {
                         width: 100%;
 
-                        th {
+                        display: flex;
+
+                        .order-row {
                             background-color: $light-red;
 
                             text-transform: capitalize;
+
+                            width: 50%;
+
+                            font-weight: 600;
                         }
 
-                        .order-row-product {
+                        .order-product {
                             text-align: left;
                             padding: 1rem 1rem 1rem 2rem;
 
                             border-radius: 3.125rem 0 0 3.125rem;
                         }
 
-                        .order-row-subtotal {
+                        .order-subtotal {
                             padding: 1rem 2rem 1rem 2rem;
 
                             border-radius: 0 3.125rem 3.125rem 0;
+
+                            text-align: right;
                         }
                     }
 
                     .order-row-products {
-                        width: 105%;
+                        width: 100%;
 
                         display: flex;
                         flex-direction: column;
 
-                        td {
+                        .order-row-item {
                             width: 100%;
 
                             display: flex;
                             justify-content: space-between;
+
+                            padding: 1rem;
 
                             .product-name,
                             .product-price {
@@ -107,6 +110,15 @@
                                 font-weight: 600;
                             }
                         }
+                    }
+
+                    .order-row-total {
+                        display: flex;
+                        justify-content: space-between;
+
+                        padding: 1rem;
+
+                        width: 100%;
                     }
                 }
             }
