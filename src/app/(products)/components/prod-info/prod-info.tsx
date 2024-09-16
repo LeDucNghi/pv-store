@@ -10,10 +10,10 @@ import NormalButton from "@/app/_components/common/custom-button/normal-button";
 import { Product } from "@/models";
 
 export interface IProductInfoProps {
-  product: Product
+  product: Product;
 }
 
-export default function ProductInfo({product}: IProductInfoProps) {
+export default function ProductInfo({ product }: IProductInfoProps) {
   const [imgPreview, setImgPreview] = React.useState("");
 
   const onImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -53,13 +53,14 @@ export default function ProductInfo({product}: IProductInfoProps) {
         <p className="summary-description"> {productList[0].description} </p>
 
         <NormalButton
-          content="add to cart"
           style={{
             backgroundColor: "#e84242",
             color: "#fff",
             textTransform: "capitalize",
           }}
-        />
+        >
+          add to cart
+        </NormalButton>
       </div>
 
       <div className="product-item-cart col">

@@ -7,6 +7,7 @@ import codLogo from "../../public/images/COD.jpg";
 import creamBottomWave from "../../public/images/cream_bottom_wave_01.png";
 import deliveryMan from "../../public/images/delivery-man.png";
 import deliveryTime from "../../public/images/delivery.png";
+import emptyCart from "../../public/images/empty-cart.png";
 import foodDelivery from "../../public/images/food-delivery.png";
 import foodPackage from "../../public/images/food-package.png";
 import footerBg from "../../public/images/hero_footer.jpg";
@@ -52,6 +53,7 @@ export const images = {
   deliveryTime,
   deliveryMan,
   serving,
+  emptyCart,
 
   // BACKGROUNDS
   bgLeft,

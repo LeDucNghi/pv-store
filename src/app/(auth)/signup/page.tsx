@@ -1,15 +1,14 @@
 "use client";
 
-import * as React from "react";
 import * as yup from "yup";
 
 import { SubmitHandler, useForm } from "react-hook-form";
 
 import AuthForm from "../components/auth-form/auth-form";
-import CustomButton from "@/app/_components/common/custom-button/button";
 import InputField from "@/app/_components/common/input-field/input-field";
 import Link from "next/link";
 import MainLayout from "@/app/_components/layouts/main-layout/main-layout";
+import NormalButton from "@/app/_components/common/custom-button/normal-button";
 import { SignUpPayload } from "@/models";
 import { images } from "@/constants";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -99,7 +98,7 @@ export default function SignUpPage(props: ISignUpPageProps) {
             </b>
           </div>
 
-          <CustomButton kind="normal" content="sign up" type="submit" />
+          <NormalButton>sign up</NormalButton>
         </form>
       </AuthForm>
     </MainLayout>

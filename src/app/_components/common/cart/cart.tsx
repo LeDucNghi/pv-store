@@ -3,6 +3,7 @@
 import "./cart.scss";
 
 import CartItem from "./cart-item";
+import Link from "next/link";
 import NormalButton from "@/app/_components/common/custom-button/normal-button";
 import { productList } from "@/_mock";
 import { redirect } from "next/navigation";
@@ -38,9 +39,9 @@ export default function Cart(props: ICartProps) {
                 textTransform: "capitalize",
                 width: "47%",
               }}
-              content="view cart"
-              onClick={() => redirect("/cart")}
-            />
+            >
+              <Link href="/cart">view cart</Link>
+            </NormalButton>
             <NormalButton
               style={{
                 backgroundColor: "#e84242",
@@ -48,9 +49,10 @@ export default function Cart(props: ICartProps) {
                 textTransform: "capitalize",
                 width: "47%",
               }}
-              content="checkout"
               onClick={() => redirect("/checkout")}
-            />
+            >
+              <Link href="/checkout">checkout</Link>
+            </NormalButton>
           </div>
         </div>
       </div>

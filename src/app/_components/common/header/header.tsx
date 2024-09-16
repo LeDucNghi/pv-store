@@ -4,17 +4,22 @@ import "./header.scss";
 
 import * as React from "react";
 
-import { Button } from "@mui/material";
+import { Badge, Button, IconButton } from "@mui/material";
+
 import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
+import CartDrawer from "./cart-drawer";
+import CustomDrawer from "../drawer/drawer";
 import Image from "next/image";
 import Link from "next/link";
 import { images } from "@/constants";
+import { productList } from "@/_mock";
 import { redirect } from "next/navigation";
 
 export interface IHeaderProps {}
 
 export default function Header(props: IHeaderProps) {
   const [isActive, setisActive] = React.useState(1);
+  const [openDrawer, setOpenDrawer] = React.useState(false);
 
   return (
     <div className="header-container">
@@ -51,16 +56,28 @@ export default function Header(props: IHeaderProps) {
             <span className="text-[1.5rem] leading-6">0931303515</span>
           </div>
 
-          <span className="menu-cart flex-space-center">
-            <CardGiftcardIcon className="cart-icon" />
-            <span className="cart-content">0</span>
-          </span>
+          <IconButton
+            aria-label="cart"
+            className="menu-cart"
+            onClick={() => setOpenDrawer(!openDrawer)}
+          >
+            <Badge color="secondary" badgeContent={productList.length}>
+              <CardGiftcardIcon className="cart-icon" />
+            </Badge>
+          </IconButton>
 
           <Button variant="outlined">
             <Link href="/products"> menu </Link>
           </Button>
         </div>
       </div>
+
+      <CustomDrawer
+        isOpen={openDrawer}
+        onClose={() => setOpenDrawer(!openDrawer)}
+      >
+        <CartDrawer />
+      </CustomDrawer>
     </div>
   );
 }

@@ -5,14 +5,14 @@ import * as React from "react";
 import { Button, ButtonProps } from "@mui/material";
 
 export type INormalButtonProps = ButtonProps & {
-  content: string;
+  children: React.ReactNode;
 
   style?: React.CSSProperties;
   className?: string;
 };
 
 export default function NormalButton({
-  content,
+  children,
   style,
   className,
   ...rest
@@ -31,7 +31,7 @@ export default function NormalButton({
       }}
       {...rest}
     >
-      {content}
+      {children}
     </Button>
   );
 }

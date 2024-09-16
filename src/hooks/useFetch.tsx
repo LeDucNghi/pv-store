@@ -17,7 +17,7 @@ function useFetch<T>(url: string): ApiResponse<T> {
       try {
         const response: AxiosResponse<T> = await axios.get(url);
         setData(response.data);
-      } catch (error: AxiosError) {
+      } catch (error: any) {
         setError(error);
       } finally {
         setLoading(false);

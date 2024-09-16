@@ -119,14 +119,16 @@ export default function Rate(props: IRatingProps) {
         </div>
 
         <NormalButton
-          content="submit form"
+          content=""
           style={{
             backgroundColor: "#e84242",
             color: "#fff",
             textTransform: "capitalize",
           }}
           type="submit"
-        />
+        >
+          submit form
+        </NormalButton>
       </form>
     </div>
   );

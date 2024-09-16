@@ -8,7 +8,7 @@ import * as React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { bannerProducts, images } from "@/constants";
 
-import CustomButton from "../custom-button/button";
+import CartButton from "../custom-button/cart-button";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -63,11 +63,7 @@ export default function HomeBanner(props: IHomeBannerProps) {
                   <p className="product-description"> {prods.description} </p>
 
                   <div className="prod-cart-btn">
-                    <CustomButton
-                      kind="cart"
-                      info={prods.weight}
-                      price={prods.price}
-                    />
+                    <CartButton info={prods.weight} price={prods.price} />
                   </div>
                 </motion.div>
               </motion.div>

@@ -4,8 +4,8 @@ import "./product.scss";
 
 import * as React from "react";
 
-import CustomButton from "@/app/_components/common/custom-button/button";
 import Image from "next/image";
+import NormalButton from "../custom-button/normal-button";
 import { Product } from "@/models";
 import { addToCart } from "@/app/lib";
 import { redirect } from "next/navigation";
@@ -52,11 +52,7 @@ export default function VerticalProd({
           <div className="prod-price">{product.goodsPrice}</div>
         </div>
 
-        <CustomButton
-          kind="normal"
-          content="add to card"
-          onClick={onCartChange}
-        />
+        <NormalButton onClick={onCartChange}>add to card</NormalButton>
       </div>
     </div>
   );

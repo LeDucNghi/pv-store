@@ -4,8 +4,8 @@ import "./offers.scss";
 
 import { images, specialOffers } from "@/constants";
 
-import CustomButton from "@/app/_components/common/custom-button/button";
 import Image from "next/image";
+import NormalButton from "@/app/_components/common/custom-button/normal-button";
 import { motion } from "framer-motion";
 
 export interface IOffersProps {}
@@ -58,11 +58,7 @@ export default function Offers(props: IOffersProps) {
                     <a href=""> {offer.name} </a>
                   </header>
 
-                  <CustomButton
-                    kind="normal"
-                    content="add to card"
-                    className="offer-btn"
-                  />
+                  <NormalButton className="offer-btn">add to card</NormalButton>
                 </div>
               </motion.div>
             );

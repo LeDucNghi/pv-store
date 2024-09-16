@@ -30,14 +30,15 @@ export default function CheckoutPage(props: ICheckoutPageProps) {
 
               <div className="py-4 w-full flex-center">
                 <NormalButton
-                  content="place order"
                   style={{
                     backgroundColor: "#e84242",
                     color: "#fff",
                     textTransform: "capitalize",
                     width: "20%",
                   }}
-                />
+                >
+                  place order
+                </NormalButton>
               </div>
             </div>
           </div>
