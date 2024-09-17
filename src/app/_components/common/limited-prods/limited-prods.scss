@@ -68,15 +68,7 @@
     }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-    .prod-container {
-        .prod-img {
-            padding: 0;
-        }
-    }
-}
-
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
     .prod-container {
         .prod-img {
             padding: 5rem;
@@ -93,6 +85,34 @@
                     margin: 0;
                     font-size: 0.7rem;
                     padding: 1rem 0;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .prod-container {
+        .prod-img {
+            padding: 3rem;
+        }
+
+        .prod-content {
+            .content-wrapper {
+                .prod-name {
+                    font-size: 0.9rem;
+                    line-height: 0rem;
+                }
+
+                .prod-description {
+                    margin: 0.5rem 0;
+                    font-size: 0.7rem;
+
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 1; /* start showing ellipsis when 3rd line is reached */
+                    white-space: pre-wrap;
                 }
             }
         }

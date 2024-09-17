@@ -50,6 +50,8 @@
             padding: 0 1rem;
 
             h3 {
+                width: 100%;
+
                 font-size: 2.5rem;
                 font-weight: 700;
                 color: #e84242;
@@ -64,6 +66,8 @@
             }
 
             .offer-prod-price {
+                width: 100%;
+
                 font-size: 2.125rem;
                 line-height: 2.8rem;
                 color: #000;
@@ -86,6 +90,7 @@
                     display: flex;
                     justify-content: flex-start;
                     align-items: center;
+                    flex-wrap: wrap;
 
                     margin-bottom: 1.125rem;
 
@@ -102,7 +107,7 @@
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
     .offer-container {
         top: 0;
 
@@ -120,6 +125,55 @@
             .offer-content,
             img {
                 width: 100%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .offer-container {
+        top: 0;
+
+        height: auto;
+
+        .top-wave {
+            top: -2rem;
+        }
+
+        .bottom-wave {
+            bottom: -2rem;
+        }
+
+        .offer-wrapper {
+            .offer-content,
+            img {
+                width: 100%;
+            }
+
+            .offer-content {
+                h3 {
+                    font-size: 1.5rem;
+                    text-align: center;
+                }
+
+                h1 {
+                    font-size: 3rem;
+                    line-height: 3rem;
+                    text-align: center;
+                }
+
+                .offer-prod-price {
+                    font-size: 1.2rem;
+                    text-align: center;
+                }
+
+                .offer-prod-description {
+                    .offer-item {
+                        width: 100%;
+
+                        justify-content: center;
+                    }
+                }
             }
         }
     }

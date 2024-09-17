@@ -15,7 +15,7 @@
         text-align: center;
         text-transform: capitalize;
 
-        padding: 0px 1.25rem;
+        padding: 0 1.25rem;
 
         h3 {
             color: #ffb300;
@@ -71,12 +71,22 @@
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 769px) {
     .mail-container {
         height: auto;
 
         .mail-content {
             padding: 5rem 0;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .mail-container {
+        height: auto;
+
+        .mail-content {
+            padding: 5rem 2rem;
         }
     }
 }

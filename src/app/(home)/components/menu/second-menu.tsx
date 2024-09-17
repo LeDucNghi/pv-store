@@ -1,8 +1,7 @@
 import "./menu.scss";
 
-import * as React from "react";
-
-import CustomProduct from "../../../_components/common/product/product";
+import HorizontalProd from "@/app/_components/common/product/horizontal-prod";
+import VerticalProd from "@/app/_components/common/product/vertical-prod";
 import { homeMenu } from "@/_mock";
 
 export interface ISecondMenuProps {}
@@ -13,12 +12,9 @@ export default function SecondMenu(props: ISecondMenuProps) {
       <div className="col1">
         {homeMenu.slice(0, 4).map((x, key) => {
           return (
-            <CustomProduct
-              key={key}
-              product={x}
-              type="normal"
-              direction="horizontal"
-            />
+            <div className="menu-item-wrapper" key={key}>
+              <HorizontalProd product={x} />
+            </div>
           );
         })}
       </div>
@@ -27,12 +23,7 @@ export default function SecondMenu(props: ISecondMenuProps) {
         {homeMenu.slice(4, 6).map((x, key) => {
           return (
             <div className="menu-item-wrapper w-5/12" key={key}>
-              <CustomProduct
-                key={key}
-                product={x}
-                type="normal"
-                direction="vertical"
-              />
+              <VerticalProd product={x} />
             </div>
           );
         })}

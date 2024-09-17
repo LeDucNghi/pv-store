@@ -1,6 +1,7 @@
 import "./menu.scss";
 
-import CustomProduct from "../../../_components/common/product/product";
+import HorizontalProd from "@/app/_components/common/product/horizontal-prod";
+import ImageProd from "@/app/_components/common/product/img-prod";
 import { homeMenu } from "@/_mock";
 import { images } from "@/constants";
 
@@ -10,8 +11,7 @@ export default function ThirdMenu(props: IThirdMenuProps) {
   return (
     <div className="menu3">
       <div className="col1">
-        <CustomProduct
-          type="img"
+        <ImageProd
           bg={images.productRv1.src}
           product={homeMenu[0]}
           style={{ height: "100%" }}
@@ -22,7 +22,7 @@ export default function ThirdMenu(props: IThirdMenuProps) {
         {homeMenu.slice(0, 4).map((x, key) => {
           return (
             <div className="menu-item-wrapper" key={key}>
-              <CustomProduct product={x} type="normal" direction="horizontal" />
+              <HorizontalProd product={x} />
             </div>
           );
         })}

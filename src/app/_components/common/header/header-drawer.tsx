@@ -31,6 +31,11 @@ export default function HeaderDrawer(props: IHeaderDrawerProps) {
         <Divider />
 
         <li className={`menu-link`}>
+          <Link href="/cart">your cart</Link>
+        </li>
+        <Divider />
+
+        <li className={`menu-link`}>
           <Link href="/shop">shop</Link>
         </li>
         <Divider />

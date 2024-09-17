@@ -23,7 +23,6 @@ export interface IHeaderProps {}
 export default function Header(props: IHeaderProps) {
   const [isActive, setisActive] = React.useState(1);
   const [openCartDrawer, setOpenCartDrawer] = React.useState(false);
-  const [openHeaderDrawer, setOpenHeaderDrawer] = React.useState(false);
 
   const { windowInnerWidth } = useWindowSize();
 
@@ -44,12 +43,14 @@ export default function Header(props: IHeaderProps) {
               >
                 <Link href="/about">about</Link>
               </li>
+
               <li
                 onClick={() => setisActive(2)}
                 className={`menu-link ${isActive === 2 ? "active" : ""}`}
               >
                 <Link href="/blog">blog</Link>
               </li>
+
               <li
                 onClick={() => setisActive(3)}
                 className={`menu-link ${isActive === 3 ? "active" : ""}`}

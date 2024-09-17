@@ -47,6 +47,7 @@ footer {
 
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
 
         padding: 0 2rem 4rem 2rem;
 
@@ -114,6 +115,18 @@ footer {
     }
 }
 
+@media only screen and (min-width: 769px) {
+    footer {
+        .footer-head {
+            width: 100%;
+        }
+
+        .footer-info {
+            width: 100%;
+        }
+    }
+}
+
 @media only screen and (max-width: 768px) {
     footer {
         .footer-head {
@@ -122,6 +135,10 @@ footer {
 
         .footer-info {
             width: 100%;
+
+            ul {
+                width: 100%;
+            }
         }
     }
 }

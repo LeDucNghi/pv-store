@@ -34,13 +34,13 @@ export default function ImageProd({
           height={500}
         />
 
-        <header>
+        <div className="prod-item-header">
           <span> special offer </span>
           <a style={{ fontSize: titleSize }} href="">
             {" "}
             {product.name}{" "}
           </a>
-        </header>
+        </div>
 
         <Button className="prod-btn" variant="contained">
           add to cart

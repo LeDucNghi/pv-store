@@ -1,8 +1,6 @@
 import "./menu.scss";
 
-import * as React from "react";
-
-import CustomProduct from "../../../_components/common/product/product";
+import VerticalProd from "@/app/_components/common/product/vertical-prod";
 import { homeMenu } from "@/_mock";
 
 export interface IFirstMenuProps {}
@@ -16,7 +14,7 @@ export default function FirstMenu(props: IFirstMenuProps) {
         {homeMenu.map((x, key) => {
           return (
             <div className="menu-item-wrapper w-4/12" key={key}>
-              <CustomProduct product={x} type="normal" direction="vertical" />
+              <VerticalProd product={x} />
             </div>
           );
         })}

@@ -98,7 +98,7 @@
     }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
     .delivery-step {
         .bottom-wave {
             bottom: -4%;
@@ -114,6 +114,44 @@
                 width: 100%;
 
                 padding: 2rem 0;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 769px) {
+    .delivery-step {
+        .bottom-wave {
+            bottom: -2%;
+            transform: translateY(2%);
+        }
+
+        h1 {
+            padding: 0 1rem;
+        }
+
+        .steps {
+            .inner-step {
+                width: 100%;
+
+                padding: 2rem 0;
+
+                .step-img {
+                    img {
+                        width: 50%;
+                        height: 50%;
+                    }
+                }
+
+                .step-content {
+                    .step-name {
+                        font-size: 1.5rem;
+                    }
+
+                    .step-description {
+                        font-size: 1.2rem;
+                    }
+                }
             }
         }
     }

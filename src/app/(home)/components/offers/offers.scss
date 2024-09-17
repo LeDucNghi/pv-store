@@ -128,12 +128,18 @@
     }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
     .special-offers {
         height: auto;
 
         .offer-content {
             transform: none;
+
+            .offer-title {
+                h1 {
+                    font-size: 5rem;
+                }
+            }
 
             .offers {
                 display: flex;
@@ -142,6 +148,44 @@
                 .offer-item {
                     width: 80%;
                     height: 45rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .special-offers {
+        height: auto;
+
+        .offer-content {
+            transform: none;
+
+            .offer-title {
+                h1 {
+                    font-size: 5rem;
+                }
+            }
+
+            .offers {
+                display: flex;
+                flex-direction: column;
+
+                .offer-item {
+                    width: 80%;
+                    height: 45rem;
+
+                    .offer-item-wrapper {
+                        header {
+                            span {
+                                font-size: 0.7rem;
+                            }
+
+                            a {
+                                font-size: 1.5rem;
+                            }
+                        }
+                    }
                 }
             }
         }

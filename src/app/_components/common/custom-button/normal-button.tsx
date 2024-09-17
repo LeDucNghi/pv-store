@@ -22,14 +22,10 @@ export default function NormalButton({
       className={`normal-button ${className}`}
       style={{
         ...style,
-        position: "relative",
-        borderRadius: "1.875rem",
         backgroundColor: style?.backgroundColor
           ? style?.backgroundColor
           : "#ffb406",
         color: style?.backgroundColor ? style?.color : "#000",
-        fontWeight: "600",
-        padding: "1rem 1.35rem",
       }}
       {...rest}
     >

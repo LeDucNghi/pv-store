@@ -107,6 +107,7 @@
             }
         }
 
+        .menu3,
         .menu2 {
             position: relative;
 
@@ -138,23 +139,6 @@
         }
 
         .menu3 {
-            position: relative;
-
-            background-color: #f5ecdd;
-
-            color: #121212;
-
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-
-            line-height: 1.8rem;
-
-            margin: 0 auto;
-            padding: 3rem 6.25rem;
-
-            width: 95%;
-
             .col1,
             .col2 {
                 position: relative;
@@ -168,7 +152,7 @@
     }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
     .menu-container {
         .menu-wrapper {
             .menu-content {
@@ -184,6 +168,24 @@
             .menu1 {
                 .menu-item-wrapper {
                     width: 47%;
+                }
+            }
+
+            .menu3,
+            .menu2 {
+                padding: 1rem;
+
+                .col1,
+                .col2 {
+                    width: 100%;
+
+                    .menu-item-wrapper {
+                        width: 100%;
+                    }
+                }
+
+                .col2 {
+                    flex-wrap: wrap;
                 }
             }
         }
@@ -205,7 +207,7 @@
 
             .menu1 {
                 .menu-item-wrapper {
-                    width: 90%;
+                    width: 100%;
                 }
             }
 
@@ -219,33 +221,22 @@
                 }
             }
 
+            .menu3,
             .menu2 {
+                padding: 1rem;
+                width: 100%;
+
                 .col1,
                 .col2 {
                     width: 100%;
-                }
-
-                .col2 {
-                    flex-wrap: wrap;
 
                     .menu-item-wrapper {
                         width: 100%;
                     }
                 }
-            }
-
-            .menu3 {
-                .col1,
-                .col2 {
-                    width: 100%;
-                }
 
                 .col2 {
                     flex-wrap: wrap;
-
-                    .menu-item-wrapper {
-                        width: 100%;
-                    }
                 }
             }
         }
