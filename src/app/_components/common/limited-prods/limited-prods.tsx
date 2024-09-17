@@ -24,7 +24,7 @@ export default function LimitedProds({
   prodImgSize,
 }: ILimitedProdsProps) {
   return (
-    <div className={`prod-container ${className}`} style={style}>
+    <div className={`prod-container flex-center ${className}`} style={style}>
       <motion.div
         initial={{ opacity: 0 }}
         viewport={{ once: true, amount: 0.8 }}

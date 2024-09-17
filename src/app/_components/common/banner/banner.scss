@@ -1,12 +1,16 @@
 .home-banner-container {
     width: 100%;
-    height: 100vh;
+    // height: 100vh;
 
     .banner-wave {
         position: absolute;
 
         bottom: -5rem;
         left: 0;
+    }
+
+    .top-wave {
+        bottom: -0.5rem;
     }
 
     .banner-products {
@@ -17,9 +21,10 @@
         width: 100%;
         height: 100%;
 
-        transform: translateZ(0.9px) scale(0.5);
+        transform: translateZ(1px) scale(0.5);
 
         .banner-slide {
+            position: relative;
             width: 100%;
 
             .slide-wrapper {
@@ -28,7 +33,7 @@
 
                 .prod-img {
                     width: 60%;
-                    height: 100%;
+                    height: 90%;
 
                     padding: 0 1.25rem;
 
@@ -211,7 +216,47 @@
     }
 }
 
-@media screen and (max-width: 640px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .home-banner-container {
+        // height: 150vh;
+
+        .banner-products {
+            .banner-slide {
+                .slide-wrapper {
+                    flex-direction: column;
+
+                    .prod-img {
+                        width: 100%;
+                        height: 60%;
+
+                        padding: 0;
+                    }
+
+                    .prod-info {
+                        width: 100%;
+
+                        left: 0;
+
+                        padding: 0;
+
+                        .product-description,
+                        .product-name {
+                            text-align: center;
+                        }
+
+                        .product-name {
+                            font-size: 3.5rem;
+                        }
+
+                        .prod-cart-btn {
+                            justify-content: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .main-banner-content span {
         font-size: 2em;
     }

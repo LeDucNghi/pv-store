@@ -21,12 +21,9 @@ export default function ThirdMenu(props: IThirdMenuProps) {
       <div className="col2">
         {homeMenu.slice(0, 4).map((x, key) => {
           return (
-            <CustomProduct
-              key={key}
-              product={x}
-              type="normal"
-              direction="horizontal"
-            />
+            <div className="menu-item-wrapper" key={key}>
+              <CustomProduct product={x} type="normal" direction="horizontal" />
+            </div>
           );
         })}
       </div>

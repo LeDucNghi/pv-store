@@ -1,18 +1,21 @@
 .mail-container {
+    height: 100vh;
+
     .top-wave {
         bottom: -6rem;
     }
 
     .mail-content {
-        color: black;
         display: flex;
-        flex-basis: 50%;
         flex-direction: column;
         justify-content: flex-start;
-        line-height: 28.8px;
-        padding: 0px 20px;
+
+        color: black;
+        line-height: 1.8rem;
         text-align: center;
         text-transform: capitalize;
+
+        padding: 0px 1.25rem;
 
         h3 {
             color: #ffb300;
@@ -64,6 +67,16 @@
                     color: white;
                 }
             }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .mail-container {
+        height: auto;
+
+        .mail-content {
+            padding: 5rem 0;
         }
     }
 }

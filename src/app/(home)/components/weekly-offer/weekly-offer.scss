@@ -1,6 +1,5 @@
 .offer-container {
     position: relative;
-    top: 6rem;
 
     width: 100%;
     height: 100vh;
@@ -16,6 +15,10 @@
 
     padding: 4rem 0;
 
+    .top-wave {
+        top: -8rem;
+    }
+
     .bottom-wave {
         bottom: -8rem;
     }
@@ -24,10 +27,13 @@
         width: 80%;
 
         display: flex;
+        flex-wrap: wrap;
 
         img {
             width: 50%;
             height: 100%;
+
+            object-fit: contain;
         }
 
         .offer-content {
@@ -91,6 +97,29 @@
                         color: red;
                     }
                 }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .offer-container {
+        top: 0;
+
+        height: auto;
+
+        .top-wave {
+            top: -4rem;
+        }
+
+        .bottom-wave {
+            bottom: -4rem;
+        }
+
+        .offer-wrapper {
+            .offer-content,
+            img {
+                width: 100%;
             }
         }
     }

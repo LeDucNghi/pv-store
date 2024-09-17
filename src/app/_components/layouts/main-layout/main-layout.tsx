@@ -4,7 +4,6 @@ import "./main-layout.scss";
 
 import * as React from "react";
 
-import Banner from "../../common/banner/banner";
 import Footer from "../../common/footer/footer";
 import Header from "../../common/header/header";
 import Loader from "../../common/loader/loader";

@@ -24,8 +24,10 @@ export default function NormalButton({
         ...style,
         position: "relative",
         borderRadius: "1.875rem",
-        backgroundColor: style ? style.backgroundColor : "#ffb406",
-        color: style ? style.color : "#000",
+        backgroundColor: style?.backgroundColor
+          ? style?.backgroundColor
+          : "#ffb406",
+        color: style?.backgroundColor ? style?.color : "#000",
         fontWeight: "600",
         padding: "1rem 1.35rem",
       }}

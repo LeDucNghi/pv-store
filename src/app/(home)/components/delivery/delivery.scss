@@ -5,6 +5,7 @@
     flex-direction: column;
 
     width: 100%;
+    height: auto;
 
     background-color: #f5ecdd;
 
@@ -16,17 +17,13 @@
 
     text-align: center;
 
-    .top-wave {
-        top: -8rem;
-    }
-
     .bottom-wave {
         bottom: -8rem;
     }
 
     h1 {
         font-weight: 700;
-        font-size: 3.625rem;
+        font-size: 3rem;
         color: #e84242;
         text-transform: capitalize;
 
@@ -36,12 +33,16 @@
     .steps {
         padding: 0 5rem;
 
-        .inner-step {
-            // width: 20%;
+        flex-wrap: wrap;
 
+        width: 100%;
+
+        .inner-step {
             margin: 0 auto;
 
             z-index: 999;
+
+            width: 33%;
 
             .step-img {
                 position: relative;
@@ -74,7 +75,7 @@
                     width: 20%;
                     height: 20%;
 
-                    object-fit: contain;
+                    object-fit: cover;
                 }
             }
 
@@ -92,6 +93,27 @@
 
                     font-weight: 500;
                 }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .delivery-step {
+        .bottom-wave {
+            bottom: -4%;
+            transform: translateY(4%);
+        }
+
+        h1 {
+            padding: 0 1rem;
+        }
+
+        .steps {
+            .inner-step {
+                width: 100%;
+
+                padding: 2rem 0;
             }
         }
     }

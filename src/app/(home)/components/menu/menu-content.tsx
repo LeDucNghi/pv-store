@@ -21,7 +21,7 @@ export default function MenuContent(props: IMenuContentProps) {
           {menuInformations.slice(0, 2).map((info, key) => {
             return (
               <div
-                className="w-1/2 flex items-center py-[1rem] mb-[2.375rem]"
+                className="w-1/2 flex flex-wrap items-center py-[1rem] mb-[2.375rem]"
                 key={key}
               >
                 <Image
@@ -42,7 +42,7 @@ export default function MenuContent(props: IMenuContentProps) {
           {menuInformations.slice(2, 4).map((info, key) => {
             return (
               <div
-                className="w-1/2 flex items-center py-[1rem] mb-[2.375rem]"
+                className="w-1/2 flex flex-wrap items-center py-[1rem] mb-[2.375rem]"
                 key={key}
               >
                 <Image

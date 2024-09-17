@@ -53,8 +53,6 @@ export default function Mail(props: IMailProps) {
           />
         </FormControl>
       </div>
-
-      <Image src={images.whiteBottomWave} alt="top wave" className="top-wave" />
     </div>
   );
 }

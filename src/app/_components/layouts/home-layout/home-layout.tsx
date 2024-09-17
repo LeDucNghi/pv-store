@@ -4,9 +4,9 @@ import "./home-layout.scss";
 
 import * as React from "react";
 
-import Banner from "../../common/banner/banner";
 import Footer from "../../common/footer/footer";
 import Header from "../../common/header/header";
+import HomeBanner from "../../common/banner/home-banner";
 import Loader from "../../common/loader/loader";
 import useDebounce from "@/hooks/useDebounce";
 
@@ -24,15 +24,11 @@ export default function HomeLayout({ children }: IHomeLayoutProps) {
       <Header />
 
       <div className="home-layout">
-        <Banner page="home" />
+        <HomeBanner />
 
         {children}
 
-        <Footer
-          style={{
-            top: "6rem",
-          }}
-        />
+        <Footer />
       </div>
     </>
   );

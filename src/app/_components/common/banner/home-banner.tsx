@@ -71,6 +71,8 @@ export default function HomeBanner(props: IHomeBannerProps) {
           );
         })}
       </Swiper>
+
+      <Image src={images.whiteBottomWave} alt="" className="top-wave" />
     </div>
   );
 }

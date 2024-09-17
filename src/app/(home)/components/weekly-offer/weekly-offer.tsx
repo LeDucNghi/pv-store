@@ -13,6 +13,8 @@ export interface IWeeklyOfferProps {}
 export default function WeeklyOffer(props: IWeeklyOfferProps) {
   return (
     <div className="offer-container">
+      <Image src={images.whiteBottomWave} alt="top wave" className="top-wave" />
+
       <div className="offer-wrapper">
         <Image src={images.product1} alt="product" />
 

@@ -15,13 +15,15 @@ footer {
     .footer-head {
         position: relative;
 
-        margin: 0 auto;
-
         width: 60%;
 
         flex-direction: column;
 
         margin: 7rem auto 5rem auto;
+
+        padding: 0 2rem;
+
+        text-align: center;
 
         span {
             margin: 0.5rem 0 1.125rem 0;
@@ -46,7 +48,7 @@ footer {
         display: flex;
         justify-content: space-between;
 
-        padding-bottom: 4rem;
+        padding: 0 2rem 4rem 2rem;
 
         border-bottom: 0.01rem solid #848c8e;
 
@@ -109,5 +111,17 @@ footer {
         text-align: center;
 
         color: white;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    footer {
+        .footer-head {
+            width: 100%;
+        }
+
+        .footer-info {
+            width: 100%;
+        }
     }
 }

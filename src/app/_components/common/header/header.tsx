@@ -4,79 +4,105 @@ import "./header.scss";
 
 import * as React from "react";
 
+import { BREAK_POINTS_NUMBER, images } from "@/constants";
 import { Badge, Button, IconButton } from "@mui/material";
 
+import BurgerButton from "../custom-button/burger";
 import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
 import CartDrawer from "./cart-drawer";
 import CustomDrawer from "../drawer/drawer";
+import HeaderDrawer from "./header-drawer";
 import Image from "next/image";
 import Link from "next/link";
-import { images } from "@/constants";
+import MenuIcon from "@mui/icons-material/Menu";
 import { productList } from "@/_mock";
-import { redirect } from "next/navigation";
+import { useWindowSize } from "@/hooks";
 
 export interface IHeaderProps {}
 
 export default function Header(props: IHeaderProps) {
   const [isActive, setisActive] = React.useState(1);
-  const [openDrawer, setOpenDrawer] = React.useState(false);
+  const [openCartDrawer, setOpenCartDrawer] = React.useState(false);
+  const [openHeaderDrawer, setOpenHeaderDrawer] = React.useState(false);
+
+  const { windowInnerWidth } = useWindowSize();
 
   return (
     <div className="header-container">
       <div className="menu-port flex-space-center">
         <ul className="flex-space-center">
-          <li onClick={() => redirect("/")}>
-            <Image src={images.logo} alt="logo" />
+          <li className="menu-link">
+            <Link href="/">
+              <Image src={images.logo} alt="logo" />
+            </Link>
           </li>
-          <li
-            onClick={() => setisActive(1)}
-            className={`ml-4 menu-link ${isActive === 1 ? "active" : ""}`}
-          >
-            <Link href="/about">about</Link>
-          </li>
-          <li
-            onClick={() => setisActive(2)}
-            className={`menu-link ${isActive === 2 ? "active" : ""}`}
-          >
-            <Link href="/blog">blog</Link>
-          </li>
-          <li
-            onClick={() => setisActive(3)}
-            className={`menu-link ${isActive === 3 ? "active" : ""}`}
-          >
-            <Link href="/shop">shop</Link>
-          </li>
+          {windowInnerWidth >= BREAK_POINTS_NUMBER.md && (
+            <>
+              <li
+                onClick={() => setisActive(1)}
+                className={`ml-4 menu-link ${isActive === 1 ? "active" : ""}`}
+              >
+                <Link href="/about">about</Link>
+              </li>
+              <li
+                onClick={() => setisActive(2)}
+                className={`menu-link ${isActive === 2 ? "active" : ""}`}
+              >
+                <Link href="/blog">blog</Link>
+              </li>
+              <li
+                onClick={() => setisActive(3)}
+                className={`menu-link ${isActive === 3 ? "active" : ""}`}
+              >
+                <Link href="/shop">shop</Link>
+              </li>
+            </>
+          )}
         </ul>
 
-        <div className="menu-cell flex-space-center">
-          <div className="menu-content">
-            <span className="text-[0.9rem] leading-6 text-black">
-              Đặt hàng qua điện thoại
-            </span>
-            <span className="text-[1.5rem] leading-6">0931303515</span>
+        {windowInnerWidth >= BREAK_POINTS_NUMBER.md && (
+          <div className="menu-cell flex-space-center">
+            <div className="menu-content">
+              <span className="text-[0.9rem] leading-6 text-black">
+                Đặt hàng qua điện thoại
+              </span>
+              <span className="text-[1.5rem] leading-6">0931303515</span>
+            </div>
+
+            <IconButton
+              aria-label="cart"
+              className="menu-cart"
+              onClick={() => setOpenCartDrawer(!openCartDrawer)}
+            >
+              <Badge color="secondary" badgeContent={productList.length}>
+                <CardGiftcardIcon className="cart-icon" />
+              </Badge>
+            </IconButton>
+
+            <Button variant="outlined">
+              <Link href="/products"> menu </Link>
+            </Button>
           </div>
+        )}
 
-          <IconButton
-            aria-label="cart"
-            className="menu-cart"
-            onClick={() => setOpenDrawer(!openDrawer)}
-          >
-            <Badge color="secondary" badgeContent={productList.length}>
-              <CardGiftcardIcon className="cart-icon" />
-            </Badge>
-          </IconButton>
-
-          <Button variant="outlined">
-            <Link href="/products"> menu </Link>
-          </Button>
-        </div>
+        {windowInnerWidth <= BREAK_POINTS_NUMBER.md && (
+          <MenuIcon
+            fontSize="large"
+            style={{ cursor: "pointer" }}
+            onClick={() => setOpenCartDrawer(!openCartDrawer)}
+          />
+        )}
       </div>
 
       <CustomDrawer
-        isOpen={openDrawer}
-        onClose={() => setOpenDrawer(!openDrawer)}
+        isOpen={openCartDrawer}
+        onClose={() => setOpenCartDrawer(!openCartDrawer)}
       >
-        <CartDrawer />
+        {windowInnerWidth <= BREAK_POINTS_NUMBER.md ? (
+          <HeaderDrawer />
+        ) : (
+          <CartDrawer />
+        )}
       </CustomDrawer>
     </div>
   );
