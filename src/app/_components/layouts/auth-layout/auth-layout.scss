@@ -1,0 +1,53 @@
+.auth-layout-container {
+    width: 100%;
+    height: 100vh;
+
+    background-image: url(../../../../../public/images/hero_footer.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    .auth-layout-wrapper {
+        width: 80%;
+
+        margin: 0 auto;
+
+        padding: 8rem 4rem;
+
+        .auth-layout-form {
+            padding: 2rem;
+
+            h1 {
+                font-size: 1.875rem;
+                font-weight: 800;
+                text-align: center;
+                text-transform: capitalize;
+                margin: 0 0 1rem;
+            }
+
+            .auth-layout-divider {
+                margin-bottom: 1rem;
+
+                .gg-icon {
+                    color: #e84242;
+                }
+
+                .fb-icon {
+                    color: #4267b2;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .auth-layout-container {
+        .auth-layout-wrapper {
+            width: 100%;
+
+            margin: 0 auto;
+
+            padding: 4rem;
+        }
+    }
+}

@@ -4,13 +4,11 @@ import * as yup from "yup";
 
 import { SubmitHandler, useForm } from "react-hook-form";
 
-import AuthForm from "../components/auth-form/auth-form";
+import AuthLayout from "@/app/_components/layouts/auth-layout/auth-layout";
 import InputField from "@/app/_components/common/input-field/input-field";
 import Link from "next/link";
-import MainLayout from "@/app/_components/layouts/main-layout/main-layout";
 import NormalButton from "@/app/_components/common/custom-button/normal-button";
 import { SignInPayload } from "@/models";
-import { images } from "@/constants";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 export interface ISignInPageProps {}
@@ -55,37 +53,38 @@ export default function SignInPage(props: ISignInPageProps) {
   };
 
   return (
-    <MainLayout
-      bannerBg={images.mainLayoutBg.src}
-      bannerTitle="Account Details"
-      bannerSubtitle="Check your account information"
-    >
-      <AuthForm elevation={8} title="sign in">
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <InputField
-            control={control}
-            name="email"
-            label="Email"
-            placeholder="Enter your email"
-          />
+    <AuthLayout title="sign in" page="signin">
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <InputField
+          control={control}
+          name="email"
+          label="Email"
+          placeholder="Enter your email"
+        />
 
-          <InputField
-            control={control}
-            name="password"
-            label="Password"
-            placeholder="Enter your password"
-            type="password"
-          />
+        <InputField
+          control={control}
+          name="password"
+          label="Password"
+          placeholder="Enter your password"
+          type="password"
+        />
 
-          <div className="w-full text-center py-4">
-            <b>
-              Dont have an account? <Link href="/signup">Sign Up</Link>{" "}
-            </b>
-          </div>
+        <div className="w-full text-center py-4">
+          <b>
+            Dont have an account? <Link href="/signup">Sign Up</Link>{" "}
+          </b>
+        </div>
 
-          <NormalButton type="submit">sign in</NormalButton>
-        </form>
-      </AuthForm>
-    </MainLayout>
+        <div className="w-full flex-center">
+          <NormalButton
+            style={{ fontSize: "0.9rem", textTransform: "capitalize" }}
+            type="submit"
+          >
+            sign in
+          </NormalButton>
+        </div>
+      </form>
+    </AuthLayout>
   );
 }

@@ -4,13 +4,11 @@ import * as yup from "yup";
 
 import { SubmitHandler, useForm } from "react-hook-form";
 
-import AuthForm from "../components/auth-form/auth-form";
+import AuthLayout from "@/app/_components/layouts/auth-layout/auth-layout";
 import InputField from "@/app/_components/common/input-field/input-field";
 import Link from "next/link";
-import MainLayout from "@/app/_components/layouts/main-layout/main-layout";
 import NormalButton from "@/app/_components/common/custom-button/normal-button";
 import { SignUpPayload } from "@/models";
-import { images } from "@/constants";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 export interface ISignUpPageProps {}
@@ -61,46 +59,47 @@ export default function SignUpPage(props: ISignUpPageProps) {
   };
 
   return (
-    <MainLayout
-      bannerBg={images.mainLayoutBg.src}
-      bannerTitle="Account Details"
-      bannerSubtitle="Check your account information"
-    >
-      <AuthForm elevation={8} title="sign up">
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <InputField
-            control={control}
-            name="email"
-            label="Email"
-            type="email"
-            placeholder="Enter your email"
-          />
+    <AuthLayout page="signup" title="sign up">
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <InputField
+          control={control}
+          name="email"
+          label="Email"
+          type="email"
+          placeholder="Enter your email"
+        />
 
-          <InputField
-            control={control}
-            name="username"
-            label="Username"
-            placeholder="Enter your username"
-            type="text"
-          />
+        <InputField
+          control={control}
+          name="username"
+          label="Username"
+          placeholder="Enter your username"
+          type="text"
+        />
 
-          <InputField
-            control={control}
-            name="password"
-            label="Password"
-            placeholder="Enter your password"
-            type="password"
-          />
+        <InputField
+          control={control}
+          name="password"
+          label="Password"
+          placeholder="Enter your password"
+          type="password"
+        />
 
-          <div className="w-full text-center py-4">
-            <b>
-              Already have an account? <Link href="/signin">Sign In</Link>{" "}
-            </b>
-          </div>
+        <div className="w-full text-center py-4">
+          <b>
+            Already have an account? <Link href="/signin">Sign In</Link>{" "}
+          </b>
+        </div>
 
-          <NormalButton>sign up</NormalButton>
-        </form>
-      </AuthForm>
-    </MainLayout>
+        <div className="w-full flex-center">
+          <NormalButton
+            style={{ fontSize: "0.9rem", textTransform: "capitalize" }}
+            type="submit"
+          >
+            sign up
+          </NormalButton>
+        </div>
+      </form>
+    </AuthLayout>
   );
 }
