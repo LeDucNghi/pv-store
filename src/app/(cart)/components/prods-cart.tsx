@@ -1,12 +1,11 @@
-import * as React from "react";
-
-import { productList, userCart } from "@/_mock";
+"use client";
 
 import AddIcon from "@mui/icons-material/Add";
 import ClearIcon from "@mui/icons-material/Clear";
 import { IconButton } from "@mui/material";
 import Image from "next/image";
 import RemoveIcon from "@mui/icons-material/Remove";
+import { userCart } from "@/_mock";
 
 export interface IProductCartProps {}
 

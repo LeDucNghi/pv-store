@@ -8,7 +8,7 @@ export const BREAK_POINTS = {
 
 export const BREAK_POINTS_NUMBER = {
   xs: 480,
-  sm: 600,
+  sm: 767,
   md: 1024,
   lg: 1200,
   xl: 1536,
