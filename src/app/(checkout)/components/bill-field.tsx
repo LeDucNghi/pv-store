@@ -95,7 +95,7 @@ export default function BillFields(props: IBillFieldsProps) {
             name="firstname"
             label="First Name"
             placeholder="Enter your first name"
-            style={{ width: "47%" }}
+            className="input-field"
           />
 
           <InputField
@@ -103,7 +103,7 @@ export default function BillFields(props: IBillFieldsProps) {
             name="lastname"
             label="Last Name"
             placeholder="Enter your lastname"
-            style={{ width: "47%" }}
+            className="input-field"
           />
 
           <InputField
@@ -111,7 +111,7 @@ export default function BillFields(props: IBillFieldsProps) {
             name="address"
             label="Address"
             placeholder="Enter your address"
-            style={{ width: "47%" }}
+            className="input-field"
           />
 
           <InputField
@@ -119,7 +119,7 @@ export default function BillFields(props: IBillFieldsProps) {
             name="district"
             label="District"
             placeholder="Enter your district"
-            style={{ width: "47%" }}
+            className="input-field"
           />
 
           <InputField
@@ -127,7 +127,7 @@ export default function BillFields(props: IBillFieldsProps) {
             name="country"
             label="Country"
             placeholder="Enter your country"
-            style={{ width: "47%" }}
+            className="input-field"
           />
 
           <InputField
@@ -135,7 +135,7 @@ export default function BillFields(props: IBillFieldsProps) {
             name="phone"
             label="Phone Number"
             placeholder=""
-            style={{ width: "47%" }}
+            className="input-field"
           />
 
           <InputField
@@ -143,7 +143,7 @@ export default function BillFields(props: IBillFieldsProps) {
             name="email"
             label="Email"
             placeholder="Enter your email"
-            style={{ width: "47%" }}
+            className="input-field"
           />
 
           <InputField

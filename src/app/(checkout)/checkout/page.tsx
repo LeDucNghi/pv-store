@@ -34,7 +34,6 @@ export default function CheckoutPage(props: ICheckoutPageProps) {
                     backgroundColor: "#e84242",
                     color: "#fff",
                     textTransform: "capitalize",
-                    width: "20%",
                   }}
                 >
                   place order
