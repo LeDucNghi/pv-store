@@ -1,37 +1,56 @@
 @import "../../../../public/styles/index.scss";
 
-.products-container {
+.products-wrapper {
     position: relative;
 
-    width: 100%;
+    width: 90%;
 
-    background-color: $cream;
+    margin: 0 auto;
 
-    .products-wrapper {
+    padding: 8rem 1.875rem;
+
+    .products-header,
+    .products-main {
         position: relative;
 
-        width: 90%;
+        width: 100%;
 
-        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
 
-        padding: 8rem 1.875rem;
+    .products-main {
+        justify-content: space-between;
+    }
 
-        .products-header,
+    .products-header {
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .products-wrapper {
         .products-main {
-            position: relative;
+            .prods-cart {
+                margin-top: 1rem;
 
-            width: 100%;
-
-            display: flex;
+                width: 100%;
+            }
         }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .products-wrapper {
+        width: 100%;
 
         .products-main {
-            justify-content: space-between;
-        }
+            .prods-cart {
+                margin-top: 1rem;
 
-        .products-header {
-            justify-content: flex-end;
-            align-items: center;
+                width: 100%;
+            }
         }
     }
 }

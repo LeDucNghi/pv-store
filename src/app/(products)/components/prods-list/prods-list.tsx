@@ -2,10 +2,8 @@
 
 import "./prods-list.scss";
 
-import * as React from "react";
-
 import CustomPagination from "@/app/_components/common/pagination/pagination";
-import CustomProduct from "@/app/_components/common/product/product";
+import VerticalProd from "@/app/_components/common/product/vertical-prod";
 import { productList } from "@/_mock";
 
 export interface IProductsListProps {}
@@ -20,7 +18,7 @@ export default function ProductsList(props: IProductsListProps) {
       {productList.slice(0, 9).map((prod, key) => {
         return (
           <div className="prod-item-wrapper" key={key}>
-            <CustomProduct type="normal" direction="vertical" product={prod} />
+            <VerticalProd product={prod} />
           </div>
         );
       })}

@@ -113,7 +113,7 @@ export default function Rate(props: IRatingProps) {
             control={control}
             name="email"
             fullWidth
-            label="your email"
+            label="Your email"
             placeholder="Enter your email"
           />
         </div>

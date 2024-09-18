@@ -1,10 +1,8 @@
 import "./products.scss";
 
-import * as React from "react";
-
 import Cart from "../../_components/common/cart/cart";
+import ComponentWrapper from "@/app/_components/common/wrapper/component-wrapper";
 import Filter from "../components/filter/filter";
-import Image from "next/image";
 import MainLayout from "@/app/_components/layouts/main-layout/main-layout";
 import ProductsList from "../components/prods-list/prods-list";
 import Search from "../components/search/search";
@@ -19,7 +17,7 @@ export default function ProductPage(props: IProductPageProps) {
       bannerTitle="Our Menu"
       color="cream"
     >
-      <div className="products-container">
+      <ComponentWrapper color="cream">
         <div className="products-wrapper">
           <div className="products-header">
             <Filter />
@@ -30,18 +28,12 @@ export default function ProductPage(props: IProductPageProps) {
           <div className="products-main">
             <ProductsList />
 
-            <div className="w-[30%]">
+            <div className="prods-cart">
               <Cart />
             </div>
           </div>
         </div>
-
-        <Image
-          src={images.creamBottomWave}
-          alt=""
-          className="bottom-wave bottom-[-4rem]"
-        />
-      </div>
+      </ComponentWrapper>
     </MainLayout>
   );
 }

@@ -22,7 +22,7 @@ export default function ComponentWrapper({
 }: IComponentWrapperProps) {
   return (
     <div
-      className={` relative wrapper w-full h-screen ${className} ${
+      className={`relative wrapper w-full ${className} ${
         color === "cream" ? "bg-[#f5e7c2]" : "#e84242"
       }`}
       style={style}
