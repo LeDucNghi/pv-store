@@ -7,7 +7,7 @@ import Link from "next/link";
 import NormalButton from "@/app/_components/common/custom-button/normal-button";
 import { productList } from "@/_mock";
 import { redirect } from "next/navigation";
-import { selectCart } from "@/app/lib";
+import { selectCart } from "@/app/lib/redux";
 import { useAppSelector } from "@/hooks";
 
 export interface ICartProps {}

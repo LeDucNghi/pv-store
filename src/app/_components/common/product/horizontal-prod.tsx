@@ -2,7 +2,7 @@ import "./product.scss";
 
 import Image from "next/image";
 import { Product } from "@/models";
-import { addToCart } from "@/app/lib";
+import { addToCart } from "@/app/lib/redux";
 import { useAppDispatch } from "@/hooks";
 
 export interface IHorizontalProdProps {

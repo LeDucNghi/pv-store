@@ -7,7 +7,7 @@ import * as React from "react";
 import Image from "next/image";
 import NormalButton from "../custom-button/normal-button";
 import { Product } from "@/models";
-import { addToCart } from "@/app/lib";
+import { addToCart } from "@/app/lib/redux";
 import { redirect } from "next/navigation";
 import { useAppDispatch } from "@/hooks";
 

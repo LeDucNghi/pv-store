@@ -21,7 +21,7 @@ import { Product } from "@/models";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { productList } from "@/_mock";
 import { redirect } from "next/navigation";
-import { useAppDispatch } from "@/app/lib";
+import { useAppDispatch } from "@/app/lib/redux";
 
 export interface ICartDrawerProps {}
 

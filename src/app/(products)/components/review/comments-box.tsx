@@ -20,14 +20,14 @@ export default function CommentsBox(props: ICommentsBoxProps) {
                 <Image
                   width={100}
                   height={100}
-                  src={review.user.avatar}
-                  alt={review.user.username}
+                  src={review.user.avatar!}
+                  alt={review.user.name!}
                 />
 
                 <div className="flex justify-center">
                   {" "}
                   <div className="flex flex-col items-start pl-4">
-                    <p className="review-user">{review.user.username}</p>
+                    <p className="review-user">{review.user.name}</p>
                     <p className="review-time">
                       {moment(review.date).startOf("hour").fromNow()}
                     </p>

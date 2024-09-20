@@ -91,8 +91,7 @@ export const prodTags = [...Array(3)].map((_, index) => ({
 export const reviews: Comments[] = [...Array(3)].map((_, index) => ({
   id: simpleFaker.string.uuid(),
   user: {
-    id: simpleFaker.string.uuid(),
-    username: faker.internet.userName(),
+    name: faker.internet.userName(),
     avatar: faker.image.avatarGitHub(),
   },
   comment: faker.lorem.paragraph({ min: 1, max: 3 }),
