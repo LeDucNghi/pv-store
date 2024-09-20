@@ -9,11 +9,15 @@ import InputField from "@/app/_components/common/input-field/input-field";
 import Link from "next/link";
 import NormalButton from "@/app/_components/common/custom-button/normal-button";
 import { SignUpPayload } from "@/models";
+import useAuth from "@/hooks/use-auth";
+import { useRouter } from "next/navigation";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 export interface ISignUpPageProps {}
 
 export default function SignUpPage(props: ISignUpPageProps) {
+  const { signup } = useAuth();
+
   const schema = yup.object().shape({
     email: yup
       .string()
@@ -25,7 +29,7 @@ export default function SignUpPage(props: ISignUpPageProps) {
       .required("Please enter password")
       .min(6, "Password is required to have at least 6 characters"),
 
-    username: yup
+    name: yup
       .string()
       .required("Please enter your username")
       .min(6, "Username is required to have at least 6 characters"),
@@ -34,28 +38,24 @@ export default function SignUpPage(props: ISignUpPageProps) {
   const {
     handleSubmit,
     control,
-    formState: { isSubmitting },
+    formState: { isSubmitting, isDirty },
   } = useForm<SignUpPayload>({
     defaultValues: {
       email: "",
       password: "",
-      username: "",
+      name: "",
     },
 
     resolver: yupResolver(schema),
   });
 
   const onSubmit: SubmitHandler<SignUpPayload> = async (data) => {
-    console.log(
-      "🚀 ~ constonSubmit:SubmitHandler<SignInPayload>= ~ data:",
-      data
-    );
-    // await signIn("credentials", {
-    //   redirect: true,
-    //   callbackUrl: "http://localhost:3000/",
-    //   email: data.email,
-    //   password: data.password,
-    // });
+    const sleep = (ms: number) =>
+      new Promise((resolve) => setTimeout(resolve, ms));
+
+    await sleep(2000);
+
+    await signup(data);
   };
 
   return (
@@ -71,7 +71,7 @@ export default function SignUpPage(props: ISignUpPageProps) {
 
         <InputField
           control={control}
-          name="username"
+          name="name"
           label="Username"
           placeholder="Enter your username"
           type="text"
@@ -95,6 +95,8 @@ export default function SignUpPage(props: ISignUpPageProps) {
           <NormalButton
             style={{ fontSize: "0.9rem", textTransform: "capitalize" }}
             type="submit"
+            loading={isSubmitting}
+            disabled={isSubmitting || !isDirty}
           >
             sign up
           </NormalButton>

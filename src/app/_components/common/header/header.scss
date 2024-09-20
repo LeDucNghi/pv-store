@@ -98,7 +98,7 @@
             }
 
             .menu-cart {
-                margin: 0 2rem;
+                margin: 0 1rem;
 
                 border-radius: 50%;
 
@@ -114,8 +114,8 @@
                 font-weight: 600;
 
                 .cart-icon {
-                    font-size: 1.5rem;
-                    margin-right: 0.2rem;
+                    font-size: 2rem;
+                    transition: color 0.3s ease-in-out;
                 }
             }
 
@@ -129,9 +129,13 @@
 
                 border-color: #e84242;
 
+                transition: background 0.3s ease-in-out;
+
                 &:hover {
                     background: #e84242;
                     color: white;
+
+                    transition: background 0.3s ease-in-out;
                 }
             }
         }

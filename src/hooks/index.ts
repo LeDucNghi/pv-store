@@ -1,3 +1,4 @@
-export * from "./useDebounce";
-export * from "./useWindow";
+export * from "./use-debounce";
+export * from "./use-window-size";
 export * from "./commons";
+export * from "./use-auth";

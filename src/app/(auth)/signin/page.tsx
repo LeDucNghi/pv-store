@@ -3,17 +3,23 @@
 import * as yup from "yup";
 
 import { SubmitHandler, useForm } from "react-hook-form";
+import { redirect, useRouter } from "next/navigation";
 
 import AuthLayout from "@/app/_components/layouts/auth-layout/auth-layout";
 import InputField from "@/app/_components/common/input-field/input-field";
 import Link from "next/link";
 import NormalButton from "@/app/_components/common/custom-button/normal-button";
 import { SignInPayload } from "@/models";
+import { alert } from "@/utils";
+import useAuth from "@/hooks/use-auth";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 export interface ISignInPageProps {}
 
 export default function SignInPage(props: ISignInPageProps) {
+  const { signin } = useAuth();
+  const router = useRouter();
+
   const schema = yup.object().shape({
     email: yup
       .string()
@@ -29,7 +35,7 @@ export default function SignInPage(props: ISignInPageProps) {
   const {
     handleSubmit,
     control,
-    formState: { isSubmitting },
+    formState: { isSubmitting, isDirty },
   } = useForm<SignInPayload>({
     defaultValues: {
       email: "",
@@ -40,16 +46,12 @@ export default function SignInPage(props: ISignInPageProps) {
   });
 
   const onSubmit: SubmitHandler<SignInPayload> = async (data) => {
-    console.log(
-      "🚀 ~ constonSubmit:SubmitHandler<SignInPayload>= ~ data:",
-      data
-    );
-    // await signIn("credentials", {
-    //   redirect: true,
-    //   callbackUrl: "http://localhost:3000/",
-    //   email: data.email,
-    //   password: data.password,
-    // });
+    const sleep = (ms: number) =>
+      new Promise((resolve) => setTimeout(resolve, ms));
+
+    await sleep(2000);
+
+    await signin(data);
   };
 
   return (
@@ -80,6 +82,8 @@ export default function SignInPage(props: ISignInPageProps) {
           <NormalButton
             style={{ fontSize: "0.9rem", textTransform: "capitalize" }}
             type="submit"
+            loading={isSubmitting}
+            disabled={isSubmitting || !isDirty}
           >
             sign in
           </NormalButton>

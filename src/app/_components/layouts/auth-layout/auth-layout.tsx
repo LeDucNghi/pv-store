@@ -20,7 +20,7 @@ export default function AuthLayout({ children, title }: IAuthLayoutProps) {
   return (
     <PageTransition>
       <div className="auth-layout-container flex-center">
-        <div className="auth-layout-wrapper">
+        <div className="auth-layout-wrapper flex-center">
           <Paper className="auth-layout-form" elevation={8}>
             <h1> {title} </h1>
 

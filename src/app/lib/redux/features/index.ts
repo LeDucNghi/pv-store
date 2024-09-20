@@ -1,2 +1,2 @@
-export * from "./auth";
-export * from "./cart";
+export * from "./auth-slice";
+export * from "./cart-slice";

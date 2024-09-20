@@ -15,6 +15,7 @@ import HeaderDrawer from "./header-drawer";
 import Image from "next/image";
 import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
+import PersonIcon from "@mui/icons-material/Person";
 import { productList } from "@/_mock";
 import { useWindowSize } from "@/hooks";
 
@@ -78,6 +79,12 @@ export default function Header(props: IHeaderProps) {
               <Badge color="secondary" badgeContent={productList.length}>
                 <CardGiftcardIcon className="cart-icon" />
               </Badge>
+            </IconButton>
+
+            <IconButton aria-label="user" className="menu-cart">
+              <Link href="/signin">
+                <PersonIcon />
+              </Link>
             </IconButton>
 
             <Button variant="outlined">

@@ -5,6 +5,6 @@ export interface SignInPayload {
 
 export interface SignUpPayload {
   email: string;
-  username: string;
+  name: string;
   password: string;
 }
