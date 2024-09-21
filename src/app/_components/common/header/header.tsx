@@ -5,9 +5,8 @@ import "./header.scss";
 import * as React from "react";
 
 import { BREAK_POINTS_NUMBER, images } from "@/constants";
-import { Badge, Button, IconButton } from "@mui/material";
+import { Badge, Button, IconButton, Tooltip } from "@mui/material";
 
-import BurgerButton from "../custom-button/burger";
 import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
 import CartDrawer from "./cart-drawer";
 import CustomDrawer from "../drawer/drawer";
@@ -16,16 +15,21 @@ import Image from "next/image";
 import Link from "next/link";
 import MenuIcon from "@mui/icons-material/Menu";
 import PersonIcon from "@mui/icons-material/Person";
+import UserMenu from "./user-menu";
+import { cookies } from "@/utils";
 import { productList } from "@/_mock";
 import { useWindowSize } from "@/hooks";
 
 export interface IHeaderProps {}
 
 export default function Header(props: IHeaderProps) {
+  const { windowInnerWidth } = useWindowSize();
+
+  const user = cookies.getCookie("user");
+  console.log("🚀 ~ Header ~ user:", user);
+
   const [isActive, setisActive] = React.useState(1);
   const [openCartDrawer, setOpenCartDrawer] = React.useState(false);
-
-  const { windowInnerWidth } = useWindowSize();
 
   return (
     <div className="header-container">
@@ -71,23 +75,31 @@ export default function Header(props: IHeaderProps) {
               <span className="text-[1.5rem] leading-6">0931303515</span>
             </div>
 
-            <IconButton
-              aria-label="cart"
-              className="menu-cart"
-              onClick={() => setOpenCartDrawer(!openCartDrawer)}
-            >
-              <Badge color="secondary" badgeContent={productList.length}>
-                <CardGiftcardIcon className="cart-icon" />
-              </Badge>
-            </IconButton>
+            <div className="px-4 flex">
+              <Tooltip title="Your cart" arrow>
+                <IconButton
+                  aria-label="cart"
+                  className="menu-cart"
+                  onClick={() => setOpenCartDrawer(!openCartDrawer)}
+                >
+                  <Badge color="secondary" badgeContent={productList.length}>
+                    <CardGiftcardIcon className="cart-icon" />
+                  </Badge>
+                </IconButton>
+              </Tooltip>
 
-            <IconButton aria-label="user" className="menu-cart">
-              <Link href="/signin">
-                <PersonIcon />
-              </Link>
-            </IconButton>
+              {user ? (
+                <UserMenu user={user} />
+              ) : (
+                <IconButton aria-label="user" className="menu-cart">
+                  <Link href="/signin">
+                    <PersonIcon />
+                  </Link>
+                </IconButton>
+              )}
+            </div>
 
-            <Button variant="outlined">
+            <Button className="menu-button" variant="outlined">
               <Link href="/products"> menu </Link>
             </Button>
           </div>
