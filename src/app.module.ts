@@ -5,6 +5,7 @@ import { ConfigModule } from '@nestjs/config';
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UsersModule } from './users/users.module';
+import { ProductModule } from './product/product.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { UsersModule } from './users/users.module';
     MongooseModule.forRoot(
       `mongodb+srv://${process.env.DB_NAME}:${process.env.DB_PASSWORD}@cluster0.teidd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`,
     ),
+    ProductModule,
   ],
   controllers: [AppController],
   providers: [AppService],

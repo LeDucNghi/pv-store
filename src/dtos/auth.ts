@@ -15,6 +15,13 @@ export interface User {
   email?: string;
 }
 
+export interface KiotVietToken {
+  access_token: string;
+  expires_in: number;
+  token_type: string;
+  scope: string;
+}
+
 export interface SignInPayload {
   email: string;
   password: string;

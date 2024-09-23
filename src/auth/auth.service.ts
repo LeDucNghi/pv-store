@@ -1,16 +1,20 @@
 import * as bcrypt from 'bcrypt';
 
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { SignInPayload, SignUpPayload, User } from 'src/dtos';
+import { KiotVietToken, SignInPayload, SignUpPayload, User } from 'src/dtos';
 
+import { AxiosRequestConfig } from 'axios';
+import { HttpService } from '@nestjs/axios';
 import { JwtService } from '@nestjs/jwt';
 import { UsersService } from '../users/users.service';
+import { lastValueFrom } from 'rxjs';
 
 @Injectable()
 export class AuthService {
   constructor(
     private usersService: UsersService,
     private jwtService: JwtService,
+    private readonly axios: HttpService,
   ) {}
 
   async signIn({ email, password }: SignInPayload): Promise<object> {
@@ -86,5 +90,35 @@ export class AuthService {
     const token = await this.jwtService.signAsync(payload);
 
     return token;
+  }
+
+  async generateKiotvietToken(): Promise<KiotVietToken> {
+    try {
+      const data = {
+        scopes: 'PublicApi.Access',
+        grant_type: 'client_credentials',
+        client_id: '1617f0b2-cbf6-4d7a-a655-ec8d06e8d63d',
+        client_secret: '9BEDC415623CA2B00F7D15827FECE03EE075E002',
+      };
+
+      const headers: AxiosRequestConfig = {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+      };
+
+      const res = await lastValueFrom(
+        this.axios.post('https://id.kiotviet.vn/connect/token', data, headers),
+      );
+
+      return res.data;
+    } catch (error: any) {
+      console.log('🚀 ~ AuthService ~ error:', error);
+
+      throw new HttpException(
+        `${error.response.data.error}`,
+        HttpStatus.BAD_REQUEST,
+      );
+    }
   }
 }
