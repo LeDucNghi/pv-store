@@ -27,7 +27,7 @@ export default function ProductInfo({ product }: IProductInfoProps) {
       <div className="product-item-gallery col">
         <div className="image-preview flex-center">
           <Image
-            src={imgPreview ? imgPreview : productList[0].images[0]}
+            src={imgPreview ? imgPreview : productList[0].images![0]}
             alt=""
             width={500}
             height={500}
@@ -48,7 +48,7 @@ export default function ProductInfo({ product }: IProductInfoProps) {
       <div className="product-item-summary col">
         <h1> {productList[0].name} </h1>
 
-        <p className="summary-price"> {productList[0].goodsPrice} </p>
+        <p className="summary-price"> {productList[0].basePrice} </p>
 
         <p className="summary-description"> {productList[0].description} </p>
 

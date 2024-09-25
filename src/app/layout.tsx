@@ -1,12 +1,17 @@
-import "../../public/styles/index.scss";
-import "swiper/css";
 import "react-toastify/dist/ReactToastify.css";
+import "swiper/css";
+import "../../public/styles/index.scss";
 
-import AnimatePresenceWrapper from "./_components/common/wrapper/animate-wrapper";
+import {
+  AnimatePresenceWrapper,
+  ReduxProvider,
+} from "./_components/common/wrapper";
+
+import { CssBaseline } from "@mui/material";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import PageTransition from "./_components/common/page-transition/page-transition";
-import ReduxProvider from "./_components/common/wrapper/redux-provider";
+import SWRConfigWrapper from "./_components/common/wrapper/SWRConfig";
 import { ToastContainer } from "react-toastify";
 
 const mont = Montserrat({ subsets: ["latin"] });
@@ -27,7 +32,9 @@ export default function RootLayout({
         <ReduxProvider>
           <AnimatePresenceWrapper>
             <PageTransition>
-              {children}
+              <SWRConfigWrapper>{children}</SWRConfigWrapper>
+
+              <CssBaseline />
               <ToastContainer />
             </PageTransition>
           </AnimatePresenceWrapper>

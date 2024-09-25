@@ -196,11 +196,7 @@
                             &:nth-child(2) {
                                 width: 25%;
 
-                                overflow: hidden;
-                                display: -webkit-box;
-                                -webkit-box-orient: vertical;
-                                -webkit-line-clamp: 2;
-                                white-space: pre-wrap;
+                                @include text-overflow(2);
                             }
 
                             &:nth-child(3) {

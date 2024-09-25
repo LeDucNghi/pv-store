@@ -1,20 +1,51 @@
 import { User } from "./user";
 
 export interface Product {
-  id: string;
+  id: number;
+  createdDate?: Date;
+  masterCode?: string;
+  retailerId?: number;
   code?: string;
-  categories?: string[];
-  stock?: number;
-  images: string[];
-  goodsCost?: number;
-  goodsPrice?: string;
+  name?: string;
+  fullName?: string;
+  categoryId?: number;
+  categoryName?: string;
+  allowsSale?: boolean;
+  type?: number;
+  hasVariants?: boolean;
+  basePrice?: number;
   weight?: number;
-  name: string;
+  conversionValue?: 1;
   description?: string;
+  modifiedDate?: string;
+  isActive?: boolean;
+  isRewardPoint?: boolean;
+  inventories?: [Inventory];
+  images?: [string];
   quantity?: number;
-  tags?: Tag[];
+  price?: number;
+  tags?: [Tag];
+  comments?: [Comments];
 }
 
+export interface Inventory {
+  productId: number;
+  branchId: number;
+  branchName: string;
+  cost: number;
+  onHand: number;
+  reserved: number;
+  actualReserved: number;
+  minQuantity: number;
+  maxQuantity: number;
+  isActive: boolean;
+}
+
+export interface ProductList {
+  total: number;
+  pageSize: number;
+  data: Product[];
+}
 export interface Tag {
   id: string;
   tag: string;
@@ -29,7 +60,14 @@ export interface Comments {
   date: Date;
 }
 
-export interface Cart {}
+export interface CartState {
+  cart: {
+    total: number;
+    subtotal: number;
+    discount: number;
+    items: Product[];
+  };
+}
 
 export interface CommentPayload {
   comment: string;
@@ -47,4 +85,21 @@ export interface CheckoutPayload {
   phone: string;
   address: string;
   note?: string;
+}
+
+export interface ProductListQueryParams {
+  orderBy: string;
+  pageSize: number;
+  currentItem: number;
+  includeInventory?: boolean;
+  includePricebook?: boolean;
+  IncludeSerials?: boolean;
+  IncludeBatchExpires?: boolean;
+  includeWarranties?: boolean;
+  includeRemoveIds?: boolean;
+  includeQuantity?: boolean;
+  productType?: boolean;
+  includeMaterial?: boolean;
+  isActive?: boolean;
+  includeSoftDeletedAttribute?: boolean;
 }

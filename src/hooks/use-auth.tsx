@@ -1,4 +1,4 @@
-import * as React from "react";
+"use client";
 
 import { SignInPayload, SignUpPayload, User } from "@/models";
 import { alert, cookies } from "@/utils";
@@ -18,26 +18,33 @@ function getUserInfo(): User | null {
   }
 }
 
-export default function useAuth(options?: Partial<SWRConfiguration>) {
+export function useAuth(options?: Partial<SWRConfiguration>) {
   const router = useRouter();
 
   const {
     data: profile,
     error,
     mutate,
-  } = useSWR<User | null>("/signin", {
-    dedupingInterval: 60 * 60 * 1000, // 1hr
-    revalidateOnFocus: false,
-    ...options,
-    fallbackData: getUserInfo(),
-    onSuccess(data) {
-      cookies.setCookie("user", data);
-    },
-    onError(err) {
-      console.log(err);
-      signout();
-    },
-  });
+  } = useSWR<User | null>(
+    "/auth", // key
+    {
+      // options
+      // call API after 1hr
+      dedupingInterval: 60 * 60 * 1000, // 1hr
+
+      // prevent call API after this tab
+      revalidateOnFocus: false,
+      ...options,
+      fallbackData: getUserInfo(),
+      onSuccess(data) {
+        cookies.setCookie("user", data);
+      },
+      onError(err) {
+        console.log(err);
+        signout();
+      },
+    }
+  );
 
   const firstLoading = profile === undefined && error === undefined;
 
@@ -50,12 +57,6 @@ export default function useAuth(options?: Partial<SWRConfiguration>) {
       await mutate();
 
       router.push("/");
-
-      alert({
-        content: "Sign In Successful 🥳",
-        position: "top-center",
-        type: "success",
-      });
     } catch (error: any) {
       console.log("🚀 ~ signin ~ error:", error);
 

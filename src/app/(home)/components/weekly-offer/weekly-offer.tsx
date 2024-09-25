@@ -23,7 +23,7 @@ export default function WeeklyOffer(props: IWeeklyOfferProps) {
 
           <h1 className="offer-prod-name">{homeMenu[0].name}</h1>
 
-          <div className="offer-prod-price">{homeMenu[0].goodsPrice}</div>
+          <div className="offer-prod-price">{homeMenu[0].basePrice}</div>
 
           <div className="offer-prod-description">
             {weeklyOffer.description.map((offer, key) => {

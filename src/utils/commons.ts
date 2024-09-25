@@ -33,3 +33,7 @@ const handlePaginate = (page: number, limit: number, list: any[]) => {
 
   return paginatedResults;
 };
+
+const handleSubtotalPricePerProduct = (price: number, qty: number) => {
+  return price * qty;
+};

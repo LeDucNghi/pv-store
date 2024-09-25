@@ -9,8 +9,7 @@ import InputField from "@/app/_components/common/input-field/input-field";
 import Link from "next/link";
 import NormalButton from "@/app/_components/common/custom-button/normal-button";
 import { SignUpPayload } from "@/models";
-import useAuth from "@/hooks/use-auth";
-import { useRouter } from "next/navigation";
+import { useAuth } from "@/hooks";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 export interface ISignUpPageProps {}

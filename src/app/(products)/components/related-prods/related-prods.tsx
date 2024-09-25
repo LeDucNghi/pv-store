@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { Product } from "@/models";
-import VerticalProd from "@/app/_components/common/product/vertical-prod";
+import { VerticalProd } from "@/app/_components/common/product";
 import { productList } from "@/_mock";
 
 export interface IRelatedProductsProps {

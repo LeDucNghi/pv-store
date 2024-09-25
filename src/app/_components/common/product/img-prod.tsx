@@ -16,7 +16,7 @@ export interface IImageProdProps {
   titleSize?: string;
 }
 
-export default function ImageProd({
+export function ImageProd({
   bg,
   product,
   style,

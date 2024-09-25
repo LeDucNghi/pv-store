@@ -8,7 +8,7 @@ import Footer from "../../common/footer/footer";
 import Header from "../../common/header/header";
 import Loader from "../../common/loader/loader";
 import MainBanner from "../../common/banner/main-banner";
-import useDebounce from "@/hooks/use-debounce";
+import { useDebounce } from "@/hooks/use-debounce";
 
 export interface IMainLayoutProps {
   children: React.ReactNode;

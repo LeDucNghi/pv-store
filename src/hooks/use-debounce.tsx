@@ -4,7 +4,7 @@ export interface IuseDebounceProps {
   time: number;
 }
 
-export default function useDebounce({ time }: IuseDebounceProps) {
+export function useDebounce({ time }: IuseDebounceProps) {
   const [show, setShow] = React.useState(false);
 
   React.useEffect(() => {

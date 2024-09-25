@@ -8,7 +8,7 @@ export interface IAnimatePresenceWrapperProps {
   children: React.ReactNode;
 }
 
-export default function AnimatePresenceWrapper({
+export function AnimatePresenceWrapper({
   children,
 }: IAnimatePresenceWrapperProps) {
   return <AnimatePresence mode="wait">{children}</AnimatePresence>;

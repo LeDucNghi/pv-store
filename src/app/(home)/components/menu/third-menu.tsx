@@ -1,7 +1,7 @@
 import "./menu.scss";
 
-import HorizontalProd from "@/app/_components/common/product/horizontal-prod";
-import ImageProd from "@/app/_components/common/product/img-prod";
+import { HorizontalProd, ImageProd } from "@/app/_components/common/product";
+
 import { homeMenu } from "@/_mock";
 import { images } from "@/constants";
 

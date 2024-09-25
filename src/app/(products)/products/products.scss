@@ -21,6 +21,14 @@
 
     .products-main {
         justify-content: space-between;
+
+        .prods-list-container {
+            width: 70%;
+        }
+
+        .prods-cart {
+            width: 30%;
+        }
     }
 
     .products-header {

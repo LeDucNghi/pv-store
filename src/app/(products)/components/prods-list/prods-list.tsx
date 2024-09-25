@@ -3,19 +3,22 @@
 import "./prods-list.scss";
 
 import CustomPagination from "@/app/_components/common/pagination/pagination";
-import VerticalProd from "@/app/_components/common/product/vertical-prod";
+import { VerticalProd } from "@/app/_components/common/product";
 import { productList } from "@/_mock";
+import { useProductList } from "@/hooks";
 
 export interface IProductsListProps {}
 
 export default function ProductsList(props: IProductsListProps) {
+  const { data } = useProductList({});
+
   const onPageChange = (value: number) => {
     console.log("🚀 ~ onPageChange ~ value:", value);
   };
 
   return (
     <div className="prods-list-container">
-      {productList.slice(0, 9).map((prod, key) => {
+      {data.data.map((prod, key) => {
         return (
           <div className="prod-item-wrapper" key={key}>
             <VerticalProd product={prod} />

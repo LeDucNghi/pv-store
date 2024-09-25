@@ -6,6 +6,7 @@ import * as React from "react";
 
 import { BREAK_POINTS_NUMBER, images } from "@/constants";
 import { Badge, Button, IconButton, Tooltip } from "@mui/material";
+import { selectCart, useAppSelector } from "@/app/lib/redux";
 
 import CardGiftcardIcon from "@mui/icons-material/CardGiftcard";
 import CartDrawer from "./cart-drawer";
@@ -24,9 +25,9 @@ export interface IHeaderProps {}
 
 export default function Header(props: IHeaderProps) {
   const { windowInnerWidth } = useWindowSize();
+  const cart = useAppSelector(selectCart);
 
   const user = cookies.getCookie("user");
-  console.log("🚀 ~ Header ~ user:", user);
 
   const [isActive, setisActive] = React.useState(1);
   const [openCartDrawer, setOpenCartDrawer] = React.useState(false);
@@ -82,7 +83,7 @@ export default function Header(props: IHeaderProps) {
                   className="menu-cart"
                   onClick={() => setOpenCartDrawer(!openCartDrawer)}
                 >
-                  <Badge color="secondary" badgeContent={productList.length}>
+                  <Badge color="secondary" badgeContent={cart.items.length}>
                     <CardGiftcardIcon className="cart-icon" />
                   </Badge>
                 </IconButton>

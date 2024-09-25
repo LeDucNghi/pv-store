@@ -10,6 +10,14 @@
     align-items: center;
 }
 
+@mixin text-overflow($lines: 1) {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+    white-space: pre-wrap;
+}
+
 @mixin backgroundImg($bg: "", $size: contain, $position: center) {
     background-image: url($bg);
     background-position: $position;

@@ -1,7 +1,7 @@
 import "./menu.scss";
 
-import HorizontalProd from "@/app/_components/common/product/horizontal-prod";
-import VerticalProd from "@/app/_components/common/product/vertical-prod";
+import { HorizontalProd, VerticalProd } from "@/app/_components/common/product";
+
 import { homeMenu } from "@/_mock";
 
 export interface ISecondMenuProps {}

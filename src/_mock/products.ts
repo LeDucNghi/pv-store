@@ -6,30 +6,20 @@ import { images } from "@/constants";
 const customSimpleFaker = new SimpleFaker();
 
 export const homeMenu: Product[] = [...Array(6)].map((_, index) => ({
-  id: simpleFaker.string.uuid(),
+  id: Number(simpleFaker.string.uuid()),
   name: faker.commerce.productName(),
   images: [images.product1.src],
   description: faker.lorem.paragraph(1),
-  goodsPrice: faker.commerce.price({
-    min: 100,
-    max: 200,
-    dec: 0,
-    symbol: "$",
-  }),
+  basePrice: Number(faker.commerce.price({ min: 1000, max: 100000, dec: 0 })),
   weight: Number(faker.number.binary(4)),
 }));
 
 export const productList: Product[] = [...Array(20)].map((_, index) => ({
-  id: simpleFaker.string.uuid(),
+  id: Number(simpleFaker.string.uuid()),
   name: faker.commerce.productName(),
   images: [images.product1.src],
   description: faker.lorem.paragraph(1),
-  goodsPrice: faker.commerce.price({
-    min: 100,
-    max: 200,
-    dec: 0,
-    symbol: "$",
-  }),
+  basePrice: Number(faker.commerce.price({ min: 1000, max: 100000, dec: 0 })),
 }));
 
 export const weeklyOffer = {
@@ -70,11 +60,10 @@ export const weeklyOffer = {
       text: "Salt, paper, italian seasoning",
     },
   ],
-  goodsPrice: faker.commerce.price({
-    min: 100,
-    max: 200,
+  basePrice: faker.commerce.price({
+    min: 1000,
+    max: 2000,
     dec: 0,
-    symbol: "$",
   }),
 };
 
@@ -101,15 +90,10 @@ export const reviews: Comments[] = [...Array(3)].map((_, index) => ({
 }));
 
 export const userCart: Product[] = [...Array(2)].map((_, index) => ({
-  id: simpleFaker.string.uuid(),
+  id: Number(simpleFaker.string.uuid()),
   name: faker.commerce.productName(),
   images: [images.product1.src],
   description: faker.lorem.paragraph(1),
-  goodsPrice: faker.commerce.price({
-    min: 100,
-    max: 200,
-    dec: 0,
-    symbol: "$",
-  }),
+  basePrice: Number(faker.commerce.price({ min: 1000, max: 100000, dec: 0 })),
   quantity: customSimpleFaker.helpers.arrayElement([1, 2, 3, 4, 5]),
 }));

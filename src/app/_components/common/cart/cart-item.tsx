@@ -15,8 +15,8 @@ export default function CartItem({ product }: ICartItemProps) {
   return (
     <div className="prods-cart-item">
       <Image
-        src={product.images[0]}
-        alt={product.name}
+        src={product.images![0]}
+        alt={product.name!}
         width={100}
         height={100}
         className="prods-cart-img"
@@ -26,7 +26,7 @@ export default function CartItem({ product }: ICartItemProps) {
         <span className="cart-item-name">{product.name}</span>
 
         <span className="cart-item-quantity">
-          {product.quantity} 1 x {product.goodsPrice}
+          {product.quantity} 1 x {product.basePrice}
         </span>
       </div>
 

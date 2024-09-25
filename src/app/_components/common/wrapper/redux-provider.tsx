@@ -9,6 +9,6 @@ export interface IReduxProviderProps {
   children: React.ReactNode;
 }
 
-export default function ReduxProvider({ children }: IReduxProviderProps) {
+export function ReduxProvider({ children }: IReduxProviderProps) {
   return <Provider store={store}>{children}</Provider>;
 }

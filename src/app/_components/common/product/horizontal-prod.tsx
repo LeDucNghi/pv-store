@@ -1,3 +1,5 @@
+"use client";
+
 import "./product.scss";
 
 import Image from "next/image";
@@ -12,7 +14,7 @@ export interface IHorizontalProdProps {
   className?: string;
 }
 
-export default function HorizontalProd({
+export function HorizontalProd({
   product,
   style,
   className,
@@ -27,7 +29,7 @@ export default function HorizontalProd({
     <div className={`horizontal-prod ${className}`} style={style}>
       <div className="prod-img">
         <Image
-          src={product.images[0]}
+          src={product.images![0]}
           alt="prod image"
           width={500}
           height={500}
@@ -37,7 +39,7 @@ export default function HorizontalProd({
       <div className="prod-content">
         <div className="content-header">
           <span className="prod-name"> {product.name} </span>
-          <span className="prod-price"> {product.goodsPrice} </span>
+          <span className="prod-price"> {product.basePrice} </span>
         </div>
 
         <div className="content-body">{product.description}</div>

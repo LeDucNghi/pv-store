@@ -2,9 +2,9 @@ import "../../menu/menu.scss";
 
 import * as React from "react";
 
+import { ImageProd, VerticalProd } from "@/app/_components/common/product";
+
 import Image from "next/image";
-import ImageProd from "@/app/_components/common/product/img-prod";
-import VerticalProd from "@/app/_components/common/product/vertical-prod";
 import { images } from "@/constants";
 import { productList } from "@/_mock";
 

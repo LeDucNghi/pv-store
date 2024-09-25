@@ -32,7 +32,7 @@ export default function LimitedProds({
         className={`prod-img flex-center`}
       >
         <Image
-          src={product.images[0]}
+          src={product.images![0]}
           alt="prod image"
           width={1000}
           height={1000}
@@ -59,7 +59,8 @@ export default function LimitedProds({
             <CartButton
               variant="outlined"
               info={`${product.weight!} gr / 600 cal`}
-              price={`${product.goodsPrice!}`}
+              price={`${product.basePrice!}`}
+              style={{ color: "#fff" }}
             />
           </div>
         </div>

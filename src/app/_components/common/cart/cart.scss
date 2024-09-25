@@ -8,6 +8,8 @@
     .prods-cart-wrapper {
         padding: 0 0 0 1.25rem;
 
+        width: 100%;
+
         .prods-cart-title {
             font-size: 1.875rem;
             font-weight: 800;
@@ -17,6 +19,8 @@
         }
 
         .prods-cart-main {
+            width: 100%;
+
             .prods-cart-item {
                 position: relative;
                 width: 100%;

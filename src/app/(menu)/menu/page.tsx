@@ -1,7 +1,6 @@
 import "./menu.scss";
 
 import Combo from "../components/combo/combo";
-import Image from "next/image";
 import MainLayout from "@/app/_components/layouts/main-layout/main-layout";
 import MenuInformation from "../components/info/info";
 import ProdsList from "../components/prods-list/prods-list";

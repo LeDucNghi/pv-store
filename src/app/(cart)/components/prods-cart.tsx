@@ -30,8 +30,8 @@ export default function ProductCart(props: IProductCartProps) {
               <div className="item-info cart-col">
                 <div className="item-img">
                   <Image
-                    src={item.images[0]}
-                    alt={item.name}
+                    src={item.images![0]}
+                    alt={item.name!}
                     width={500}
                     height={500}
                   />
@@ -39,7 +39,7 @@ export default function ProductCart(props: IProductCartProps) {
                 <p className="item-name">{item.name}</p>
               </div>
 
-              <p className="item-price cart-col">{item.goodsPrice}</p>
+              <p className="item-price cart-col">{item.basePrice}</p>
 
               <div className="item-quantity cart-col">
                 <IconButton>
@@ -56,7 +56,7 @@ export default function ProductCart(props: IProductCartProps) {
               <div className="item-total cart-col">
                 {parseFloat(`${2 * 1000}`).toLocaleString("it-IT", {
                   style: "currency",
-                  currency: "VND", // minimumFractionDigits: 3,
+                  currency: "VND",
                 })}
               </div>
             </div>

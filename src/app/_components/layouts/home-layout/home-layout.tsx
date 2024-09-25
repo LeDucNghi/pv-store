@@ -8,7 +8,7 @@ import Footer from "../../common/footer/footer";
 import Header from "../../common/header/header";
 import HomeBanner from "../../common/banner/home-banner";
 import Loader from "../../common/loader/loader";
-import useDebounce from "@/hooks/use-debounce";
+import { useDebounce } from "@/hooks/use-debounce";
 
 export interface IHomeLayoutProps {
   children: React.ReactNode;

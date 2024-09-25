@@ -11,14 +11,14 @@ import Link from "next/link";
 import NormalButton from "@/app/_components/common/custom-button/normal-button";
 import { SignInPayload } from "@/models";
 import { alert } from "@/utils";
-import useAuth from "@/hooks/use-auth";
+import { debounce } from "@mui/material";
+import { useAuth } from "@/hooks/use-auth";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 export interface ISignInPageProps {}
 
 export default function SignInPage(props: ISignInPageProps) {
   const { signin } = useAuth();
-  const router = useRouter();
 
   const schema = yup.object().shape({
     email: yup

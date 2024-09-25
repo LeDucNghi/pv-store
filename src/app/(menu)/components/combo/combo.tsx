@@ -8,10 +8,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import LimitedProds from "@/app/_components/common/limited-prods/limited-prods";
 import { homeMenu } from "@/_mock";
+import { useProductList } from "@/hooks";
 
 export interface IComboProps {}
 
 export default function Combo(props: IComboProps) {
+  const { data } = useProductList({});
+
   const [activeTab, setActiveTab] = React.useState(0);
 
   return (
@@ -21,7 +24,7 @@ export default function Combo(props: IComboProps) {
         onSlideChange={(swiper) => setActiveTab(swiper.realIndex)}
         className="mySwiper menu-products"
       >
-        {homeMenu.map((prods, key) => {
+        {data.data.map((prods, key) => {
           return (
             <SwiperSlide className="menu-slide" key={key}>
               <LimitedProds

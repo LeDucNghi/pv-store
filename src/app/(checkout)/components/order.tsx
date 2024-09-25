@@ -28,7 +28,7 @@ export default function Order(props: IOrderProps) {
                   <p className="font-bold"> &nbsp;&nbsp;x {item.quantity}</p>
                 </div>
 
-                <p className="product-price">{item.goodsPrice}</p>
+                <p className="product-price">{item.basePrice}</p>
               </div>
             );
           })}
@@ -38,17 +38,17 @@ export default function Order(props: IOrderProps) {
 
         <div className="order-row-total">
           <div className="font-bold capitalize">subtotal</div>
-          <div className="font-semibold">{userCart[0].goodsPrice}</div>
+          <div className="font-semibold">{userCart[0].basePrice}</div>
         </div>
 
         <div className="order-row-total">
           <div className="font-bold capitalize">shipping</div>
-          <div className="font-semibold">{userCart[0].goodsPrice}</div>
+          <div className="font-semibold">{userCart[0].basePrice}</div>
         </div>
 
         <div className="order-row-total">
           <div className="font-bold capitalize">total</div>
-          <div className="font-semibold">{userCart[0].goodsPrice}</div>
+          <div className="font-semibold">{userCart[0].basePrice}</div>
         </div>
 
         <Divider sx={{ margin: "0 auto" }} />
