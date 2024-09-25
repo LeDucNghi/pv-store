@@ -34,3 +34,20 @@ export interface Inventory {
   maxQuantity: number;
   isActive: boolean;
 }
+
+export interface ProductListQueryParams {
+  orderBy: string;
+  pageSize: number;
+  currentItem: number;
+  includeInventory?: boolean;
+  includePricebook?: boolean;
+  IncludeSerials?: boolean;
+  IncludeBatchExpires?: boolean;
+  includeWarranties?: boolean;
+  includeRemoveIds?: boolean;
+  includeQuantity?: boolean;
+  productType?: boolean;
+  includeMaterial?: boolean;
+  isActive?: boolean;
+  includeSoftDeletedAttribute?: boolean;
+}

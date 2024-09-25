@@ -4,6 +4,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { lastValueFrom } from 'rxjs';
 import { AuthService } from 'src/auth/auth.service';
+import { ProductListQueryParams } from 'src/dtos/product';
 import { Product } from 'src/schemas/product.schema';
 
 @Injectable()
@@ -14,36 +15,21 @@ export class ProductService {
     private authService: AuthService,
   ) {}
 
-  async getAllProduct() {
+  async getAllProduct(query: ProductListQueryParams) {
     try {
       const kiotvietToken = await this.authService.generateKiotvietToken();
 
-      // const data = {
-      //   orderBy: 'Name',
-      //   pageSize: 9,
-      //   currentItem: 1,
-      //   includeInventory: true,
-      //   includePricebook: true,
-      //   IncludeSerials: true,
-      //   IncludeBatchExpires: true,
-      //   includeWarranties: true,
-      //   includeRemoveIds: true,
-      //   includeQuantity: true,
-      //   productType: true,
-      //   includeMaterial: true,
-      //   isActive: true,
-      //   includeSoftDeletedAttribute: true,
-      // };
-
       const res = await lastValueFrom(
-        this.httpService.get('https://public.kiotapi.com/products', {
-          // params: { ...data },
-          headers: {
-            Retailer: 'pvfood',
-            Authorization: `Bearer ${kiotvietToken.access_token}`,
-            'Content-Type': 'application/x-www-form-urlencoded',
+        this.httpService.get(
+          `https://public.kiotapi.com/products?orderBy=${query.orderBy}&pageSize=20&currentItem=${query.currentItem}`,
+          {
+            headers: {
+              Retailer: 'pvfood',
+              Authorization: `Bearer ${kiotvietToken.access_token}`,
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
           },
-        }),
+        ),
       );
 
       return res.data;

@@ -1,5 +1,13 @@
-import { Controller, Get, HttpCode, HttpStatus, Param } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Param,
+  Query,
+} from '@nestjs/common';
 import { ProductService } from './product.service';
+import { ProductListQueryParams } from 'src/dtos/product';
 
 @Controller('product')
 export class ProductController {
@@ -7,8 +15,8 @@ export class ProductController {
 
   @HttpCode(HttpStatus.OK)
   @Get('getProductList')
-  getProductList() {
-    return this.productService.getAllProduct();
+  getProductList(@Query() query: ProductListQueryParams) {
+    return this.productService.getAllProduct(query);
   }
 
   @HttpCode(HttpStatus.OK)
