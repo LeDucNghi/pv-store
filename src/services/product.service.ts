@@ -1,6 +1,6 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 
-import { KiotvietService } from 'src/kiotviet/kiotviet.service';
+import { KiotvietService } from './kiotviet.service';
 import { ProductListQueryParams } from 'src/dtos/product';
 
 @Injectable()

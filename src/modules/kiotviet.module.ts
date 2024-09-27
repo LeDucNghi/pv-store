@@ -4,7 +4,7 @@ import {
 } from 'src/schemas/kiotviet-token.schema';
 
 import { HttpModule } from '@nestjs/axios';
-import { KiotvietService } from './kiotviet.service';
+import { KiotvietService } from 'src/services';
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 

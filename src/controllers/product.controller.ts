@@ -6,7 +6,7 @@ import {
   Param,
   Query,
 } from '@nestjs/common';
-import { ProductService } from './product.service';
+import { ProductService } from '../services/product.service';
 import { ProductListQueryParams } from 'src/dtos/product';
 
 @Controller('product')

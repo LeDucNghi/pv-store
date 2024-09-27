@@ -4,7 +4,7 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { SignInPayload, SignUpPayload, User } from 'src/dtos';
 
 import { JwtService } from '@nestjs/jwt';
-import { UsersService } from '../users/users.service';
+import { UsersService } from './users.service';
 import { v4 as uuidv4 } from 'uuid';
 
 @Injectable()
