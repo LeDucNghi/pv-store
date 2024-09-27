@@ -15,7 +15,7 @@ export interface User {
   email?: string;
 }
 
-export interface KiotVietToken {
+export interface KiotVietTokenPayload {
   access_token: string;
   expires_in: number;
   token_type: string;
