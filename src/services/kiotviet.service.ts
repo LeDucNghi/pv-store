@@ -5,7 +5,13 @@ import { InjectModel } from '@nestjs/mongoose';
 import { AxiosRequestConfig } from 'axios';
 import { Model } from 'mongoose';
 import { lastValueFrom } from 'rxjs';
-import { KiotVietTokenPayload, ProductListQueryParams } from 'src/dtos';
+import {
+  KiotVietTokenPayload,
+  OrderDetailResponse,
+  OrderListResponse,
+  OrderQueryParams,
+  ProductListQueryParams,
+} from 'src/dtos';
 import { KiotVietToken } from 'src/schemas/kiotviet-token.schema';
 import { isNearyExpire } from './../utils/date';
 
@@ -146,6 +152,57 @@ export class KiotvietService {
             },
           },
         ),
+      );
+
+      return res.data;
+    } catch (error) {
+      console.log('🚀 ~ ProductService ~ getAllProduct ~ error:', error);
+      throw new HttpException(
+        `${error.response.data.error}`,
+        HttpStatus.BAD_REQUEST,
+      );
+    }
+  }
+
+  async handleOrder() {}
+  async getOrderList(query: OrderQueryParams): Promise<OrderListResponse> {
+    const kiotvietToken = await this.generateKiotvietToken();
+
+    try {
+      const res = await lastValueFrom(
+        this.axios.get(
+          `https://public.kiotapi.com/orders?orderBy=${query.orderBy}&pageSize=20&currentItem=${query.currentItem}`,
+          {
+            headers: {
+              Retailer: 'pvfood',
+              Authorization: `Bearer ${kiotvietToken.access_token}`,
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+          },
+        ),
+      );
+
+      return res.data;
+    } catch (error) {
+      console.log('🚀 ~ ProductService ~ getAllProduct ~ error:', error);
+      throw new HttpException(
+        `${error.response.data.error}`,
+        HttpStatus.BAD_REQUEST,
+      );
+    }
+  }
+  async getOrderDetail(id: string): Promise<OrderDetailResponse> {
+    const kiotvietToken = await this.generateKiotvietToken();
+
+    try {
+      const res = await lastValueFrom(
+        this.axios.get(`https://public.kiotapi.com/orders/${id}`, {
+          headers: {
+            Retailer: 'pvfood',
+            Authorization: `Bearer ${kiotvietToken.access_token}`,
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+        }),
       );
 
       return res.data;
