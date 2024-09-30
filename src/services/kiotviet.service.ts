@@ -7,6 +7,7 @@ import { AxiosRequestConfig } from 'axios';
 import { Model } from 'mongoose';
 import { lastValueFrom } from 'rxjs';
 import {
+  KiotParamsPayload,
   KiotVietTokenPayload,
   OrderDetailResponse,
   OrderListResponse,
@@ -115,6 +116,39 @@ export class KiotvietService {
         `${error.response.data.error}`,
         HttpStatus.BAD_REQUEST,
       );
+    }
+  }
+
+  async createNewUser(payload: KiotParamsPayload) {
+    try {
+      const kiotvietToken = await this.generateKiotvietToken();
+
+      const data = {
+        code: '',
+        name: payload.name, // Tên khách hàng
+        gender: payload.gender === 'Nam' ? true : false, // Giới tính (true: nam, false: nữ)
+        contactNumber: payload.contactNumber, // Số điện thoại khách hàng
+        address: payload.address, // Địa chỉ khách hàng
+        locationName: payload.locationName, // Khu vực
+        wardName: payload.wardName, // Phường xã
+        email: payload.email, // Email của khách hàng
+        comments: '', // Ghi chú
+        branchId: 417299, // ID chi nhánh tạo khách hàng
+      };
+
+      const res = await lastValueFrom(
+        this.axios.post(`https://public.kiotapi.com/customers`, data, {
+          headers: {
+            Retailer: 'pvfood',
+            Authorization: `Bearer ${kiotvietToken.access_token}`,
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+        }),
+      );
+
+      return res.data;
+    } catch (error) {
+      console.log('🚀 ~ KiotvietService ~ createNewUser ~ error:', error);
     }
   }
 

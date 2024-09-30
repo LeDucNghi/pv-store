@@ -6,29 +6,29 @@ export type UserDocument = HydratedDocument<User>;
 
 @Schema()
 export class User {
-  @Prop()
+  @Prop({ required: true })
   id: number;
 
   @Prop()
   code: string;
 
-  @Prop()
+  @Prop({ required: true })
   email: string;
 
-  @Prop()
+  @Prop({ required: true })
   name: string;
 
-  @Prop({ required: true, default: 'member' })
+  @Prop({ default: 'member' })
   role: 'member' | 'admin';
 
-  @Prop()
+  @Prop({ required: true })
   password: string;
 
   @Prop()
   avatar: string;
 
   @Prop()
-  gender: 'male' | 'female';
+  gender: string;
 
   @Prop()
   birthdate: Date;
@@ -39,13 +39,13 @@ export class User {
   @Prop()
   modifiedDate: Date;
 
-  @Prop()
+  @Prop({ required: true })
   locationName: string;
 
-  @Prop()
+  @Prop({ required: true })
   address: string;
 
-  @Prop()
+  @Prop({ required: true })
   contactNumber: string;
 
   // @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Ticket' }] })

@@ -28,9 +28,15 @@ export interface SignInPayload {
 }
 
 export interface SignUpPayload {
-  email: string;
-  password: string;
   name: string;
+  password: string;
+  gender: string;
+  birthDate?: Date;
+  contactNumber: string;
+  address: string;
+  locationName: string;
+  wardName: string;
+  email: string;
 }
 
 export interface DecodedToken {
@@ -45,4 +51,17 @@ export interface DecodedToken {
   client_GroupId: string;
   iat: number;
   scope: [string];
+}
+
+export interface KiotParamsPayload {
+  name: string;
+  email: string;
+  password?: string;
+
+  gender?: string;
+  birthDate?: Date;
+  contactNumber?: string;
+  address?: string;
+  locationName?: string;
+  wardName?: string;
 }

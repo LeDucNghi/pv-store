@@ -39,11 +39,11 @@ export class AuthService {
     }
   }
 
-  async signUp({ email, password, name }: SignUpPayload): Promise<User> {
-    const user = await this.usersService.findOne(email);
-    const hashedPwd = await bcrypt.hash(password, 10);
+  async signUp(params: SignUpPayload): Promise<User> {
+    const user = await this.usersService.findOne(params.email);
+    const hashedPwd = await bcrypt.hash(params.password, 10);
 
-    password = hashedPwd;
+    params.password = hashedPwd;
 
     if (user) {
       throw new HttpException(
@@ -52,9 +52,14 @@ export class AuthService {
       );
     } else {
       const newUser = await this.usersService.create({
-        email: email,
-        name: name,
-        password: password,
+        email: params.email,
+        name: params.name,
+        password: params.password,
+        address: params.address,
+        contactNumber: params.contactNumber,
+        gender: params.gender,
+        locationName: params.locationName,
+        wardName: params.wardName,
       });
 
       return newUser;
