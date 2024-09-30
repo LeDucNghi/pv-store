@@ -4,9 +4,10 @@ import {
   HttpCode,
   HttpStatus,
   Param,
+  Post,
   Query,
 } from '@nestjs/common';
-import { OrderQueryParams } from 'src/dtos/order';
+import { OrderParamsPayload, OrderQueryParams } from 'src/dtos/order';
 
 import { OrderService } from 'src/services';
 
@@ -24,5 +25,11 @@ export class OrderController {
   @Get('getOrderDetail/:id')
   getOrderDetail(@Param('id') id: string) {
     return this.orderService.getOrderDetail(id);
+  }
+
+  @HttpCode(HttpStatus.OK)
+  @Post('order')
+  handleOrder(@Param() params: OrderParamsPayload) {
+    return this.orderService.handleOrder(params);
   }
 }

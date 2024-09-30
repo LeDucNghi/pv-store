@@ -1,6 +1,7 @@
 import { HttpService } from '@nestjs/axios';
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
+import { JwtService } from '@nestjs/jwt';
 import { InjectModel } from '@nestjs/mongoose';
 import { AxiosRequestConfig } from 'axios';
 import { Model } from 'mongoose';
@@ -9,6 +10,7 @@ import {
   KiotVietTokenPayload,
   OrderDetailResponse,
   OrderListResponse,
+  OrderParamsPayload,
   OrderQueryParams,
   ProductListQueryParams,
 } from 'src/dtos';
@@ -22,6 +24,7 @@ export class KiotvietService {
 
     private readonly axios: HttpService,
     private readonly configService: ConfigService,
+    private jwtService: JwtService,
   ) {}
 
   async generateKiotvietToken(): Promise<KiotVietTokenPayload> {
@@ -49,7 +52,9 @@ export class KiotvietService {
 
       if (kiotVietToken) {
         // check if token is neary expire - 1 day
-        const isCloserExpire = isNearyExpire(kiotVietToken.expires_in, 1);
+        const decodedToken = this.jwtService.decode(kiotVietToken.access_token);
+
+        const isCloserExpire = isNearyExpire(decodedToken.exp, 1);
 
         if (isCloserExpire) {
           // true
@@ -143,7 +148,7 @@ export class KiotvietService {
 
       const res = await lastValueFrom(
         this.axios.get(
-          `https://public.kiotapi.com/products?orderBy=${query.orderBy}&pageSize=20&currentItem=${query.currentItem}`,
+          `https://public.kiotapi.com/products?orderBy=${query.orderBy}&pageSize=20&currentItem=${query.currentItem}&isActive=true`,
           {
             headers: {
               Retailer: 'pvfood',
@@ -164,7 +169,45 @@ export class KiotvietService {
     }
   }
 
-  async handleOrder() {}
+  async handleOrder(params: OrderParamsPayload) {
+    const kiotvietToken = await this.generateKiotvietToken();
+
+    const data = {
+      isApplyVoucher: params.isApplyVoucher ? params.isApplyVoucher : false, //Có apply voucher khi tạo đặt hàng không
+      purchaseDate: params.purchaseDate,
+      branchId: 417299,
+      soldById: 573722,
+      discount: 0,
+      description: 'Đơn hàng tạo ảo từ đơn Postman, người mua Đức Nghị',
+      totalPayment: 0,
+      saleChannelId: 359252,
+      makeInvoice: true,
+      orderDetails: params.orderDetails,
+      orderDelivery: params.orderDelivery,
+      customer: params.customer ? params.customer : null,
+    };
+
+    try {
+      const res = await lastValueFrom(
+        this.axios.post(`https://public.kiotapi.com/orders`, data, {
+          headers: {
+            Retailer: 'pvfood',
+            Authorization: `Bearer ${kiotvietToken.access_token}`,
+            Partner: 'MyKiot',
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+        }),
+      );
+
+      return res.data;
+    } catch (error) {
+      console.log('🚀 ~ ProductService ~ getAllProduct ~ error:', error);
+      throw new HttpException(
+        `${error.response.data.error}`,
+        HttpStatus.BAD_REQUEST,
+      );
+    }
+  }
   async getOrderList(query: OrderQueryParams): Promise<OrderListResponse> {
     const kiotvietToken = await this.generateKiotvietToken();
 
@@ -184,7 +227,7 @@ export class KiotvietService {
 
       return res.data;
     } catch (error) {
-      console.log('🚀 ~ ProductService ~ getAllProduct ~ error:', error);
+      console.log('🚀 ~ ProductService ~ getOrderList ~ error:', error);
       throw new HttpException(
         `${error.response.data.error}`,
         HttpStatus.BAD_REQUEST,

@@ -32,3 +32,17 @@ export interface SignUpPayload {
   password: string;
   name: string;
 }
+
+export interface DecodedToken {
+  nbf: number;
+  exp: number;
+  iss: string;
+  client_id: string;
+  client_RetailerCode: string;
+  client_RetailerId: string;
+  client_UserId: string;
+  client_SensitiveApi: string;
+  client_GroupId: string;
+  iat: number;
+  scope: [string];
+}

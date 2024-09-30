@@ -1,8 +1,8 @@
 export interface OrderQueryParams {
   pageSize: number;
   currentItem: number;
-  orderBy: string;
 
+  orderBy?: string;
   branchIds?: number[];
   customerIds?: number[];
   customerCode?: string;
@@ -61,102 +61,88 @@ export interface OrderListResponse {
 }
 
 export interface OrderDetailResponse {
-  id: number; //Id đặt hàng
-  code: string; //Mã đặt hàng
-  purchaseDate: Date; // Ngày đặt hàng
-  branchId: number; //Id chi nhánh
-  branchName: string; //Tên chi nhánh
+  id: number;
+  code: string;
+  purchaseDate: string;
+  branchId: number;
+  branchName: string;
   soldById: number;
   soldByName: string;
-  customerId: number; // Id khách hàng
-  customerName: string; // Tên khách hàng
-  total: number; // Khách cần trả
-  totalPayment: number; //Khách đã trả
-
-  discountRatio: number; // Giảm giá trên đơn theo %
-  discount: number; // Giảm giá trên đơn theo tiền
-  status: number; // trạng thái đơn đặt hàng
-  statusValue: string; // trạng thái đơn đặt hàng bằng chữ
-  description: string; // ghi chú
-  usingCod: boolean;
-  payments: [
-    {
-      id: number;
-      code: string;
-      amount: number;
-      method: string;
-      status: number;
-      statusValue: string;
-      transDate: Date;
-      bankAccount: string;
-      accountId: number;
-    },
-  ];
-
-  orderDetails: {
-    productId: number; // Id hàng hóa
-    productCode: string;
-    productName: string; //Tên hàng hóa bao gồm thuộc tính và đơn vị tính
-
-    quantity: number; // Số lượng hàng hóa
-    isMaster: boolean; //Tính năng thêm dòng, true: hàng hóa ở dòng chính, false: hàng hóa ở dòng phụ.
-
-    price: number; //Giá trị
-    discountRatio: number; // Giảm giá trên sản phẩm theo %
-    discount: number; // Giảm giá trên sản phẩm theo tiền
-    note: string; // Ghi chú hàng hóa
-  };
+  customerId: number;
+  customerCode: string;
+  customerName: string;
+  total: number;
+  totalPayment: number;
+  status: number;
+  statusValue: string;
+  retailerId: number;
+  description: string;
+  usingCod: true;
+  modifiedDate: string;
+  createdDate: string;
   orderDelivery: {
-    deliveryCode: string;
-    type: number;
+    serviceType: string;
+    status: number;
     price: number;
     receiver: string;
-
     contactNumber: string;
     address: string;
     locationId: number;
     locationName: string;
-    weight: number;
-    length: number;
-    width: number;
-    height: number;
+    wardName: string;
     partnerDeliveryId: number;
-
     partnerDelivery: {
       code: string;
       name: string;
-      address: string;
-      contactNumber: string;
-      email: string;
     };
+    latestStatus: number;
   };
-
-  invoiceOrderSurcharges: [
+  SaleChannelId: number;
+  PriceBookId: number;
+  Extra: string;
+  orderDetails: [
     {
-      id: number;
-      invoiceId: number;
-      surchargeId: number;
-      surchargeName: string;
-      surValue: number;
+      productId: number;
+      productCode: string;
+      productName: string;
+      quantity: number;
       price: number;
-      createdDate: Date;
+      discount: number;
+      discountRatio: number;
+      viewDiscount: number;
     },
   ];
-
-  retailerId: number; // Id cửa hàng
-  modifiedDate: Date; // thời gian cập nhật
-  createdDate: Date; //thời gian tạo
+  SaleChannelName: string;
+  invoices: [
+    {
+      invoiceId: number;
+      invoiceCode: string;
+      total: number;
+      status: number;
+    },
+  ];
+  SaleChannel: {
+    IsNotDelete: true;
+    Img: string;
+    RetailerId: number;
+    Position: number;
+    IsActive: true;
+    CreatedBy: number;
+    CreatedDate: string;
+    Id: number;
+    Name: string;
+  };
 }
 
 export interface OrderParamsPayload {
-  isApplyVoucher: boolean; //Có apply voucher khi tạo đặt hàng không
+  isApplyVoucher: boolean;
   purchaseDate: Date;
   branchId: number;
   soldById: number;
   discount: number;
   description: string;
-  totalPayment: number; //khách đã trả
-  saleChannelId: number; // Id kênh bán hàng, nếu không truyền mặc định kênh khác,
+  totalPayment: number;
+  saleChannelId: number;
   orderDetails: [
     {
       productId: number;
@@ -168,41 +154,42 @@ export interface OrderParamsPayload {
       discountRatio: number;
       viewDiscount: number;
       isMaster: true;
-      note: '';
+      note: string;
     },
   ];
-  orderDelivery: {
+  orderDelivery?: {
     deliveryCode: string;
     price: number;
     receiver: string;
     contactNumber: string;
     address: string;
     locationName: string;
-    wardName: string; // Tên phường
+    wardName: string;
     partnerDelivery: {
       code: string;
       name: string;
     };
   };
-  // "customer": {
-  //     "id": long,
-  //     "code": string,
-  //     "name": string,
-  //     "gender": boolean,
-  //     "contactNumber": string,
-  //     "address": string,
-  //     "wardName": string, // Tên phường
-  //     "email": string,
-  // }
-  // "Payments": [
-  //     { // Thêm phương thức thanh toán bằng voucher
-  //         "Method": "Voucher", // Giá trị mặc định là Voucher (không đổi)
-  //         "MethodStr": "Voucher", // Giá trị mặc định là Voucher (không đổi)
-  //         "Amount": 50000, // Giá trị của voucher
-  //         "Id": -1, // Giá trị mặc định là -1 (không đổi)
-  //         "AccountId": null, // Giá trị mặc định là null (không đổi)
-  //         "VoucherId": 30996, // Id của voucher
-  //         "VoucherCampaignId": 30087 // Id của đợt phát hành voucher
-  //     }
-  // ]
+  customer?: {
+    id: number;
+    code: string;
+    name: string;
+    gender: boolean;
+    contactNumber: string;
+    address: string;
+    wardName: string;
+    email: string;
+  };
+  Payments?: [
+    {
+      // Thêm phương thức thanh toán bằng voucher
+      Method: string; // Giá trị mặc định là Voucher (không đổi)
+      MethodStr: string; // Giá trị mặc định là Voucher (không đổi)
+      Amount: number; // Giá trị của voucher
+      Id: number; // Giá trị mặc định là -1 (không đổi)
+      AccountId: null; // Giá trị mặc định là null (không đổi)
+      VoucherId: number; // Id của voucher
+      VoucherCampaignId: 30087; // Id của đợt phát hành voucher
+    },
+  ];
 }

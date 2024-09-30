@@ -1,5 +1,9 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { OrderDetailResponse, OrderQueryParams } from 'src/dtos/order';
+import {
+  OrderDetailResponse,
+  OrderParamsPayload,
+  OrderQueryParams,
+} from 'src/dtos/order';
 
 import { KiotvietService } from './kiotviet.service';
 
@@ -25,5 +29,9 @@ export class OrderService {
     const orderList = await this.kiotvietService.getOrderDetail(id);
 
     return orderList as OrderDetailResponse;
+  }
+
+  async handleOrder(params: OrderParamsPayload) {
+    await this.kiotvietService.handleOrder(params);
   }
 }
