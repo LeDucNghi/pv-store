@@ -4,7 +4,13 @@ export interface SignInPayload {
 }
 
 export interface SignUpPayload {
-  email: string;
   name: string;
   password: string;
+  gender: string;
+  birthDate?: Date;
+  contactNumber: string;
+  address: string;
+  locationName: string;
+  wardName: string;
+  email: string;
 }

@@ -1,4 +1,4 @@
-import { Product } from "@/models";
+import { SelectParams } from "@/models";
 import { faker } from "@faker-js/faker";
 import { images } from "./images";
 
@@ -120,5 +120,18 @@ export const paymentMethods = [
     id: 3,
     img: images.codLogo,
     name: "COD",
+  },
+];
+
+export const genders: SelectParams[] = [
+  {
+    id: 1,
+    name: "Nam",
+    value: "Nam",
+  },
+  {
+    id: 2,
+    name: "Nữ",
+    value: "Nữ",
   },
 ];

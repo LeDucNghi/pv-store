@@ -8,7 +8,7 @@ import * as yup from "yup";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 import { CheckoutPayload } from "@/models";
-import InputField from "@/app/_components/common/input-field/input-field";
+import InputField from "@/app/_components/common/form/input-field";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 export interface IBillFieldsProps {}

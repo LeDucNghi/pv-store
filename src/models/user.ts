@@ -14,3 +14,9 @@ export interface User {
   avatar?: string;
   email?: string;
 }
+
+export interface SelectParams {
+  id: number;
+  name: string;
+  value: string;
+}

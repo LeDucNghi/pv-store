@@ -28,6 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script src="https://unpkg.com/alpinejs" defer></script>
+      </head>
+
       <body className={mont.className}>
         <ReduxProvider>
           <AnimatePresenceWrapper>
