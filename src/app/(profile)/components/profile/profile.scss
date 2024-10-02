@@ -1,0 +1,67 @@
+@import "../../../../../public/styles/index.scss";
+
+.user-profile-container {
+    width: 100%;
+
+    form {
+        width: 100%;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        .user-avatar {
+            width: 30%;
+            height: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            .avatar {
+                position: relative;
+
+                width: 15rem;
+                height: 15rem;
+
+                border-radius: 50%;
+
+                color: #cccccc;
+
+                .avt {
+                    width: 100%;
+                    height: 100%;
+
+                    border-radius: 50%;
+
+                    object-fit: contain;
+                    border: 0.2rem solid $light-red;
+                }
+
+                .avatar-icon {
+                    position: absolute;
+                    bottom: 1rem;
+                    right: 1rem;
+
+                    color: #ccc;
+
+                    font-size: 2rem;
+
+                    z-index: 1;
+                }
+            }
+        }
+
+        .user-info {
+            width: 70%;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .user-info-field {
+                width: 47%;
+            }
+        }
+    }
+}

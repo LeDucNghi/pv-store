@@ -1,0 +1,24 @@
+.shipping-tracking-container {
+    padding: 1rem 0;
+
+    p {
+        padding: 0.5rem 0;
+        text-align: center;
+    }
+
+    .shipping-tracking-img {
+        width: 50%;
+
+        margin: 0 auto;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 65%;
+
+            object-fit: contain;
+        }
+    }
+}

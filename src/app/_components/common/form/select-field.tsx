@@ -16,6 +16,7 @@ export type ISelecFieldProps<T extends FieldValues> = SelectProps & {
   options: SelectParams[];
 
   label?: string;
+  className?: string;
 };
 
 export function SelectField<T extends FieldValues>({
@@ -27,6 +28,7 @@ export function SelectField<T extends FieldValues>({
   value: externalValue,
   options,
   label,
+  className,
   ...rest
 }: ISelecFieldProps<T>) {
   const {
@@ -38,14 +40,16 @@ export function SelectField<T extends FieldValues>({
   });
 
   return (
-    <FormControl fullWidth sx={{ m: 1 }} size="small">
+    <FormControl margin="normal" fullWidth size="small" className={className}>
       <InputLabel id="demo-select-small-label"> {label} </InputLabel>
       <Select
+        size="small"
         labelId="demo-select-small-label"
         id="demo-select-small"
         label={label}
         onChange={onChange}
         value={value}
+        {...rest}
       >
         {options.map((x, key) => {
           return (

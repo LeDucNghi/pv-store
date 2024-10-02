@@ -1,3 +1,5 @@
+import { Product } from "./product";
+
 export interface OrderParamsPayload {
   isApplyVoucher: boolean;
   purchaseDate: string;
@@ -41,5 +43,48 @@ export interface OrderParamsPayload {
   //     "email": string,
   // }
 }
-export interface OrderResponse {}
+export interface OrderListResponse {
+  id: number;
+  code: string;
+  purchaseDate: string;
+  branchId: number;
+  branchName: string;
+  soldById: number;
+  soldByName: string;
+  customerId: number;
+  customerCode: string;
+  customerName: string;
+  total: number;
+  totalPayment: number;
+  status: number;
+  statusValue: string;
+  retailerId: number;
+  description: string;
+  usingCod: true;
+  modifiedDate: string;
+  createdDate: string;
+  orderDelivery: {
+    serviceType: string;
+    status: number;
+    statusValue: string;
+    price: number;
+    receiver: string;
+    contactNumber: string;
+    address: string;
+    locationId: number;
+    locationName: string;
+    wardName: string;
+    partnerDeliveryId: number;
+    partnerDelivery: {
+      code: string;
+      name: string;
+    };
+    latestStatus: number;
+  };
+  SaleChannelId: number;
+  PriceBookId: number;
+  Extra: string;
+  orderDetails: Product[];
+  SaleChannelName: string;
+}
 export interface OrderDetailResponse {}

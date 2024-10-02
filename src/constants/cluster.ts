@@ -135,3 +135,49 @@ export const genders: SelectParams[] = [
     value: "Nữ",
   },
 ];
+
+export const tabs = [
+  {
+    id: "1",
+    label: "Profile",
+    value: "1",
+  },
+  {
+    id: "2",
+    label: "Orders",
+    value: "2",
+  },
+  {
+    id: "3",
+    label: "Tracking",
+    value: "3",
+  },
+  {
+    id: "4",
+    label: "Addresses",
+    value: "4",
+  },
+];
+
+export const deliveryTrackingSteps = [
+  {
+    id: 1,
+    statusValue: "We are preparing your order. Please chill out😚",
+    statusCode: 1,
+  },
+  {
+    id: 2,
+    statusValue: "Your order is on the way🥳. Please wait...",
+    statusCode: 2,
+  },
+  {
+    id: 3,
+    statusValue: "Your order was completed🥳",
+    statusCode: 3,
+  },
+  {
+    id: 4,
+    statusValue: "Cancelled",
+    statusCode: 4,
+  },
+];

@@ -92,6 +92,8 @@ export function useAuth(options?: Partial<SWRConfiguration>) {
     }
   }
 
+  async function updateProfile(params: SignUpPayload) {}
+
   async function signout() {
     await authService.signout();
     mutate(null, false);

@@ -1,0 +1,143 @@
+@import "../../../../../public/styles/index.scss";
+
+.orders-container {
+    position: relative;
+
+    width: 100%;
+    height: 33rem;
+
+    overflow-y: auto;
+
+    .order-item {
+        margin-bottom: 2rem;
+
+        border-radius: 1rem;
+
+        .order {
+            width: 100%;
+
+            display: flex;
+        }
+
+        .order-header {
+            align-items: center;
+
+            .header-avatar {
+                display: flex;
+                align-items: center;
+
+                button {
+                    background-color: $light-red;
+                    color: #ffffff;
+                    font-size: 0.9rem;
+                    text-transform: capitalize;
+                }
+
+                h3 {
+                    font-weight: 700;
+                    font-size: 0.9rem;
+                }
+            }
+
+            .header-actions {
+                span {
+                    color: #26aa99;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                }
+
+                button {
+                    color: $light-red;
+                    font-weight: 500;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+
+        .order-product {
+            align-items: center;
+
+            .product-img {
+                width: 5.125rem;
+                height: 5.125rem;
+
+                object-fit: contain;
+            }
+
+            .product-info {
+                width: 100%;
+
+                display: flex;
+                flex-direction: column;
+
+                padding-left: 1rem;
+
+                span {
+                    &:first-child {
+                        font-weight: 600;
+                        font-size: 1.1rem;
+                    }
+
+                    &:nth-child(2) {
+                        color: #99a1a3;
+                        font-size: 0.9rem;
+                    }
+
+                    &:nth-child(3) {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+
+            .product-price {
+                font-weight: 600;
+                font-size: 0.9rem;
+                color: $light-red;
+            }
+        }
+
+        .order-actions,
+        .order-price {
+            justify-content: flex-end;
+        }
+
+        .order-price {
+            align-items: center;
+
+            span {
+                &:first-child {
+                    font-weight: 700;
+                    font-size: 1rem;
+                }
+
+                &:nth-child(2) {
+                    padding-left: 1rem;
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    color: $light-red;
+                }
+            }
+        }
+
+        .order-actions {
+            button {
+                font-size: 0.9rem;
+                text-transform: capitalize;
+
+                &:first-child {
+                    background-color: $light-red;
+
+                    padding: 0.5rem 0.625rem;
+
+                    color: #ffffff;
+                }
+
+                &:nth-child(2) {
+                    border: 0.1rem solid #00000017;
+                    padding: 0.5rem 0.625rem;
+                    color: #555;
+                }
+            }
+        }
+    }
+}
