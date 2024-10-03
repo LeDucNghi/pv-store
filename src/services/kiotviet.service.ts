@@ -16,7 +16,6 @@ import {
   ProductListQueryParams,
 } from 'src/dtos';
 import { KiotVietToken } from 'src/schemas/kiotviet-token.schema';
-import { isNearyExpire } from './../utils/date';
 
 @Injectable()
 export class KiotvietService {
@@ -52,12 +51,11 @@ export class KiotvietService {
       });
 
       if (kiotVietToken) {
-        // check if token is neary expire - 1 day
-        const decodedToken = this.jwtService.decode(kiotVietToken.access_token);
+        // check if token is valid
 
-        const isCloserExpire = isNearyExpire(decodedToken.exp, 1);
+        const validToken = this.jwtService.verify(kiotVietToken.access_token);
 
-        if (isCloserExpire) {
+        if (!validToken) {
           // true
           // refresh token
           // else continue return old token
@@ -71,18 +69,23 @@ export class KiotvietService {
           );
 
           await this.tokenModel.findOneAndUpdate(
-            { id: kiotVietToken._id },
+            { _id: kiotVietToken._id },
             {
               access_token: res.data.access_token,
-              expires_in: res.data.expires_in,
               createdDate: Date.now(),
             },
             { new: true },
           );
 
           await kiotVietToken.save();
+
+          return res.data;
         } else {
-          return kiotVietToken;
+          const decodedToken = this.jwtService.decode(
+            kiotVietToken.access_token,
+          );
+
+          return decodedToken;
         }
       } else {
         const res = await lastValueFrom(
@@ -93,7 +96,7 @@ export class KiotvietService {
           ),
         );
 
-        const newToken = new this.tokenModel({
+        const payload = {
           access_token: res.data.access_token,
           clientId: res.data.clientId,
           clientSecret: res.data.clientSecret,
@@ -103,6 +106,13 @@ export class KiotvietService {
           createdDate: Date.now(),
           prefix: 'kiotviet',
           service: 'kiotviet',
+        };
+
+        const token = await this.jwtService.signAsync(payload);
+
+        const newToken = new this.tokenModel({
+          ...payload,
+          access_token: token,
         });
 
         await newToken.save();
