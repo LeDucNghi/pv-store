@@ -13,29 +13,50 @@ export class UsersService {
   ) {}
 
   async findOne(email: string): Promise<User | undefined> {
-    return this.userModel.findOne({ email: email });
+    const userInDb = await this.userModel.findOne({ email: email });
+
+    return userInDb;
   }
 
   async create(params: SignUpPayload): Promise<User> {
     try {
       const kiotUser = await this.kiotService.createNewUser(params);
 
-      const createdUser = new this.userModel({
-        id: kiotUser.data.id,
-        code: kiotUser.data.code,
-        email: params.email,
-        name: params.name,
-        password: params.password,
-        address: params.address,
-        contactNumber: params.contactNumber,
-        gender: params.gender,
-        locationName: params.locationName,
-        wardName: params.wardName,
-      });
+      if (kiotUser) {
+        const createdUser = new this.userModel({
+          id: kiotUser.data.id,
+          code: kiotUser.data.code,
+          email: params.email,
+          name: params.name,
+          password: params.password,
+          address: params.address,
+          contactNumber: params.contactNumber,
+          gender: params.gender,
+          locationName: params.locationName,
+          wardName: params.wardName,
 
-      const user = createdUser.save();
+          avatar: '',
+          role: 'member',
 
-      return user;
+          retailerId: 500345979,
+          branchId: 417299,
+          modifiedDate: new Date(),
+          createdDate: new Date(),
+          type: 0,
+          organization: '',
+          taxCode: '',
+          comments: '',
+          debt: 0,
+          totalInvoiced: 0,
+          totalRevenue: 0,
+          totalPoint: 0,
+          rewardPoint: 0,
+        });
+
+        await createdUser.save();
+
+        return createdUser;
+      }
     } catch (error) {
       console.log('🚀 ~ UsersService ~ create ~ error:', error);
     }

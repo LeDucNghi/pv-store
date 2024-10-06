@@ -53,12 +53,13 @@ export class KiotvietService {
       if (kiotVietToken) {
         // check if token is valid
 
-        const validToken = this.jwtService.verify(kiotVietToken.access_token);
+        const isExpire = Date.now() - kiotVietToken.createdDate > 3600000;
 
-        if (!validToken) {
+        if (isExpire) {
           // true
           // refresh token
           // else continue return old token
+          console.log('🚀 return refresh token ');
 
           const res = await lastValueFrom(
             this.axios.post(
@@ -85,9 +86,13 @@ export class KiotvietService {
             kiotVietToken.access_token,
           );
 
+          console.log('🚀 return old token ');
+
           return decodedToken;
         }
       } else {
+        console.log('🚀 create new token ');
+
         const res = await lastValueFrom(
           this.axios.post(
             'https://id.kiotviet.vn/connect/token',
@@ -159,6 +164,26 @@ export class KiotvietService {
       return res.data;
     } catch (error) {
       console.log('🚀 ~ KiotvietService ~ createNewUser ~ error:', error);
+    }
+  }
+
+  async getUser(id: number) {
+    try {
+      const kiotvietToken = await this.generateKiotvietToken();
+
+      const res = await lastValueFrom(
+        this.axios.get(`https://public.kiotapi.com/customers/${id}`, {
+          headers: {
+            Retailer: 'pvfood',
+            Authorization: `Bearer ${kiotvietToken.access_token}`,
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+        }),
+      );
+
+      return res.data;
+    } catch (error) {
+      console.log('🚀 ~ KiotvietService ~ getUser ~ error:', error);
     }
   }
 
