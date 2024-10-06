@@ -10,8 +10,8 @@ import {
 import { CssBaseline } from "@mui/material";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import PageTransition from "./_components/common/page-transition/page-transition";
-import SWRConfigWrapper from "./_components/common/wrapper/SWRConfig";
+import PageTransition from "./_components/common/wrapper/page-transition";
+import SWRConfigWrapper from "./_components/common/wrapper/swr-config";
 import { ToastContainer } from "react-toastify";
 
 const mont = Montserrat({ subsets: ["latin"] });

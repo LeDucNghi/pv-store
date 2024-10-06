@@ -6,6 +6,8 @@ import ClearIcon from "@mui/icons-material/Clear";
 import { IconButton } from "@mui/material";
 import Image from "next/image";
 import { Product } from "@/models";
+import { selectCart } from "@/app/lib/redux";
+import { useAppSelector } from "@/hooks";
 
 export interface ICartItemProps {
   product: Product;
@@ -26,7 +28,7 @@ export default function CartItem({ product }: ICartItemProps) {
         <span className="cart-item-name">{product.name}</span>
 
         <span className="cart-item-quantity">
-          {product.quantity} 1 x {product.basePrice}
+          {product.quantity} x {product.basePrice}
         </span>
       </div>
 

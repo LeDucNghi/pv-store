@@ -4,7 +4,8 @@ import "./page-transition.scss";
 
 import * as React from "react";
 
-import { motion } from "framer-motion";
+import { motion, useAnimationControls } from "framer-motion";
+
 import { usePathname } from "next/navigation";
 
 export interface IPageTransitionProps {
@@ -13,6 +14,7 @@ export interface IPageTransitionProps {
 
 export default function PageTransition({ children }: IPageTransitionProps) {
   const pathname = usePathname();
+  const controls = useAnimationControls();
 
   return (
     <motion.div className="page-transition-container" key={pathname}>
@@ -27,6 +29,11 @@ export default function PageTransition({ children }: IPageTransitionProps) {
           duration: 0.8,
           ease: [0, 0.71, 0.2, 1.01],
         }}
+
+        // animate={controls.start({
+        //   scaleY: 0,
+        //   transition: { duration: 0.8, ease: [0, 0.71, 0.2, 1.01] },
+        // })}
       ></motion.div>
 
       <motion.div

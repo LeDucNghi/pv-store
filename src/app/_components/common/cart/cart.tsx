@@ -5,6 +5,7 @@ import "./cart.scss";
 import CartItem from "./cart-item";
 import Link from "next/link";
 import NormalButton from "@/app/_components/common/custom-button/normal-button";
+import React from "react";
 import { productList } from "@/_mock";
 import { redirect } from "next/navigation";
 import { selectCart } from "@/app/lib/redux";
@@ -24,7 +25,7 @@ export default function Cart(props: ICartProps) {
           {cart.items.length === 0 ? (
             <div> No products in the cart </div>
           ) : (
-            <>
+            <React.Fragment>
               {cart.items.map((item, key) => {
                 return <CartItem key={key} product={item} />;
               })}
@@ -57,7 +58,7 @@ export default function Cart(props: ICartProps) {
                   <Link href="/checkout">checkout</Link>
                 </NormalButton>
               </div>
-            </>
+            </React.Fragment>
           )}
         </div>
       </div>

@@ -26,6 +26,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import Image from "next/image";
 import Link from "next/link";
 import NormalButton from "../custom-button/normal-button";
+import React from "react";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { images } from "@/constants";
 
@@ -37,7 +38,7 @@ export default function CartDrawer(props: ICartDrawerProps) {
   const cart = useAppSelector(selectCart);
 
   return (
-    <>
+    <React.Fragment>
       {cart && cart.items.length === 0 ? (
         <div className="empty_cart">
           <Image src={images.emptyCart} alt="empty_cart" />
@@ -132,10 +133,6 @@ export default function CartDrawer(props: ICartDrawerProps) {
                 })}{" "}
               </p>
             </div>
-            <div className="flex w-full justify-between py-2">
-              <p className="font-bold capitalize">total</p>
-              <p className="font-semibold">{cart.total}</p>
-            </div>
           </div>
 
           <div className="drawer-button flex justify-between">
@@ -164,6 +161,6 @@ export default function CartDrawer(props: ICartDrawerProps) {
           </div>
         </div>
       )}
-    </>
+    </React.Fragment>
   );
 }

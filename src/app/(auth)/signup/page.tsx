@@ -76,8 +76,13 @@ export default function SignUpPage(props: ISignUpPageProps) {
 
   return (
     <AuthLayout page="signup" title="sign up">
-      <form autoComplete="false" onSubmit={handleSubmit(onSubmit)}>
+      <form
+        autoComplete="false"
+        className="flex justify-between flex-wrap"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <InputField
+          className="w-[47%]"
           autoComplete="false"
           control={control}
           name="email"
@@ -87,6 +92,7 @@ export default function SignUpPage(props: ISignUpPageProps) {
         />
 
         <InputField
+          className="w-[47%]"
           autoComplete="false"
           control={control}
           name="name"
@@ -96,6 +102,7 @@ export default function SignUpPage(props: ISignUpPageProps) {
         />
 
         <InputField
+          className="w-[47%]"
           autoComplete="false"
           control={control}
           name="password"
@@ -105,6 +112,7 @@ export default function SignUpPage(props: ISignUpPageProps) {
         />
 
         <InputField
+          className="w-[47%]"
           autoComplete="false"
           control={control}
           name="contactNumber"
@@ -114,6 +122,7 @@ export default function SignUpPage(props: ISignUpPageProps) {
         />
 
         <InputField
+          className="w-[47%]"
           autoComplete="false"
           control={control}
           name="address"
@@ -123,6 +132,7 @@ export default function SignUpPage(props: ISignUpPageProps) {
         />
 
         <InputField
+          className="w-[47%]"
           autoComplete="false"
           control={control}
           name="locationName"
@@ -132,6 +142,7 @@ export default function SignUpPage(props: ISignUpPageProps) {
         />
 
         <InputField
+          className="w-[47%]"
           autoComplete="false"
           control={control}
           name="wardName"
@@ -141,6 +152,7 @@ export default function SignUpPage(props: ISignUpPageProps) {
         />
 
         <SelectField
+          className="w-[47%]"
           name="gender"
           control={control}
           options={genders}
@@ -160,7 +172,7 @@ export default function SignUpPage(props: ISignUpPageProps) {
             loading={isSubmitting}
             disabled={isSubmitting || !isDirty}
           >
-            sign in
+            sign up
           </NormalButton>
         </div>
       </form>

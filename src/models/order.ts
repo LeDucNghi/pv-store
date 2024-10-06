@@ -32,16 +32,16 @@ export interface OrderParamsPayload {
     locationName: string;
     wardName: string;
   };
-  // "customer": {
-  //     "id": long,
-  //     "code": string,
-  //     "name": string,
-  //     "gender": boolean,
-  //     "contactNumber": string,
-  //     "address": string,
-  //     "wardName": string,
-  //     "email": string,
-  // }
+  customer?: {
+    id: number;
+    code: string;
+    name: string;
+    gender: boolean;
+    contactNumber: string;
+    address: string;
+    wardName: string;
+    email: string;
+  };
 }
 export interface OrderListResponse {
   id: number;

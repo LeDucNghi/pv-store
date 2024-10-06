@@ -14,6 +14,7 @@ const nextConfig = {
         protocol: "https",
         hostname: "picsum.photos",
       },
+      
       {
         protocol: "https",
         hostname: "loremflickr.com",
@@ -27,6 +28,11 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "cdn2-retail-images.kiotviet.vn",
+      },
+
+      {
+        protocol: "https",
+        hostname: "cdn-images.kiotviet.vn",
       },
     ],
   },

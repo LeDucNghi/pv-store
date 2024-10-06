@@ -1,3 +1,5 @@
+"use client";
+
 import "./auth-layout.scss";
 
 import * as React from "react";
@@ -6,7 +8,7 @@ import { Divider, IconButton, Paper } from "@mui/material";
 
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GoogleIcon from "@mui/icons-material/Google";
-import PageTransition from "../../common/page-transition/page-transition";
+import PageTransition from "../../common/wrapper/page-transition";
 
 export interface IAuthLayoutProps {
   children: React.ReactNode;
