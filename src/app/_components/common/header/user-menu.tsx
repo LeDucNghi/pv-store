@@ -16,18 +16,26 @@ import Logout from "@mui/icons-material/Logout";
 import PersonAdd from "@mui/icons-material/PersonAdd";
 import Settings from "@mui/icons-material/Settings";
 import { User } from "@/models";
+import { useRouter } from "next/navigation";
 
 export interface IUserMenuProps {
   user: User;
 }
 
 export default function UserMenu({ user }: IUserMenuProps) {
+  const router = useRouter();
+
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = () => {
+  const handleClose = () => {};
+
+  const redirect = (route: string) => {
+    router.push(`/${route}`);
+
     setAnchorEl(null);
   };
 
@@ -83,7 +91,7 @@ export default function UserMenu({ user }: IUserMenuProps) {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={() => redirect("profile")}>
           <Avatar /> Profile
         </MenuItem>
         <MenuItem onClick={handleClose}>

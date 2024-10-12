@@ -8,6 +8,7 @@ import Footer from "../../common/footer/footer";
 import Header from "../../common/header/header";
 import HomeBanner from "../../common/banner/home-banner";
 import Loader from "../../common/loader/loader";
+import { useAuth } from "@/hooks";
 import { useDebounce } from "@/hooks/use-debounce";
 
 export interface IHomeLayoutProps {
@@ -16,6 +17,8 @@ export interface IHomeLayoutProps {
 
 export default function HomeLayout({ children }: IHomeLayoutProps) {
   const { show } = useDebounce({ time: 3000 });
+  const { profile } = useAuth();
+  console.log("🚀 ~ HomeLayout ~ profile:", profile);
 
   if (!show) return <Loader />;
 

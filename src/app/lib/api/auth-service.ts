@@ -14,4 +14,8 @@ export const authService = {
   signout() {
     return axiosClient.post("/logout");
   },
+
+  getUserInfo(id: string): Promise<User> {
+    return axiosClient.get(`/auth/profile/${id}`);
+  },
 };

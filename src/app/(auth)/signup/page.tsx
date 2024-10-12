@@ -161,7 +161,10 @@ export default function SignUpPage(props: ISignUpPageProps) {
 
         <div className="w-full text-center py-4">
           <b>
-            Already have an account? <Link href="/signin">Sign In</Link>{" "}
+            Already have an account?{" "}
+            <Link className="underline hover:text-[#e84242]" href="/signin">
+              Sign In
+            </Link>{" "}
           </b>
         </div>
 

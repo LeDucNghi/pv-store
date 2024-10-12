@@ -12,13 +12,17 @@ export interface IuseAuthProps {}
 function getUserInfo(): User | null {
   try {
     const user = cookies.getCookie("user");
-    return JSON.parse(user || "");
+
+    return user!;
   } catch (error) {
     return null;
   }
 }
 
-export function useAuth(options?: Partial<SWRConfiguration>) {
+export function useAuth(
+  params?: Partial<{ id: string }>,
+  options?: Partial<SWRConfiguration>
+) {
   const router = useRouter();
 
   const {
@@ -26,7 +30,9 @@ export function useAuth(options?: Partial<SWRConfiguration>) {
     error,
     mutate,
   } = useSWR<User | null>(
-    "/auth", // key
+    // [QueryKeys.GET_USER_PROFILE, params], // key
+    // () => authService.getUserInfo(params?.id!),
+    "/auth/profile",
     {
       // options
       // call API after 1hr
@@ -37,11 +43,12 @@ export function useAuth(options?: Partial<SWRConfiguration>) {
       ...options,
       fallbackData: getUserInfo(),
       onSuccess(data) {
+        console.log("🚀 ~ onSuccess ~ data:", data);
         cookies.setCookie("user", data);
       },
       onError(err) {
         console.log(err);
-        signout();
+        // signout();
       },
     }
   );
@@ -52,11 +59,13 @@ export function useAuth(options?: Partial<SWRConfiguration>) {
     try {
       const user = await authService.signin(payload);
 
-      cookies.setCookie("user", user);
+      if (user) {
+        cookies.setCookie("user", user);
 
-      await mutate();
+        await mutate();
 
-      router.push("/");
+        router.push("/");
+      }
     } catch (error: any) {
       console.log("🚀 ~ signin ~ error:", error);
 
@@ -95,7 +104,7 @@ export function useAuth(options?: Partial<SWRConfiguration>) {
   async function updateProfile(params: SignUpPayload) {}
 
   async function signout() {
-    await authService.signout();
+    // await authService.signout();
     mutate(null, false);
     cookies.removeCookie("user");
   }

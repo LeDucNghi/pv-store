@@ -71,7 +71,10 @@ export default function SignInPage(props: ISignInPageProps) {
 
         <div className="w-full text-center py-4">
           <b>
-            Dont have an account? <Link href="/signup">Sign Up</Link>{" "}
+            Dont have an account?{" "}
+            <Link className="underline hover:text-[#e84242]" href="/signup">
+              Sign Up
+            </Link>{" "}
           </b>
         </div>
 

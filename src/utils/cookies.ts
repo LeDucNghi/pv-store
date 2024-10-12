@@ -1,4 +1,6 @@
 import Cookies from "js-cookie";
+import { User } from "@/models";
+import { jwtDecode } from "jwt-decode";
 
 export const cookies = {
   setCookie(name: string, value: any, options?: Cookies.CookieAttributes) {
@@ -9,7 +11,9 @@ export const cookies = {
     const cookie = Cookies.get(name)!;
 
     if (cookie) {
-      return JSON.parse(Cookies.get(name)!);
+      const decodedToken = jwtDecode(cookie);
+
+      return decodedToken as User;
     }
 
     return undefined;
