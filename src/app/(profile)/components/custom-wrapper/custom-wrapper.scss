@@ -1,0 +1,21 @@
+.wrapper-container {
+    padding: 1.25rem 1.25rem 1.875rem;
+
+    // background: #f5e7c2;
+
+    .wrapper-header {
+        text-align: left;
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-transform: capitalize;
+        }
+
+        p {
+            font-size: 0.9rem;
+
+            padding: 0;
+        }
+    }
+}

@@ -8,7 +8,8 @@ import { Divider, IconButton, Paper } from "@mui/material";
 
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GoogleIcon from "@mui/icons-material/Google";
-import PageTransition from "../../common/wrapper/page-transition";
+import Loader from "../../common/loader/loader";
+import { useDebounce } from "@/hooks";
 
 export interface IAuthLayoutProps {
   children: React.ReactNode;
@@ -19,27 +20,29 @@ export interface IAuthLayoutProps {
 }
 
 export default function AuthLayout({ children, title }: IAuthLayoutProps) {
+  const { show } = useDebounce({ time: 3000 });
+
+  if (!show) return <Loader />;
+
   return (
-    <PageTransition>
-      <div className="auth-layout-container flex-center">
-        <div className="auth-layout-wrapper flex-center">
-          <Paper className="auth-layout-form" elevation={8}>
-            <h1> {title} </h1>
+    <div className="auth-layout-container flex-center">
+      <div className="auth-layout-wrapper flex-center">
+        <Paper className="auth-layout-form" elevation={8}>
+          <h1> {title} </h1>
 
-            <Divider className="auth-layout-divider">
-              <IconButton>
-                <GoogleIcon className="gg-icon" />
-              </IconButton>
+          <Divider className="auth-layout-divider">
+            <IconButton>
+              <GoogleIcon className="gg-icon" />
+            </IconButton>
 
-              <IconButton>
-                <FacebookIcon className="fb-icon" />
-              </IconButton>
-            </Divider>
+            <IconButton>
+              <FacebookIcon className="fb-icon" />
+            </IconButton>
+          </Divider>
 
-            {children}
-          </Paper>
-        </div>
+          {children}
+        </Paper>
       </div>
-    </PageTransition>
+    </div>
   );
 }

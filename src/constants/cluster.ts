@@ -181,3 +181,31 @@ export const deliveryTrackingSteps = [
     statusCode: 4,
   },
 ];
+
+export const userDrawer = [
+  {
+    id: 1,
+    route: "/user/profile",
+    name: "your profile",
+  },
+  {
+    id: 2,
+    route: "/user/settings",
+    name: "settings",
+  },
+  {
+    id: 3,
+    route: "/user/order-list",
+    name: "your orders",
+  },
+  {
+    id: 4,
+    route: "/user/order-detail",
+    name: "order detail",
+  },
+  {
+    id: 5,
+    route: "/user/invoice",
+    name: "order invoice",
+  },
+];

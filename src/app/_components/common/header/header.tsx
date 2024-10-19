@@ -18,7 +18,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import PersonIcon from "@mui/icons-material/Person";
 import UserMenu from "./user-menu";
 import { cookies } from "@/utils";
-import { productList } from "@/_mock";
 import { useWindowSize } from "@/hooks";
 
 export interface IHeaderProps {}

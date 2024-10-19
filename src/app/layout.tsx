@@ -2,15 +2,11 @@ import "react-toastify/dist/ReactToastify.css";
 import "swiper/css";
 import "../../public/styles/index.scss";
 
-import {
-  AnimatePresenceWrapper,
-  ReduxProvider,
-} from "./_components/common/wrapper";
-
 import { CssBaseline } from "@mui/material";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import PageTransition from "./_components/common/wrapper/page-transition";
+import { ReduxProvider } from "./_components/common/wrapper";
 import SWRConfigWrapper from "./_components/common/wrapper/swr-config";
 import { ToastContainer } from "react-toastify";
 
@@ -34,14 +30,13 @@ export default function RootLayout({
 
       <body className={mont.className}>
         <ReduxProvider>
-          <AnimatePresenceWrapper>
-            <PageTransition>
-              <SWRConfigWrapper>{children}</SWRConfigWrapper>
-
+          <PageTransition>
+            <SWRConfigWrapper>
               <CssBaseline />
+              {children}
               <ToastContainer />
-            </PageTransition>
-          </AnimatePresenceWrapper>
+            </SWRConfigWrapper>
+          </PageTransition>
         </ReduxProvider>
       </body>
     </html>

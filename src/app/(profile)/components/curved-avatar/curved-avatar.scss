@@ -1,0 +1,76 @@
+@property --a {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0deg;
+}
+
+.box {
+    --r: 30px; /* control the rounded part*/
+    --s: 80px; /* control the size of the cut and the image  */
+    --a: 20deg; /* control the depth of the curvature */
+
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+    transition: 0.4s --a;
+    color: #fff;
+    font-family: system-ui, sans-serif;
+    text-align: center;
+    animation: --a 0.8s backwards cubic-bezier(0, 0.6, 0.6, 1.5) 0.7s;
+}
+
+@keyframes --a {
+    0% {
+        --a: 90deg;
+    }
+}
+
+.box:hover {
+    --a: 35deg;
+}
+
+.box .avatar {
+    height: calc(2 * var(--s));
+    width: calc(2 * var(--s));
+    aspect-ratio: 1;
+    scale: 0.9;
+    translate: 0 calc(-1 * sin(var(--a)) * var(--s) - sin(var(--a)) * var(--r));
+    border-radius: 50%;
+    background: #d95b43;
+    animation: t linear both 0.7s;
+    margin: 0 auto;
+}
+
+@keyframes t {
+    0% {
+        transform: translate(0, -200px);
+    }
+}
+
+.box:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: calc(var(--s) / 2 + var(--r) / 4) 0 0 0;
+    border-radius: 1rem;
+    background: linear-gradient(45deg, #00a0b0, #88a65e);
+    --_m: 0 / calc(2 * var(--r)) calc(2 * var(--r)) no-repeat radial-gradient(50% 50%, #000 calc(100% - 1px), #0000);
+    --_d: (var(--s) + var(--r)) * cos(var(--a));
+    mask:
+        calc(50% + var(--_d)) var(--_m),
+        calc(50% - var(--_d)) var(--_m),
+        radial-gradient(var(--s) at 50% calc(-1 * sin(var(--a)) * var(--s)), #0000 100%, #000 calc(100% + 1px)) 0
+            calc(var(--r) * (1 - sin(var(--a)))) no-repeat,
+        linear-gradient(90deg, #000 calc(50% - var(--_d)), #0000 0 calc(50% + var(--_d)), #000 0);
+}
+
+h2 {
+    margin-block: calc(var(--s) / -3) 0;
+    font-size: 3rem;
+}
+
+p {
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 1rem;
+}
