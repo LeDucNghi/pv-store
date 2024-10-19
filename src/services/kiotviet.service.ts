@@ -68,7 +68,6 @@ export class KiotvietService {
               headers,
             ),
           );
-
           await this.tokenModel.findOneAndUpdate(
             { _id: kiotVietToken._id },
             {

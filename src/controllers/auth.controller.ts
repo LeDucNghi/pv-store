@@ -1,4 +1,12 @@
-import { Body, Controller, HttpCode, HttpStatus, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  HttpCode,
+  HttpStatus,
+  Param,
+  Post,
+} from '@nestjs/common';
 import { ApiParam } from '@nestjs/swagger';
 import { SignInPayload, SignUpPayload } from 'src/dtos';
 import { AuthService } from 'src/services';
@@ -29,5 +37,11 @@ export class AuthController {
   })
   signUp(@Body() signUpDto: SignUpPayload) {
     return this.authService.signUp(signUpDto);
+  }
+
+  @HttpCode(HttpStatus.OK)
+  @Get('profile/:id')
+  getUsereProfile(@Param('id') id: string) {
+    return this.authService.getUserProfile(id);
   }
 }

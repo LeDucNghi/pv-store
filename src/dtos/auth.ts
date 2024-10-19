@@ -1,3 +1,5 @@
+import { OrderDetailResponse } from './order';
+
 export interface User {
   id?: number;
   code?: string;
@@ -13,6 +15,7 @@ export interface User {
   createdDate?: Date;
   avatar?: string;
   email?: string;
+  order?: OrderDetailResponse[];
 }
 
 export interface KiotVietTokenPayload {
