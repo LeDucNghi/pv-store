@@ -34,7 +34,7 @@ export default function UserMenu({ user }: IUserMenuProps) {
   const handleClose = () => {};
 
   const redirect = (route: string) => {
-    router.push(`/${route}`);
+    router.push(`/user/${route}`);
 
     setAnchorEl(null);
   };

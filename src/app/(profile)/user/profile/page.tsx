@@ -78,7 +78,7 @@ export default function ProfilePage(props: ISettingPageProps) {
     // await signup(data);
   };
 
-  if (!show) return <Loader />;
+  if (!show) return <Loader style={{ height: "100%", background: "red" }} />;
 
   return (
     <div className="profile-container flex flex-wrap justify-between">

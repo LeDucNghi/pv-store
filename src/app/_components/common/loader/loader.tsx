@@ -9,11 +9,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useDebounce } from "@/hooks";
 
 export interface ILoadingProps {
-  height?: string;
   style?: React.CSSProperties;
 }
 
-export default function Loader({ height, style }: ILoadingProps) {
+export default function Loader({ style }: ILoadingProps) {
   const { show } = useDebounce({ time: 500 });
 
   if (show)
@@ -25,7 +24,7 @@ export default function Loader({ height, style }: ILoadingProps) {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
           className="flex-center loader-container"
-          style={{ ...style, height: height ? height : "100vh" }}
+          style={{ ...style }}
         >
           <div className="loader"></div>
         </motion.div>
