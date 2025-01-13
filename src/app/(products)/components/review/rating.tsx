@@ -11,7 +11,7 @@ import { faker, simpleFaker } from "@faker-js/faker";
 
 import CustomRating from "@/app/_components/common/rating/rating";
 import InputField from "@/app/_components/common/form/input-field";
-import NormalButton from "@/app/_components/common/custom-button/normal-button";
+import NormalButton from "@/app/_components/common/buttons/normal-button";
 import Rating from "@mui/material/Rating";
 import { yupResolver } from "@hookform/resolvers/yup";
 

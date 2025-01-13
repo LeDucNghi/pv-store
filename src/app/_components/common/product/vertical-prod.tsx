@@ -8,7 +8,7 @@ import { addToCart, selectCart } from "@/app/lib/redux";
 import { useAppDispatch, useAppSelector } from "@/hooks";
 
 import Image from "next/image";
-import NormalButton from "../custom-button/normal-button";
+import NormalButton from "../buttons/normal-button";
 import { Product } from "@/models";
 import { Tooltip } from "@mui/material";
 import { redirect } from "next/navigation";

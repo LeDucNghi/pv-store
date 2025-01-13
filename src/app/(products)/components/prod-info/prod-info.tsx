@@ -6,7 +6,7 @@ import { prodImgGallery, productList } from "@/_mock";
 
 import Cart from "@/app/_components/common/cart/cart";
 import Image from "next/image";
-import NormalButton from "@/app/_components/common/custom-button/normal-button";
+import NormalButton from "@/app/_components/common/buttons/normal-button";
 import { Product } from "@/models";
 
 export interface IProductInfoProps {

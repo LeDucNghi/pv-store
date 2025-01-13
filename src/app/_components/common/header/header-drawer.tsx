@@ -4,7 +4,7 @@ import { Button, Divider, IconButton } from "@mui/material";
 
 import Image from "next/image";
 import Link from "next/link";
-import NormalButton from "../custom-button/normal-button";
+import NormalButton from "../buttons/normal-button";
 import { images } from "@/constants";
 
 export interface IHeaderDrawerProps {}

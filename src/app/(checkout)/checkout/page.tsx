@@ -3,7 +3,7 @@ import "./checkout.scss";
 import BillFields from "../components/bill-field";
 import ComponentWrapper from "@/app/_components/common/wrapper/component-wrapper";
 import MainLayout from "@/app/_components/layouts/main-layout/main-layout";
-import NormalButton from "@/app/_components/common/custom-button/normal-button";
+import NormalButton from "@/app/_components/common/buttons/normal-button";
 import Order from "../components/order";
 import PaymentMethods from "../components/payment-methods";
 import { images } from "@/constants";

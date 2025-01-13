@@ -7,7 +7,7 @@ import ComponentWrapper from "@/app/_components/common/wrapper/component-wrapper
 import { Divider } from "@mui/material";
 import Link from "next/link";
 import MainLayout from "@/app/_components/layouts/main-layout/main-layout";
-import NormalButton from "@/app/_components/common/custom-button/normal-button";
+import NormalButton from "@/app/_components/common/buttons/normal-button";
 import ProductCart from "../components/prods-cart";
 import { images } from "@/constants";
 

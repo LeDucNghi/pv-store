@@ -4,7 +4,7 @@ import "./cart.scss";
 
 import CartItem from "./cart-item";
 import Link from "next/link";
-import NormalButton from "@/app/_components/common/custom-button/normal-button";
+import NormalButton from "@/app/_components/common/buttons/normal-button";
 import React from "react";
 import { productList } from "@/_mock";
 import { redirect } from "next/navigation";

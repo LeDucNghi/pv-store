@@ -5,7 +5,7 @@ import "./offers.scss";
 import { images, specialOffers } from "@/constants";
 
 import Image from "next/image";
-import NormalButton from "@/app/_components/common/custom-button/normal-button";
+import NormalButton from "@/app/_components/common/buttons/normal-button";
 import { motion } from "framer-motion";
 
 export interface IOffersProps {}

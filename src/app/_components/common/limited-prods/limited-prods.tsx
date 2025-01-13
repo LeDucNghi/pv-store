@@ -2,7 +2,7 @@ import "./limited-prods.scss";
 
 import * as React from "react";
 
-import CartButton from "../custom-button/cart-button";
+import CartButton from "../buttons/cart-button";
 import Image from "next/image";
 import { Product } from "@/models";
 import { motion } from "framer-motion";

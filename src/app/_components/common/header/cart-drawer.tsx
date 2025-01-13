@@ -25,7 +25,7 @@ import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Image from "next/image";
 import Link from "next/link";
-import NormalButton from "../custom-button/normal-button";
+import NormalButton from "../buttons/normal-button";
 import React from "react";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { images } from "@/constants";

@@ -11,7 +11,7 @@ import { CustomWrapper } from "../../components/custom-wrapper/custom-wrapper";
 import InputField from "@/app/_components/common/form/input-field";
 import Link from "next/link";
 import Loader from "@/app/_components/common/loader/loader";
-import NormalButton from "@/app/_components/common/custom-button/normal-button";
+import NormalButton from "@/app/_components/common/buttons/normal-button";
 import { Paper } from "@mui/material";
 import { SelectField } from "@/app/_components/common/form/select-field";
 import { SignUpPayload } from "@/models";

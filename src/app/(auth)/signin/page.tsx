@@ -7,7 +7,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import AuthLayout from "@/app/_components/layouts/auth-layout/auth-layout";
 import InputField from "@/app/_components/common/form/input-field";
 import Link from "next/link";
-import NormalButton from "@/app/_components/common/custom-button/normal-button";
+import NormalButton from "@/app/_components/common/buttons/normal-button";
 import { SignInPayload } from "@/models";
 import { useAuth } from "@/hooks/use-auth";
 import { yupResolver } from "@hookform/resolvers/yup";
