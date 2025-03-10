@@ -64,6 +64,12 @@ export function useAuth(
 
         await mutate();
 
+        alert({
+          content: "Sign In Successfully",
+          type: "success",
+          position: "top-center",
+        });
+
         router.push("/");
       }
     } catch (error: any) {
@@ -107,6 +113,7 @@ export function useAuth(
     // await authService.signout();
     mutate(null, false);
     cookies.removeCookie("user");
+    window.location.reload();
   }
 
   return {

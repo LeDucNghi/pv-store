@@ -16,6 +16,7 @@ import Logout from "@mui/icons-material/Logout";
 import PersonAdd from "@mui/icons-material/PersonAdd";
 import Settings from "@mui/icons-material/Settings";
 import { User } from "@/models";
+import { useAuth } from "@/hooks";
 import { useRouter } from "next/navigation";
 
 export interface IUserMenuProps {
@@ -24,6 +25,7 @@ export interface IUserMenuProps {
 
 export default function UserMenu({ user }: IUserMenuProps) {
   const router = useRouter();
+  const { signout } = useAuth();
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
@@ -31,7 +33,6 @@ export default function UserMenu({ user }: IUserMenuProps) {
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = () => {};
 
   const redirect = (route: string) => {
     router.push(`/user/${route}`);
@@ -58,8 +59,8 @@ export default function UserMenu({ user }: IUserMenuProps) {
         anchorEl={anchorEl}
         id="account-menu"
         open={open}
-        onClose={handleClose}
-        onClick={handleClose}
+        // onClose={handleClose}
+        // onClick={handleClose}
         slotProps={{
           paper: {
             elevation: 0,
@@ -94,23 +95,23 @@ export default function UserMenu({ user }: IUserMenuProps) {
         <MenuItem onClick={() => redirect("profile")}>
           <Avatar /> Profile
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={() => redirect("profile")}>
           <Avatar /> My account
         </MenuItem>
         <Divider />
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={() => redirect("profile")}>
           <ListItemIcon>
             <PersonAdd fontSize="small" />
           </ListItemIcon>
           Add another account
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={() => redirect("profile")}>
           <ListItemIcon>
             <Settings fontSize="small" />
           </ListItemIcon>
           Settings
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={() => signout()}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>

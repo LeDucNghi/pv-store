@@ -18,12 +18,11 @@ export interface IHomeLayoutProps {
 export default function HomeLayout({ children }: IHomeLayoutProps) {
   const { show } = useDebounce({ time: 3000 });
   const { profile } = useAuth();
-  console.log("🚀 ~ HomeLayout ~ profile:", profile);
 
   if (!show) return <Loader />;
 
   return (
-    <>
+    <div data-lenis-prevent>
       <Header />
 
       <div className="home-layout">
@@ -33,6 +32,6 @@ export default function HomeLayout({ children }: IHomeLayoutProps) {
 
         <Footer />
       </div>
-    </>
+    </div>
   );
 }

@@ -2,7 +2,8 @@ import "./button.scss";
 
 import * as React from "react";
 
-import { ButtonProps } from "@mui/material";
+import { Button, ButtonProps } from "@mui/material";
+
 import LoadingButton from "@mui/lab/LoadingButton";
 import SaveIcon from "@mui/icons-material/Save";
 
@@ -23,25 +24,32 @@ export default function NormalButton({
   ...rest
 }: INormalButtonProps) {
   return (
-    <LoadingButton
-      className={`normal-button ${loading ? "isLoading" : ""} ${className}`}
-      style={{
-        ...style,
-        position: "relative",
-        borderRadius: "1.875rem",
-        fontWeight: 600,
-        padding: "0.8rem 1.5rem",
+    <>
+      {loading ? (
+        <LoadingButton
+          loading={loading}
+          loadingPosition="start"
+        ></LoadingButton>
+      ) : (
+        <Button
+          className={`normal-button ${className}`}
+          style={{
+            ...style,
+            position: "relative",
+            borderRadius: "1.875rem",
+            fontWeight: 600,
+            padding: "0.8rem 1.5rem",
 
-        backgroundColor: style?.backgroundColor
-          ? style?.backgroundColor
-          : "#ffb406",
-        color: style?.backgroundColor ? style?.color : "#000",
-      }}
-      loading={loading}
-      loadingPosition="start"
-      {...rest}
-    >
-      {children}
-    </LoadingButton>
+            backgroundColor: style?.backgroundColor
+              ? style?.backgroundColor
+              : "#ffb406",
+            color: style?.backgroundColor ? style?.color : "#000",
+          }}
+          {...rest}
+        >
+          {children}
+        </Button>
+      )}
+    </>
   );
 }
